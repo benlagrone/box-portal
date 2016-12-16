@@ -1,0 +1,58 @@
+/* =======================
+   Teaser
+   ======================= */
+
+.teaser {
+    h2 {
+        @include type-ub-24;
+        font-weight: normal;
+        margin-top: 0;
+        color: $tertiaryBlack;
+    }
+    ul li{
+        color: $neutralGreyDarkest;
+        @include type-ub-21;
+    }
+    .teaser-content {
+        margin-top: 15px;
+        color: $neutralGreyDarkest;
+        p {
+            @include type-m-21;
+        }
+        .cta {
+            margin-top: 20px;
+        }
+    }
+    @include breakpoint(max-width $width-small) {
+        padding: 0;
+        margin: 0;
+        h2 {
+            margin-bottom: 5px;
+        }
+        .teaser-content {
+            margin-top: 0;
+            p {
+                margin-top: 0;
+                margin-bottom: 8px;
+            }
+            a {
+                white-space: nowrap;
+            }
+        }
+        &.teaser-short-mobile {
+            .teaser-content {
+                p {
+                    display: none;
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+    ul {
+        list-style-type: none;
+        padding: 0;
+        li {
+            padding-bottom: 10px;
+        }
+    }
+}

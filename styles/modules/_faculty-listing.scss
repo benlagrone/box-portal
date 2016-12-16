@@ -1,0 +1,153 @@
+/* =======================
+Carousel
+======================= */
+
+.faculty-listing {
+    position: relative;
+    @include clearfix;
+    .section-title {
+        @include type-m-36;
+        text-align: center;
+        margin-bottom: 50px;
+        margin-top: -11px;
+    }
+    //*---------------------------------------
+    // Global Carousel Rules
+    .carousel-group {
+        //*---------------------------------------
+        // Default
+        &.carousel-config-faculty {
+            .carousel-item {
+                margin: 0 20px;
+                text-align: center;
+                padding: 10px 0 0;
+                .item-wrapper {
+                    height: 240px;
+                    padding: 0;
+                    margin-bottom: 10px;
+                    width: 100%;
+                }
+                @include breakpoint(max-width $width-small) {
+                    margin: 0;
+                    padding: 0;
+                    .item-wrapper {
+                        height: 320px;
+                        height: 175px;
+                    }
+                }
+                &.last-item {
+                    padding-top: 140px;
+                }
+                .carousel-image {
+                    img {
+                        border-radius: 50%;
+                        width: 104px;
+                        height: auto;
+                        margin: auto;
+                        @include breakpoint(max-width $width-small) {
+                            width: 65%;
+                            padding: 0;
+                        }
+                    }
+                    margin-bottom: 5px;
+                }
+                .carousel-body {
+                    clear: both;
+                    padding-top: 10px;
+                    margin-bottom: 15px;
+                    .body-title {
+                        margin-bottom: 3px;
+                        line-height: 1.1;
+                    }
+                    .body-text {
+                        line-height: 1.1;
+                    }
+                }
+            }
+        }
+        //*---------------------------------------
+        // Slick Controls
+        &.slick-slider {
+            padding: 0 30px;
+            margin-bottom: 50px;
+        }
+        .slick-track {
+            -webkit-backface-visibility: hidden;
+        }
+        .slick-dots {
+            bottom: -35px;
+            margin: 0;
+            @include slick-dots;
+        }
+        .slick-prev,
+        .slick-next {
+            display: inline-block;
+            position: absolute;
+            z-index: 3;
+            width: 40px;
+            height: 40px;
+            top: 50%;
+            margin-top: -20px;
+            @include transition(all 300ms);
+            opacity: 0;
+            &:before {
+                color: $primaryRed;
+                @extend .fa;
+            }
+        }
+        .slick-prev {
+            left: -10px;
+            &:before {
+                content: "\f053";
+            }
+        }
+        .slick-next {
+            right: -10px;
+            &:before {
+                content: "\f054";
+            }
+        }
+        &:hover {
+            .slick-prev, .slick-next {
+                opacity: 1;
+            }
+        }
+        @include breakpoint(max-width $width-small) {
+            .carousel-image {
+                img {
+                    width: 50%;
+                    padding: 20px;
+                }
+            }
+            .item-wrapper {
+                height: 175px;
+            }
+        }
+    }
+    @include breakpoint(max-width $width-small) {
+        padding: 0;
+        .section-title {
+            padding: 0 50px;
+            margin-bottom: 15px;
+        }
+        .carousel-group.carousel-config-faculty {
+            margin-bottom: 0;
+            .slick-track {
+                overflow: hidden;
+                .carousel-item {
+                    &.last-item {
+                        padding-top: 0;
+                    }
+                    .item-wrapper {
+                        width: 49%;
+                        display: inline-block;
+                        height: auto;
+                    }
+                }
+            }
+            .slick-dots {
+                display: none;
+            }
+        }
+    }
+}

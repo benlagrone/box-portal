@@ -1,0 +1,243 @@
+/* =======================
+   Share
+   ======================= */
+
+.share-module {
+    position: relative;
+    .social-share {
+        color: white;
+        opacity: 0;
+        margin-top: 30px;
+        width: 386px;
+        height: 340px;
+        background-color: $primaryBlack;
+        position: absolute;
+        top: -388px;
+        left: -55px;
+        @include transition(opacity 0.5s);
+        &.visible {
+            opacity: 1;
+            @include transition(opacity 0.5s);
+        }
+        &.adjust-right {
+            left: -340px;
+            &:after {
+                left: 325px;
+            }
+        }
+        .social-close-btn {
+            position: absolute;
+            @include type-u-16(16px,14px);
+            color: $primaryWhite;
+            right: 15px;
+            top: 10px;
+        }
+        .fa-times {
+            float: right;
+            color: white;
+        }
+        .share-content {
+            padding: 45px 50px 30px;
+            display: block;
+            .share-btns {
+                // padding: 20px 0 10px 0;
+                color: black;
+                .item {
+                    color: white;
+                    text-align: center;
+                    i {
+                        padding-bottom: 5px;
+                        @include transition();
+                        &.adjust-down {
+                            position: relative;
+                            top: 4px;
+                        }
+                    }
+                    label {
+                        @include type-u-10;
+                        color: $neutralGreyLight;
+                        margin-top: -20px;
+                    }
+                    &:hover {
+                        i {
+                            color: $primaryRed;
+                        }
+                    }
+                }
+            }
+            .url-share {
+                padding: 30px 0 0;
+                text-align: center;
+                form {
+                    input {
+                        border-radius: 0;
+                        background: black;
+                        color: white;
+                        width: 196px;
+                        text-align: center;
+                        @include transition();
+                        @include button-hover();
+                        // &:hover {
+                        //   border: 1px solid $primaryRed;
+                        // }
+                    }
+                }
+            }
+        }
+        .share-triangle {
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 20px 15px 0 15px;
+            border-color: #000000 transparent transparent transparent;
+        }
+        &:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            position: absolute;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 14px solid black;
+            left: 40px;
+            bottom: -11px;
+        }
+    }
+    @include breakpoint(max-width $width-small) {
+        .item, item.last {
+            width: 50%;
+            margin-bottom: 10px;
+        }
+        .social-share,
+        .social-share.adjust-right {
+            left: inherit;
+            width: 100%;
+            height: 375px;
+            top: -425px;
+            .share-content {
+                padding: 25px 30px 30px;
+                .url-share {
+                    padding: 20px 0 0;
+                }
+            }
+            &:after {
+                display: none;
+            }
+        }
+    }
+}
+
+.share-see-more {
+    h2 {
+        text-align: center;
+        color: $primaryWhite;
+        @include type-m-48(36px,24px);
+        font-weight: normal;
+        margin: 20px 0;
+    }
+    form {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 40px;
+        input {
+            width: 420px;
+            background-color: $primaryBlack;
+            text-align: center;
+            color: $primaryWhite;
+        }
+    }
+    .share-content {
+        width: 750px;
+        height: 500px;
+        padding: 0 90px;
+        .share-row {
+            height: 350px;
+            overflow-y: scroll;
+            float: inherit;
+            .col4 {
+                margin: 0;
+                float: left;
+                height: 88px;
+                text-align: center;
+                color: $primaryWhite;
+                display: table;
+                width: 33.3%;
+                i {
+                    display: table-cell;
+                    vertical-align: middle;
+                    text-align: right;
+                    font-size: 54px;
+                    padding-right: 7px;
+                }
+                p {
+                    display: table-cell;
+                    vertical-align: middle;
+                    padding-left: 7px;
+                    width: 50%;
+                    text-align: left;
+                    margin: 0;
+                    @include type-u-14;
+                }
+            }
+        }
+        .url-share {
+            p {
+                text-align: center;
+                color: $primaryWhite;
+                margin-bottom: 10px;
+                @include type-u-12();
+            }
+            form {
+                input {
+                    color: $primaryWhite;
+                    width: 230px;
+                }
+            }
+        }
+    }
+    @include breakpoint(max-width $width-small) {
+        width: 100%;
+        >form input {
+            width: 300px;
+        }
+        .share-content {
+            width: 100%;
+            padding: 0;
+            height: 200px;
+            height: 42vh;
+            .share-row {
+                height: 90%;
+                .col4 {
+                    width: 50%;
+                    i {
+                        text-align: center;
+                        padding-right: 0;
+                        width: 42%;
+                    }
+                    p {
+                        padding-left: 0;
+                        width: 58%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.modal-close {
+    color: white;
+    float: right;
+    padding: 5px;
+    i {
+        @include transition();
+        &:hover {
+            color: $primaryRed;
+        }
+    }
+}
+
+.share-see-more {
+    display: none;
+    color: red;
+}

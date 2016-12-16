@@ -1,0 +1,402 @@
+/* =======================
+   Link List
+   ======================= */
+.linklist { text-align: left; }
+
+.link-list {
+    .link-list-heading {
+        text-align: center;
+        .fa-stack {
+            border-radius: 50%;
+            width: 108px;
+            height: 108px;
+            margin-bottom: 20px;
+            i:nth-child(2) {
+                font-size: 0.9em;
+            }
+
+            &.icon-green {
+                background-color: $secondaryGreen;
+            }
+            &.icon-lightblue {
+                background-color: $secondaryBlueLight;
+            }
+            &.icon-blue {
+                background-color: $secondaryBlue;
+            }
+            &.icon-red {
+                background-color: $primaryRed;
+            }
+            &.icon-orange {
+                background-color: $secondaryOrange;
+            }
+            &.icon-white {
+                background-color: $primaryWhite;
+            }
+            &.icon-purple {
+                background-color: $secondaryPurple;
+            }
+
+            &.gradient-background-green {
+                @include gradientBackground($secondaryGreen, $secondaryGreenGradientDark);
+            }
+            &.gradient-background-lightblue {
+                @include gradientBackground($secondaryBlueLight, $secondaryBlueLightGradientDark);
+            }
+            &.gradient-background-blue {
+                @include gradientBackground($secondaryBlue, $secondaryBlueGradientDark);
+            }
+            &.gradient-background-red {
+                @include gradientBackground($primaryRed, $primaryRedGradientDark);
+            }
+            &.gradient-background-purple {
+                @include gradientBackground($secondaryPurple, $secondaryPurpleGradientDart);
+            }
+            &.gradient-background-orange {
+                @include gradientBackground($secondaryOrange, $secondaryOrangeGradientDark);
+            }
+        }
+        h3 {
+            margin: 0 0 15px 0;
+            @include type-ub-24;
+            font-weight: normal;
+            text-align: left;
+            &.heading-divider {
+                border-bottom: 1px solid $neutralGrey;
+            }
+        }
+        &.icon-heading {
+            h3 {
+                @include type-m-36(32px,24px);
+                line-height: 1;
+                font-weight: normal;
+                text-align: center;
+            }
+        }
+    }
+    .subtext {
+        @include type-m-21;
+        margin: 0 0 9px 0;
+        color: $neutralGreyDarkest;
+    }
+    .link-list-body {
+        ul {
+            padding: 0;
+            margin: 0;
+            li {
+                list-style: none;
+                display: table;
+                width: 100%;
+                height: 95px;
+                text-align: left;
+                a {
+                    cursor: pointer;
+                    color: $primaryBlack;
+                    display: table-cell;
+                    height: 100%;
+                    vertical-align: middle;
+                    padding: 30px 10px 30px 0;
+                    position: relative;
+                    border-bottom: 1px solid $neutralGrey;
+                    @include transition(all 0.35s);
+                    &:before {
+                        color: $primaryRed;
+                        position: absolute;
+                        right: 16px;
+                        top: 50%;
+                        margin-top: -10px;
+                    }
+                    &:hover {
+                        background-color: $neutralGrey;
+                        padding-right: 0px;
+                        padding-left: 10px;
+                        &:before {
+                            color: $primaryBlack;
+                            transition: color 0.25s ease-in-out;
+                        }
+                    }
+                    img {
+                        float: left;
+                        width: 20%;
+                        margin-right: 15px;
+                    }
+                    h4,
+                    p {
+                        margin: 0;
+                    }
+                    h4 {
+                        @include type-u-14;
+                        text-transform: uppercase;
+                        font-weight: normal;
+                        max-width: 87%;
+                        &.type-title {
+                            float: left;
+                        }
+                    }
+                    p {
+                        @include type-ul-14;
+                        line-height: 1.2em;
+                        color: $neutralGreyDark;
+                        max-width: 85%;
+                        margin-top: 10px;
+                        &.publish-date {
+                            margin-bottom: 10px;
+                        }
+                        &.link-subtitle {
+                            @include type-ub-16;
+                            text-transform: uppercase;
+                            color: $secondaryBlue;
+                            margin-bottom: 10px;
+                        }
+                    }
+                    > .fa {
+                        float: left;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+        .link-list-cta {
+            margin-top: 25px;
+            display: block;
+        }
+        .link-list-cta-container {
+            .link-list-cta:last-child {
+                .cta {
+                    text-align: left;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    &.article-helper {
+        .link-list-heading{
+            h3{
+                @include type-m-21;
+                padding-top: 30px;
+
+            }
+        }
+        padding-left: 0;
+        margin: $desktop-spacing-small 0;
+        border-top: 1px solid $neutralGrey;
+        border-bottom: 1px solid $neutralGrey;
+        ul {
+            margin: 10px 0;
+            padding: 0;
+            li {
+                display: block;
+                height: auto;
+                border-bottom: none;
+                a {
+                    display: block;
+                    height: auto;
+                    padding: 8px 8px 8px 0;
+                    border-top: none;
+                    border-bottom: none;
+                    color: $neutralGreyDarkest;
+                    &:first-child {
+                        border-top: none;
+                    }
+                    .link-title {
+                        @include type-ub-16;
+                        margin-bottom: 0;
+                    }
+                    &:hover {
+                        padding: 8px;
+                    }
+                }
+            }
+        }
+    }
+    &.link-list-headers-only {
+        li a {
+            padding: 30px 10px;
+            h4 {
+                margin: 0;
+            }
+        }
+    }
+    &.news-list {
+        .link-list-body {
+            ul {
+                li {
+                    a {
+                        p {
+                            &.link-subtitle {
+                                @include type-ul-14;
+                                color: $primaryBlack;
+                                margin-bottom:0;
+                            }
+                        }
+                        h4 {
+                            @include type-ub-16;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.related-posts{
+        .link-list-body {
+            ul {
+                li {
+                    :first-child a {
+                        border-top: 1px solid $neutralGrey;
+                    }
+
+                    a{
+                        h4{
+                            @include type-ub-14;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include breakpoint(max-width $width-medium) {
+        .link-list-heading {
+            .fa-stack {
+                width: 88px;
+                height: 88px;
+                line-height: 88px;
+            }
+        }
+        &.article-helper {
+            margin-top: 35px;
+            margin-bottom: 35px;
+            ul {
+                margin: 23px 0;
+                li {
+                    a {
+                        padding: 8px;
+                    }
+                }
+            }
+        }
+    }
+    @include breakpoint(max-width $width-small) {
+        padding-left: 0;
+        padding-right: 0;
+        padding-top:2em;
+        padding-bottom:2em;
+        .link-list-heading {
+            @include mobile-icon-wrapper;
+            padding-top: 0;
+            padding-bottom: 0;
+            @include spacing('padding', 'sides', 'mobile');
+            h3 {
+                margin-bottom: 25px;
+            }
+            &.icon-heading {
+                @include spacing('padding', 'sides', 'mobile');
+                margin-bottom: 15px;
+                h3 {
+                    @include mobile-icon-right;
+                    padding: 0 0 0 15px;
+                }
+            }
+            .icon-circle {
+                @include mobile-icon-left;
+                span {
+                    font-size: 3em;
+                }
+            }
+            .fa-stack {
+                margin-bottom: 0;
+            }
+        }
+        .subtext {
+            margin: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-bottom: 15px;
+            @include spacing('padding', 'sides', 'mobile');
+        }
+        .link-list-body {
+            ul {
+                margin: 0;
+                li {
+                    width: 100%;
+                    display: block;
+                    height: auto;
+                    &.top-border a {
+                        border-top: none;
+                    }
+                    &:first-child a {
+                        border-top: none;
+                    }
+                    a {
+                        display: block;
+                        height: auto;
+                        padding-top: 15px;
+                        padding-bottom: 15px;
+                        @include spacing('padding', 'sides', 'mobile');
+                        h4 {
+                            margin-bottom: 0;
+                        }
+                        &:before {
+                            color: $primaryRed;
+                            right: 40px;
+                            top: 50%;
+                            margin-top: -7px;
+                        }
+                        &:hover {
+                            @include spacing('padding', 'sides', 'mobile');
+                            &:before {
+                                color: $primaryRed;
+                            }
+                        }
+                    }
+                    &:last-child a {
+                        border-bottom: none;
+                    }
+                }
+            }
+            .link-list-cta {
+                margin: 20px 0 10px;
+                padding-top: 0;
+                padding-bottom: 0;
+                @include spacing('padding', 'sides', 'mobile');
+            }
+        }
+    }
+}
+@include breakpoint(max-width $width-small) {
+    .last .link-list .link-list-body ul li:first-child a {
+       border-top: 1px solid $neutralGrey;
+    }
+}
+
+.cell-s-highlight{
+    .link-list{
+        padding-left: $global-spacing;
+        padding-right: $global-spacing;
+        @include breakpoint(max-width $width-small) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.lt-ie9,
+.ie9 {
+    .fa-stack {
+        &.gradient-background-green {
+            background: $secondaryGreenLight;
+        }
+        &.gradient-background-blue {
+            background: $secondaryBlueLight;
+        }
+        &.gradient-background-red {
+            background: $primaryRed;
+        }
+        &.gradient-background-purple {
+            background: $secondaryPurple;
+        }
+        &.gradient-background-orange {
+            background: $secondaryOrange;
+        }
+    }
+}
+

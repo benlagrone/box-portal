@@ -1,0 +1,114 @@
+.spotlight-quote {
+	display: table;
+	> div {
+		position: relative;
+		display: table-cell;
+		width: 50%;
+		text-align: center;
+		vertical-align: middle;
+		padding: 50px;
+		&:first-of-type {
+			&:after {
+				position: absolute;
+				right: 0;
+				top: 20%;
+				bottom: 20%;
+				content: '';
+				width: 1px;
+				background: $neutralGrey;
+			}
+		}
+		h2 {
+			@include type-ub-24;
+			font-weight: normal;
+			color: $primaryRed;
+			margin-bottom: 40px;
+		}
+		h3 {
+			@include type-m-32(32px, 21px);
+			margin-bottom: 0;
+			margin-top: 20px;
+			font-weight: normal;
+		}
+		.secondary-info {
+			@include type-ub-16(16px, 14px);
+			margin: 0;
+		}
+		.other-info {
+			@include type-u-16(16px, 14px);
+			margin-top: 5px;
+		}
+		&.quote {
+			padding: 70px;
+			> p {
+				@include type-m-32(32px, 21px);
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+			.quote-icon {
+				color: $primaryRed;
+			}
+		}
+		.image-container {
+			width: 132px;
+			height: 132px;
+			overflow: hidden;
+			display: inline-block;
+			border-radius: 50%;
+			img {
+				display: block;
+			}
+		}
+	}
+	@include breakpoint (min-width $width-small) {
+		&.spotlight-quote-alt .info {
+			left: 50%;
+			&:after {
+				content: '';
+				width: 0;
+			}
+		}
+		&.spotlight-quote-alt .quote {
+			right: 50%;
+			&:after {
+				position: absolute;
+				right: 0;
+				top: 20%;
+				bottom: 20%;
+				content: '';
+				width: 1px;
+				background: $neutralGrey;
+			}
+		}
+	}
+	@include breakpoint (max-width $width-small) {
+		display: block;
+		> div {
+			display: block;
+			width: 100%;
+			&.info {
+				&:after {
+					content: '';
+					position: absolute;
+					top: auto;
+					bottom: 0;
+					left: 20%;
+				  right: 20%;
+				  width: auto;
+				  height: 1px;
+				  background: $neutralGrey;
+				}
+			}
+		}
+		&.spotlight-quote-alt .info {
+			left: 0;
+		}
+		&.spotlight-quote-alt .quote {
+			right: 0;
+			&:after {
+				content: '';
+				width: 0;
+			}
+		}
+	}
+}

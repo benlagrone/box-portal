@@ -1,0 +1,53 @@
+/* =======================
+   Article Body
+   ======================= */
+
+.article-body {
+	@include type-m-18(16px, 14px);
+	h1 {
+		@include type-m-36;
+		font-weight: normal;
+		border-bottom: 1px solid $neutralGrey;
+		margin: 0;
+    	padding: 0 0 0.67em;
+	}
+	p {
+		&.article-subtitle {
+			margin: 0 0 2em;
+    		padding: 1.5em 0;
+			border-bottom: 1px solid $neutralGrey;
+		}
+	}
+	.article-date {
+		@include type-ul-14;
+	}
+	div {
+		&.article-image-caption {
+			float:right;
+			margin:20px;
+			background-color: $neutralGreyLight;
+			img {
+				display: block;
+			}
+			.caption {
+				display:block;
+				@include type-u-16;
+				padding:10px;
+			}
+		}
+	}
+	@include breakpoint(max-width $width-small) {
+		@include spacing('padding', 'all', 'mobile');
+		div {
+			&.article-image-caption {
+				float: none;
+				margin: 2em 0;
+				img {
+					display: block;
+					width:100%;
+					height:auto;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,636 @@
+/* ==|====================
+   Base/Form
+   ======================= */
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="search"],
+textarea {
+    font-size: 1em;
+    font-weight: 300;
+    color: #666;
+    padding: .5em;
+    border: 1px solid #bfbfbf;
+    outline: 0;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    background-color: #f7f7f7;
+    @include placeholder($neutralGrey);
+
+    &:hover {
+        border-color: #a5a5a5;
+    }
+
+    &:focus {
+        border-color: #999;
+    }
+}
+
+.donate-custom {
+    @include placeholder(#FFF);
+}
+
+/* ===================
+Module/Form search
+=================== */
+
+$searchBarHeight: 70px;
+
+@mixin search-field-color($class, $color){
+  &.#{$class} {
+    &.hasVal, &.focus{
+      .placeholder {
+        color:$primaryWhite;
+      }
+      .search-icon {
+        color:$primaryWhite;
+      }
+      .search-field {
+        color:$primaryWhite;
+        background:$color;
+        @include placeholder($primaryWhite);
+      }
+    }
+    .search-results {
+      background:$color;
+      position: absolute;
+    }
+  }
+}
+
+.search-wrapper {
+  position:relative;
+
+  .search-form {
+    height: $searchBarHeight;
+    line-height: $searchBarHeight;
+  }
+  &.lightblue{
+    .search-field{
+      line-height: normal;
+      text-transform: capitalize;
+    }
+    ul{
+      li{
+        .suggestion-name{
+          text-transform: none;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+
+  &.purple{
+    .search-field{
+      line-height: normal;
+    }
+    .search-result{
+      .option{
+        display: table-cell;
+        vertical-align: middle;
+        .suggestion-name{
+          line-height: 1.3em;
+          display: inline-block;
+          vertical-align: middle;
+          text-transform: lowercase;
+        }
+      }
+    }
+  }
+
+  .placeholder {
+    top:50%;
+    display:block;
+    position:absolute;
+    color: $neutralGreyDark;
+    text-align:left;
+    padding:0 10px 0 35px;
+    pointer-events:none;
+    @include type-u-14(12px,12px);
+    @include transform(translate3d(0, -42%, 0));
+    @include transition(color 0.3s);
+  }
+
+  .search-icon {
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 26px;
+    font-size: 18px;
+    @include transition(color 0.3s);
+  }
+
+  .search-field {
+    &::-ms-clear{
+      display:none;
+    }
+    width: 100%;
+    height: $searchBarHeight;
+    padding-left: 35px;
+    padding-right: 10px;
+    color: $neutralGreyDark;
+    background-color: $neutralGrey;
+    box-shadow: none;
+    border:none;
+    border-radius:0;
+    outline:none;
+    appearance: none;
+    resize: none;
+    @include type-u-18;
+    @include multi-transition(background 0.3s, color 0.3s);
+    line-height: $searchBarHeight;
+    text-transform: none;
+
+    &::input-placeholder {
+      color:    $neutralGreyDark;
+      opacity:  1;
+      @include type-u-18;
+    }
+    &::-webkit-input-placeholder {
+      color:    $neutralGreyDark;
+      opacity:  1;
+      @include type-u-18;
+    }
+    &:-moz-placeholder {
+      color:    $neutralGreyDark;
+      opacity:  1;
+
+      @include type-u-18;
+    }
+    &::-moz-placeholder {
+      color:    $neutralGreyDark;
+      opacity:  1;
+      line-height: -moz-block-height !important;
+      @include type-u-18;
+
+    }
+    &:-ms-input-placeholder { /* Internet Explorer 10+ */
+      color:    $neutralGreyDark;
+      opacity:  1;
+      @include type-u-18;
+    }
+  }
+
+  .search-results {
+    background:$neutralGreyDark;
+    overflow:hidden;
+    z-index: z('search-results');
+    width:100%;
+    margin-top: 0;
+    padding-left: 0;
+    cursor: pointer;
+  }
+
+  .search-result {
+
+    display:block;
+    color:$primaryWhite;
+    padding:0 25px;
+    height:0;
+    opacity:0;
+    overflow:hidden;
+    text-align:left;
+    @include type-u-18;
+    line-height: $searchBarHeight;
+
+    &.active{
+      background: rgba($primaryWhite, .15) !important;
+      font-weight: bold;
+    }
+
+
+    background:rgba($primaryWhite, .25);
+
+    @include transition(all 0.3s);
+    @include transition-delay(0);
+      .a{
+          display: block;
+          color:$primaryWhite;
+      }
+  }
+
+  &.focus {
+    .search-result {
+      &.reveal {
+        height:$searchBarHeight;
+        opacity:1;
+      }
+    }
+  }
+
+  &.hasVal {
+    .placeholder{
+      display:none;
+    }
+  }
+
+  .form-search-submit{
+    display:none;
+    width: $searchSubmitWidth;
+    float: right;
+    background: $secondaryRed;
+    border: 1px solid $primaryWhite;
+    color: $primaryWhite;
+    vertical-align: middle;
+    font-size: 19px;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    -webkit-transition: background 0.3s, color 0.3s;
+    transition: background 0.3s, color 0.3s;
+    height: 36px;
+    color: white;
+  }
+
+  // customize for various color schemes
+  @include search-field-color("purple", $secondaryPurple);
+  @include search-field-color("lightblue", $secondaryBlueLight);
+}
+
+.md-form-label {
+  @include type-m-36;
+  display:block;
+}
+
+.md-field-wrapper {
+  position:relative;
+  width:400px;
+  margin-bottom:20px;
+
+  .field-helper {
+    position:absolute;
+    top:7px;
+    right:0;
+    cursor: pointer;
+    color:$primaryRed;
+  }
+
+  .field-helper-dialog {
+    background-color:$neutralGreyDarkest;
+    color:$primaryWhite;
+    width:220px;
+    height:190px;
+    position:absolute;
+    top:-7px;
+    right:-240px;
+    opacity:0;
+    @include transition(all 0.3s);
+
+    .dialog-inner {
+      position:relative;
+      padding:20px;
+
+      .dialog-close {
+        position:absolute;
+        top:10px;
+        right:10px;
+        cursor: pointer;
+      }
+
+      .dialog-title {
+        margin-top:0;
+        margin-bottom:10px;
+        @include type-m-21;
+        padding-right:20px;
+      }
+
+      .dialog-body {
+        margin-top:0;
+        @include type-u-12;
+      }
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
+      border-right: 14px solid $neutralGreyDarkest;
+      top: 10px;
+      left: -11px;
+    }
+  }
+}
+
+input {
+  &.md-form-text {
+    height:73px;
+    width:400px;
+    border:none;
+    background-color:$neutralGreyLight;
+    @include type-u-18;
+    @include placeholder($neutralGreyDark);
+    color: $primaryBlack;
+    box-shadow:none;
+    border-radius:none;
+  }
+}
+
+.md-switch {
+  .tgl{
+    display: none;
+    // add default box-sizing for this scope
+    &, &:after, &:before,
+    & *, & *:after, & *:before,
+    & + .tgl-btn{
+      box-sizing: border-box;
+      &::selection{
+        background: none;
+      }
+    }
+    + .tgl-btn{
+      padding: 2px;
+      transition: all .2s ease;
+      background: #fff;
+      border: 2px solid $neutralGrey;
+      outline: 0;
+      display: block;
+      width: 44px;
+      height: 26px;
+      position: relative;
+      cursor: pointer;
+      user-select: none;
+
+      &:after, &:before{
+        position: relative;
+        display: block;
+        content: "";
+        width: 50%;
+        height: 100%;
+      }
+
+      &:after{
+        left: 0;
+        transition: all .2s ease;
+        background: $neutralGrey;
+        content: "";
+      }
+
+      &:before{
+        display: none;
+      }
+    }
+    &:checked{
+      + .tgl-btn{
+        &:after{
+          left: 50%;
+          background: $primaryRed;
+        }
+      }
+    }
+  }
+}
+.md-radio {
+  input[type="radio"] {
+    display:none;
+  }
+  &.style1 {
+    input[type="radio"] + label span {
+      display:inline-block;
+      width:20px;
+      height:20px;
+      background:$neutralGreyLight;
+      border: 2px solid $neutralGreyLight;
+      border-radius: 20px;
+      cursor:pointer;
+    }
+    input[type="radio"]:checked + label span {
+      background:$primaryRedGradientDark;
+      border-color: $primaryRed;
+    }
+    input[type="radio"]:unchecked + label span {
+      background:$neutralGreyLight;
+      border-color: $neutralGreyLight;
+    }
+  }
+  &.style2 {
+    input[type="radio"] + label span {
+      display:inline-block;
+      width:20px;
+      height:20px;
+      background:$primaryWhite;
+      border: 4px solid $neutralGreyLight;
+      border-radius: 20px;
+      cursor:pointer;
+    }
+    input[type="radio"]:checked + label span {
+      background:$primaryRedGradientDark;
+      border-color: $neutralGreyDark;
+    }
+    input[type="radio"]:unchecked + label span {
+      background:$primaryWhite;
+      border-color: $neutralGreyLight;
+    }
+  }
+}
+.md-check {
+  input[type="checkbox"] {
+    display:none;
+  }
+  input[type="checkbox"] + label span {
+      display:inline-block;
+      width:25px;
+      height:25px;
+      border: 2px solid $neutralGrey;
+      background: white;
+      position:relative;
+      cursor:pointer;
+      i {
+        display: none;
+      }
+  }
+  input[type="checkbox"]:checked + label span {
+    i {
+      display: block;
+      position:absolute;
+      top:2px;
+      left: 3px;
+      font-size: 16px;
+      color: $primaryRed;
+    }
+  }
+  input[type="radio"]:unchecked + label span {
+    i {
+      display: none;
+    }
+  }
+}
+
+.mda-custom-dd {
+  &.style1{
+    width: 200px;
+    h2 {
+      position:relative;
+      background: $neutralGrey;
+      border-top: 1px solid $neutralGreyLightest;
+      border-bottom: 1px solid $neutralGreyLightest;
+      float:left;
+      margin: 0;
+      a{
+        width: 100%;
+        height: 100%;
+        float:left;
+        font-weight: normal;
+        padding: 20px 65px 20px 30px;
+        cursor: pointer;
+        @include type-ub-21()
+      }
+      i {
+        position:absolute;
+        right: 20px;
+        top: 25px;
+        color:$neutralGreyDark;
+      }
+    }
+    .mda-custom-dd-list {
+      list-style: none;
+      background: $neutralGrey;
+      display: block;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 250px;
+      overflow-y: auto;
+      li {
+        display: block;
+        height: 50px;
+        a {
+          width: 100%;
+          color: $primaryBlack;
+          padding: 0 20px 0 30px;
+          display: block;
+          @include type-u-18;
+          line-height: 50px;
+          &:hover {
+            font-size: 20px;
+            font-weight: bold;
+          }
+        }
+        &:first-child {
+          a {
+            height: 60px;
+
+          }
+        }
+      }
+    }
+    &.extended {
+      h2 {
+        background: $primaryWhite;
+        border-top: 1px solid $primaryWhite;
+        border-bottom: 1px solid $primaryWhite;
+        i {
+          color: $primaryRed;
+        }
+      }
+    }
+  }
+  &.style2{
+    width: 300px;
+    h2 {
+      position:relative;
+      background: $neutralGrey;
+      float:left;
+      margin: 0;
+      width: 100%;
+      a{
+        width: 100%;
+        height: 100%;
+        float:left;
+        font-weight: normal;
+        padding: 20px 65px 20px 20px;
+        cursor: pointer;
+        color:$primaryBlack;
+        @include type-ub-16()
+      }
+      i {
+        position:absolute;
+        right: 20px;
+        color:$neutralGreyDark;
+      }
+    }
+    .mda-custom-dd-list {
+      list-style: none;
+      background: $neutralGrey;
+      display: block;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 200px;
+      overflow-y: auto;
+      li {
+        display: block;
+        height: 40px;
+        a {
+          width: 100%;
+          color: $primaryBlack;
+          padding: 0 20px 0 30px;
+          display: block;
+          @include type-u-14;
+          line-height: 40px;
+          &:hover {
+            font-size: 17px;
+            font-weight: bold;
+          }
+        }
+        // &:first-child {
+        //   a {
+        //     height: 50px;
+        //     line-height: 50px;
+        //   }
+        // }
+      }
+    }
+    &.extended {
+      h2 {
+        border-top: 1px solid $neutralGreyLightest;
+        border-bottom: 1px solid $neutralGreyLightest;
+        color:$primaryBlack;
+        i {
+          color: $primaryRed;
+        }
+      }
+    }
+  }
+}
+.search-field {
+&::-moz-placeholder {      
+      line-height: -moz-block-height;  
+    }
+}
+
+.ie9{
+  .search-wrapper{
+    .search-result{
+      filter: none;
+    }
+
+    &.lightblue{
+      .placeholder{
+        line-height: normal;
+        top: 0;
+      }
+    }
+    &.purple{
+      .placeholder{
+        line-height: normal;
+        top: 0;
+      }
+    }
+    &.grey, &.red {
+        .placeholder { 
+          top: 40%;
+          position: relative;
+      }
+    }  
+  }
+}

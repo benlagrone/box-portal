@@ -1,0 +1,42 @@
+/* =======================
+   Bio
+   ======================= */
+
+.bio {
+    width: 100%;
+    text-align: center;
+    .bio-image {
+        width: 15%;
+        border-radius: 50%;
+    }
+    .bio-intro {
+        padding: 10px 0 10px 0;
+        .name {
+            @include type-m-36;
+        }
+        .titles {
+            @include type-m-36(36px,36px);
+        }
+    }
+    .bio-subtitle {
+        text-align: left;
+        @include type-ub-21;
+        margin-top: 30px;
+        border-top: 1px solid $neutralGreyLight;
+        padding-top: 25px;
+    }
+    .bio-description {
+        text-align: left;
+        width: 100%;
+        padding-top: 20px;
+        .text {
+            margin: 0;
+            padding: 0;
+        }
+    }
+    .cta {
+        padding-top: 20px;
+        float: left;
+        clear: both;
+    }
+}

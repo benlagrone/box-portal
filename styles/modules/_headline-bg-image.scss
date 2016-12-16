@@ -1,0 +1,133 @@
+.headline-bg-image {
+    $componentHeight: 495px;
+    width: 100%;
+    height: 495px;
+    position: relative;
+    .image-container {
+        position: relative;
+        height: $componentHeight;
+        overflow: hidden;
+        width: 100%;
+        img {
+            display: block;
+            width: auto;
+            height: auto;
+            position: absolute;
+            min-width: 100%;
+        }
+        //Text is aligned left
+        &.left{
+            &:before{
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                width: 70%;
+                z-index: 1;
+
+                background: -moz-linear-gradient(180deg, rgba(255,255,255,0.01) 0%, rgba(0,0,0,1) 100%); /* ff3.6+ */
+                background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0,0,0,1)), color-stop(100%, rgba(255,255,255,0.01))); /* safari4+,chrome */
+                background: -webkit-linear-gradient(180deg, rgba(255,255,255,0.01) 0%, rgba(0,0,0,1) 100%); /* safari5.1+,chrome10+ */
+                background: -o-linear-gradient(180deg, rgba(255,255,255,0.01) 0%, rgba(0,0,0,1) 100%); /* opera 11.10+ */
+                background: -ms-linear-gradient(180deg, rgba(255,255,255,0.01) 0%, rgba(0,0,0,1) 100%); /* ie10+ */
+                background: linear-gradient(270deg, rgba(255,255,255,0.01) 0%, rgba(0,0,0,1) 100%); /* w3c */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#FFFFFF',GradientType=1 ); /* ie6-9 */
+            }
+
+            img {
+                right: 0;
+
+            }
+
+        }
+        //Text is aligned right
+        &.right{
+            &:before{
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                width: 70%;
+                z-index: 1;
+
+                background: -moz-linear-gradient(0deg, rgba(255,255,255,0.01) 0%, rgba(0,0,0,1) 100%); /* ff3.6+ */
+                background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255,255,255,0.01)), color-stop(100%, rgba(0,0,0,1))); /* safari4+,chrome */
+                background: -webkit-linear-gradient(0deg, rgba(255,255,255,0.01) 0%, rgba(0,0,0,1) 100%); /* safari5.1+,chrome10+ */
+                background: -o-linear-gradient(0deg, rgba(255,255,255,0.01) 0%, rgba(0,0,0,1) 100%); /* opera 11.10+ */
+                background: -ms-linear-gradient(0deg, rgba(255,255,255,0.01) 0%, rgba(0,0,0,1) 100%); /* ie10+ */
+                background: linear-gradient(90deg, rgba(255,255,255,0.01) 0%, rgba(0,0,0,1) 100%); /* w3c */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#000000',GradientType=1 ); /* ie6-9 */
+
+            }
+            img {
+                left: 0;
+            }
+        }
+    }
+    .info-container {
+        position: absolute;
+        width: 50%;
+        height: $componentHeight;
+        top: 0;
+        left: 0;
+        display: table;
+        color: $primaryWhite;
+        z-index: 2;
+        &.right {
+            right: 0;
+            left: auto;
+        }
+        .info {
+            display: table-cell;
+            vertical-align: middle;
+            padding: 0 50px;
+        }
+        .cta {
+            color: $primaryWhite;
+            @include type-ub-18(18px, 14px);
+            i,span{
+                margin-left: 15px;
+            }
+        }
+        .heading {
+            @include type-m-42;
+            margin: 0;
+            font-weight: normal;
+        }
+        .description {
+            @include type-m-21(18px, 14px);
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+
+    }
+    @include breakpoint(max-width $width-small) {
+        height: auto;
+        .image-container {
+            height: 235px;
+            img{
+                height: 100%;
+            }
+            &:before{
+                display: none;
+            }
+        }
+        .info-container {
+            position: relative;
+            width: 100%;
+            height: auto;
+            background: $primaryBlack;
+            .info {
+                padding: 40px;
+            }
+            .heading {
+                font-size: 21px;
+            }
+            .description {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

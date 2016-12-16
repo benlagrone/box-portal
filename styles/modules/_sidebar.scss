@@ -1,0 +1,203 @@
+/* =======================
+   Sidebar
+   ======================= */
+
+#sidebar {
+    @include breakpoint(max-width $width-medium) {
+        display: none;
+    }
+}
+
+.scrollmagic-pin-spacer {
+    width: 100%;
+}
+
+#sidebar-nav {
+    padding: 30px 0;
+    .sidebar-back {
+        padding-left: 4px;
+        color: $neutralGreyDark;
+        i {
+            padding-right: 10px;
+            .rtl & {
+                padding-right: 0;
+                padding-left: 10px;
+            }
+        }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        height: 100%;
+    }
+    li {
+        clear: both;
+        padding: 5px 0 5px 0;
+        margin: 0 0 10px 0;
+        position: relative;
+        a {
+            display: block;
+            border-top: 1px solid $neutralGrey;
+            border-bottom: 1px solid $neutralGrey;
+            color: $primaryRed;
+            padding-left: 20px;
+            padding-right: 20px;
+            @include type-ub-14;
+            margin: 0 0 10px 0;
+            position: relative;
+            padding-bottom: 10px;
+            .rtl & {
+                padding-right: 25px;
+            }
+        }
+        &.active-nochild {
+            a {
+                &:after {
+                    content: none;
+                }
+            }
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            height: 100%;
+            li {
+                clear: both;
+                display: block;
+                margin: 0;
+                padding: 0;
+                a {
+                    display: inline-block;
+                    color: $primaryBlack;
+                    padding: 8px 10px 4px;
+                    @include type-u-14;
+                    margin: 0;
+                    border: 0;
+                    &:after {
+                        content: none;
+                    }
+                    &:hover {
+                        color: $primaryRed;
+                        text-decoration: none;
+                    }
+                    &.current {
+                        color: white;
+                        background: $primaryRed;
+                        width: 100%;
+                        &:hover {
+                            color: $neutralGreyLight;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+    a {
+        display: inline-block;
+        color: $primaryBlack;
+        padding: 8px 10px 4px;
+        @include type-u-14;
+        &:hover {
+            color: $primaryRed;
+            text-decoration: none;
+        }
+        &.current {
+            color: white;
+            background: $primaryRed;
+            width: 100%;
+            &:hover {
+                color: $neutralGreyLight;
+            }
+        }
+    }
+
+    &.blog-sidebar-nav{
+        .help-text{
+            @include type-m-16;
+            margin-bottom: 0;
+        }
+        li{
+            &.parent-link{
+                a{
+                    &.active{
+                        font-weight: bold;
+                    }
+                    i{
+                        float: right;
+                        padding-top: 3px;
+
+                        &.dd-extended-icon{
+                            display: none;
+                        }
+                        &.dd-collapsed-icon{
+                            display: inline-block;
+                        }
+                    }
+
+                    &:after{
+                        display:none
+                    }
+
+                }
+                ul{
+                    @include transition(max-height 0.35s);
+                    max-height: 0;
+                    overflow: hidden;
+
+                }
+                &.expanded{
+                    a{
+                        i{
+                            &.dd-extended-icon{
+                                display: inline-block;
+                            }
+                            &.dd-collapsed-icon{
+                                display: none;
+                            }
+                        }
+
+                    }
+                    ul{
+                        @include transition(max-height 0.35s);
+                        max-height: 400px;
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+                        &::-webkit-scrollbar {
+                            -webkit-appearance: none;
+                        }
+
+                        &::-webkit-scrollbar:vertical {
+                            width: 11px;
+                        }
+
+                        &::-webkit-scrollbar:horizontal {
+                            height: 11px;
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            border-radius: 8px;
+                            border: 2px solid white; /* should match background, can't be transparent */
+                            background-color: rgba(0, 0, 0, .5);
+                        }
+
+                        &::-webkit-scrollbar-track {
+                            background-color: #fff;
+                            border-radius: 8px;
+                        }
+                    }
+                }
+
+            }
+            ul{
+                li{
+                    a{
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+    }
+}

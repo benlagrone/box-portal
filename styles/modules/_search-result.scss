@@ -1,0 +1,411 @@
+#search-page {
+    &.search-results {
+        margin-top: 9px;
+        padding-bottom: 35px;
+        @include breakpoint(max-width $width-medium) {
+            margin-top: 0px;
+
+        }
+    }
+}
+
+.init-search-loader{
+    width: 100%;
+    text-align: center;
+    i {
+        font-size: 50px;
+        margin-top: 30px;
+    }
+}
+
+.search-content {
+    margin-top: 0px;
+    @include transition(margin-top 0.35s);
+    &.move-down{
+        margin-top: 65px;
+        @include transition(margin-top 0.35s);
+        @include breakpoint(max-width $width-medium) {
+            margin-top: 0;
+        }
+
+    }
+    @include breakpoint(max-width $width-medium) {
+        margin-top: 0px;
+    }
+    .search-results {
+        .loader {
+            width: 100%;
+            text-align: center;
+            i {
+                font-size: 50px;
+                margin-top: 30px;
+            }
+        }
+        .did-you-mean, .search-instead, .showing-instead {
+            @include type-u-36;
+            text-align: left;
+            margin-top: 30px;
+            padding-left: 15px;
+            p {
+                margin: 15px 0;
+            }
+        }
+        .no-results {
+            @include type-u-36 ;
+            text-align: left;
+            margin-top: 30px;
+            padding-left: 15px;
+        }
+        .no-results-suggestion {
+            display: none;
+            padding-left: 15px;
+        }
+        .mobile-common-search-terms {
+            display: none;
+            text-align: center;
+            @include type-u-18;
+            .even {
+                float: left;
+                width: 50%;
+            }
+            .odd {
+                float: right;
+                width: 50%;
+            }
+            @media (min-width: $width-medium) {
+                display: none !important;
+            }
+        }
+    }
+}
+
+.search-result {
+    padding: 30px 15px;
+    border-bottom: 1px solid $neutralGreyLight;
+    position: relative;
+    .search-result-img {
+        width: 20%;
+        height: auto;
+        display: table-cell;
+        padding-right: 10px;
+        img {
+            width: 100%;
+        }
+    }
+    .search-result-details {
+        display: table-cell;
+        width: 80%;
+        vertical-align: top;
+        @include type-u-18;
+
+        p{
+            &.search-result-details{
+                .patient-education &{
+                    display: none;
+                }
+            }
+        }
+    }
+    .search-result-title {
+        a {
+            text-decoration: underline;
+        }
+    }
+    .search-result-subtitle {
+        font-style: italic;
+    }
+    
+    &:last-child {
+        border-bottom: none;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+    @include breakpoint(max-width $width-medium) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        @include spacing('padding', 'sides', 'mobile');
+    }
+}
+
+.search-result-summary {
+    position: relative;
+    @include type-u-18;
+    padding: 30px 15px;
+    border-bottom: 1px solid $neutralGreyLight;
+    display: table;
+    width: 100%;
+    .search-result-count {
+        display: table-cell;
+        width: 50%;
+    }
+    .search-result-sort {
+        display: table-cell;
+        width: 50%;
+        text-align: right;
+        a {
+            color: $neutralGrey;
+            &.active {
+                color: $primaryBlack;
+            }
+        }
+    }
+    @include breakpoint(max-width $width-medium) {
+        @include spacing('padding', 'all', 'mobile');
+        padding-bottom: 0;
+        text-align: center;
+        .search-result-count {
+            display: none;
+        }
+        .search-result-sort {
+            display: block;
+            width: 100%;
+            font-size: 14px;
+        }
+    }
+
+    @include breakpoint(max-width $width-small) {
+        border-bottom: none;
+    }
+}
+
+.search-result-heading {
+    @include type-u-18;
+    padding: 30px 15px;
+    .search-result-title {
+        @include type-ub-18;
+    }
+}
+
+.search-result-pagination {
+    padding-top: 30px;
+    display: none;
+    .pagination {
+        float: right;
+        padding: 0 15px;
+        margin-bottom: 30px;
+        a {
+            @include type-ul-18;
+            display: inline-block;
+            padding: 14px 4px;
+            &.active {
+                @include type-ub-18;
+            }
+        }
+
+        @include breakpoint(max-width $width-small) {
+            display: none;
+        }
+    }
+    .cta {
+        .search-results-prev {
+            width: 135px;
+            float: right;
+            background: $primaryWhite;
+            color: $primaryRed;
+            border: 1px red solid;
+            text-align: center;
+            padding: 15px;
+            display: none;
+            @include type-u-18;
+        }
+        .search-results-more {
+            width: 135px;
+            float: right;
+            background: $primaryWhite;
+            color: $primaryRed;
+            border: 1px red solid;
+            text-align: center;
+            @include type-u-18;
+        }
+        @include breakpoint(max-width $width-small) {
+            width: 100px;
+            margin-bottom: 20px;
+
+            &.next{
+                float: right;
+                margin-right: 35px;
+            }
+
+            &.prev{
+                margin-left: 35px;
+            }
+            .search-results-prev {
+                width: 100px;
+                float: left;
+                display: none;
+
+            }
+            .search-results-more {
+                width: 100px;
+                float: right;
+                padding: 15px;
+            }
+        }
+
+    }
+}
+
+.search-wrapper {
+    &.search-results-search-bar {
+        height: 80px;
+        margin-top: 0;
+        .col-content-alternate {
+            position: absolute;
+        }
+        .col-content-title {
+            display: block;
+        }
+        .search-form {
+            height: 56px;
+            margin-top: 12px;
+            padding-top:1px;
+        }
+        form {
+            padding: 0 84px;
+            .placeholder {
+                float: left;
+                font-size: 20px;
+                color: white;
+                padding-left: 0;
+                position: relative;
+                width: 25%;
+                display: none;
+                top: 45%;
+            }
+            .search-field {
+                height: 56px;
+                background-color: $primaryWhite;
+                width: 84%;
+                float: left;
+                line-height: normal;
+                @include breakpoint(max-width $width-medium) {
+                    margin-right: 0;
+                }
+            }
+            .form-search-submit {
+                height: 56px;
+                display: block;
+                width: 15%;
+                float: right;
+                @include type-u-18;
+                &.blogs {
+                    background-color: $secondaryPurple;
+                }
+                &.clinical-trials {
+                    background-color: $secondaryBlue;
+                }
+                &.publications {
+                    background-color: $secondaryPurple;
+                }
+                &.news {
+                    background-color: $secondaryBlack;
+                }
+                &.patient-education {
+                    background-color: $neutralGreyDark;
+                }
+                &.vanilla {
+                    background-color: $primaryRed;
+                }
+                @include breakpoint(max-width $width-medium) {
+                    width: 22%;
+                    float: right;
+                    margin-right: 0;
+                    padding-right: 0;
+                }
+
+                @include breakpoint(max-width $width-small) {
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    padding-right: 0;
+                }
+            }
+        }
+        .search-results {
+            position: relative;
+            width: 84%;
+        }
+        &.blogs {
+            background-color: $secondaryPurple;
+        }
+        &.clinical-trials {
+            background-color: $secondaryBlue;
+            .search-field{
+                text-transform: capitalize;
+            }
+
+        }
+        &.publications {
+            background-color: $secondaryPurple;
+        }
+        &.patient-education {
+            background-color: $neutralGreyDark;
+        }
+        &.news {
+            background-color: $secondaryBlack;
+        }
+        &.vanilla {
+            margin-top: 0;
+            background-color: $primaryRed;
+        }
+        @include breakpoint(max-width $width-medium) {
+            padding: 0;
+            .search-form {
+                padding: 0 5% 0 5%;
+                .placeholder {
+                    font-size: 17px;
+                    width: 100%;
+                    position: relative;
+                    padding-left: 0;
+                    top: 0;
+                    margin-top: 24px;
+                }
+                .form-search-submit {
+                    position: relative;
+                    margin-top: 0;
+                    width: 20%;
+                    max-width: 135px;
+                    padding: 0;
+                    margin-left: 0;
+                }
+                .search-field {
+                    position: relative;
+                    margin-top: 0;
+                    padding-left: 12px;
+                    float: left;
+                    width: 75%;
+                    font-size: 17px;
+                }
+            }
+            .search-results {
+                width: 75%;
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+/* Internet Explorer 8+ (Media Query) */
+@media screen\0  {
+    .search-wrapper {
+        &.search-results-search-bar {
+            .search-field {
+                line-height: 38px;
+            }
+        }
+    }
+}
+
+.ie9{
+    .search-wrapper {
+        &.search-results-search-bar {
+            form {
+                .placeholder {
+                    top: 15px;
+                }
+                .search-field {
+                    line-height: normal;
+                }
+            }
+        }
+    }
+}

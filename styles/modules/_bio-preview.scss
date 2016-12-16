@@ -1,0 +1,34 @@
+/* =======================
+   Bio Preview
+   ======================= */
+
+.bio-preview {
+    width: 100%;
+    text-align: center;
+    img {
+        width: 30%;
+        border-radius: 50%;
+    }
+    .bio-preview-intro {
+        padding: 10px 0 10px 0;
+        .name {
+            @include type-m-36;
+        }
+        .titles {
+            @include type-m-36(36px,36px);
+        }
+    }
+    .bio-preview-description {
+        text-align: left;
+        width: 100%;
+    }
+    .bio-preview-ctas {
+        padding-top: 20px;
+        .left {
+            float: left;
+        }
+        .right {
+            float: right;
+        }
+    }
+}

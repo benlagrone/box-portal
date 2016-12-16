@@ -1,0 +1,230 @@
+.col-single{
+  .glossary-search-wrapper{
+    height: auto;
+    .glossary-search{
+      .title-wrapper{
+        padding-bottom: 30px;
+      }
+
+      .search-form.search-filed .search-filed::-ms-clear {
+        display: none;
+      }
+      .search-form.search-field .text{
+        color: $primaryBlack;
+
+        &.default{
+          color: $neutralGreyDark;
+        }
+      }
+      .ui.search.selection.dropdown > input.search{
+        padding-right: 120px;
+        z-index:1;
+      }
+
+      .ui.search.dropdown > .text {
+        padding-right: 120px;
+      }
+      .ui.selection.dropdown .menu > .item {
+          width: 33em !important;
+      }
+      .ui{
+        label{
+          position:absolute;
+          left:-10000px;
+          top:auto;
+          width:1px;
+          height:1px;
+          overflow:hidden;
+        }
+        .clear{
+          position: absolute;
+          color: $primaryRed;
+          right: 68px;
+          top: 50%;
+          transform: translateY(-50%);
+          display: none;
+          z-index: 1000;
+        }
+      }
+    }
+    .col-double{
+      &.last{
+        p{
+          @include type-u-21(18px,16px);
+        }
+      }
+    }
+
+    @include breakpoint(max-width $width-medium) {
+      .glossary-search {
+        .ui.search.dropdown > .text{
+          padding-right: 70px;
+        }
+      }
+    }
+
+    @include breakpoint(max-width $width-small) {
+      .glossary-search{
+        .title-wrapper{
+          padding: 0;
+          .search-title{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+
+  .glossary-search-results{
+    .browse-by-letter{
+      margin-top: 30px;
+      text-align: left;
+      .browse-text-letters, .browse-text-numbers{
+        @include type-ub-21(21px, 18px);
+        display: block;
+        padding-right: 50px;
+        &.hide{
+          display: none;
+        }
+      }
+      .numbers,.letters{
+        display: inline;
+        &.hide{
+          display: none;
+        }
+
+      }
+      h2{
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .browse-letter{
+        @include type-u-21(21px, 18px);
+        color: black;
+        padding: 0 5px;
+        font-weight: bold;
+        padding: 10px 5px;
+        margin: 10px 5px;
+
+        &.switch-abc{
+          display: none;
+        }
+
+        &.active, &:hover{
+       
+          color: $primaryRed;
+          
+          
+
+        }
+        &:hover{
+          border-bottom: 3px solid $primaryRed;
+        }
+        &.disabled{
+          color: $disabledGrey;
+          font-weight: normal;
+          &:hover{
+            border-bottom: none;
+            @include type-u-21(21px, 18px);
+          }
+        }
+      
+    }
+
+    }
+    .result-section{
+      section{
+        padding: 50px 0;
+      }
+      .letter-section{
+        margin-bottom: 25px;
+
+        .letter{
+          @include type-ub-41(41px,21px);
+          display: inline-block;
+          margin: 0;
+        }
+        .table{
+          border-top: 1px solid $neutralGrey;
+          margin-left: 50px;
+          margin-top: -12px;
+        }
+        .glossary-search-title{
+          p{
+            @include type-ub-16;
+            color: black;
+          }
+        }
+        .glossary-search-description{
+          p{
+            @include type-u-16(16px, 14px);
+          }
+        }
+      }
+    }
+    @include breakpoint(max-width $width-medium) {
+      .result-section{
+        .letter-section{
+          .letter{
+            margin-bottom: 10px;
+          }
+          .table{
+            margin: 0;
+          }
+        }
+      }
+
+      .browse-by-letter{
+        .browse-text-letters,.browse-text-numbers{
+          width: 100%;
+          padding: 0;
+        }
+      }
+
+    }
+
+    @include breakpoint(max-width $width-small) {
+      .result-section {
+        section{
+          padding: 20px 0;
+        }
+        .letter-section {
+          @include spacing('padding', 'sides', 'mobile');
+          margin-bottom: 0;
+          padding-bottom: 0;
+          .table {
+            margin: 0;
+            .link-list-body{
+              ul{
+                li{
+                  &:last-child{
+                    a{
+                      border-bottom: 1px solid $neutralGrey;
+                    }
+                  }
+                  a{
+                    padding-left: 0;
+                    padding-right: 0;
+                    margin:0;
+                    &:before{
+                      right: 5px;
+                    }
+
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .browse-by-letter{
+        @include spacing('padding', 'sides', 'mobile');
+        margin-bottom: 35px;
+
+      }
+    }
+  }
+}

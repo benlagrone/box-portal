@@ -1,0 +1,399 @@
+/* =======================
+   Carousel
+   ======================= */
+
+.carousel {
+    position: relative;
+    @include clearfix;
+    text-align: left;
+    .section-title {
+        @include type-m-42(36px,24px);
+        font-weight: normal;
+        text-align: center;
+        margin-bottom: 50px;
+        margin-top: -11px;
+    }
+    //*---------------------------------------
+    // Global Carousel Rules
+    .carousel-group {
+        .carousel-item-link {
+            color: $primaryBlack;
+        }
+        //*---------------------------------------
+        // Default
+        &.default {
+            .carousel-item {
+                padding: 0;
+                margin: 0 $global-spacing/2;
+                height: auto;
+                &:first-child {
+                    // margin: 0;
+                }
+                .carousel-image {
+                    position: relative;
+                    background: $primaryBlack;
+                    img {
+                        @include transition(opacity 0.5s);
+                        width: 100%;
+                        height: auto;
+                        margin-bottom: 30px;
+                    }
+                    .video-icon {
+                        color: rgba(255,255,255,0.7);
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        margin-top: -0.5em;
+                        margin-left: -0.5em;
+                    }
+                    &.mediahub-poster{
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .carousel-body {
+                    clear: both;
+                    margin-bottom: 15px;
+                    .body-title {
+                        margin-top: 0;
+                        margin-bottom: 15px;
+                        @include type-mb-24(24px,21px);
+                    }
+                }
+                .body-text {
+                    @include type-m-18;
+                    color: #3f3d3d;
+                    margin: 0 0 30px 0;
+                }
+                &:hover {
+                    .carousel-image {
+                        img {
+                            opacity: 0.5;
+                        }
+                    }
+                    .carousel-body .body-title {
+                        color: $primaryRed;
+                    }
+                }
+                &.dynamic{
+                    &.no-img{
+                        background-color: $neutralGreyLightest;
+                        .carousel-body{
+                            padding: 15px;
+                        }
+                        .carousel-publication{
+                            @include type-ub-16;
+                            color: $secondaryBlue;
+                            text-transform: uppercase;
+                            margin-bottom: 7px;
+                        }
+                        .carousel-author-name{
+                            @include type-ub-16;
+                            text-transform: uppercase;
+                            span{
+                                @include type-ub-16;
+                                border-bottom: 1px solid black;
+                            }
+                        }
+                        .body-title{
+                             @include type-mb-24;
+                            font-weight:normal;
+
+                        }
+                        .highlight.apply &{
+                            background-color: $primaryWhite;
+                        }
+                        .body-text{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.article-carousel{
+            .carousel-item{
+                .body-text{
+                    display: none;
+                }
+                &.dynamic{
+                    &.no-img{
+                        .carousel-publication{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        &.carousel-config-promo {
+            .carousel-item {
+                color: $primaryWhite;
+                margin-bottom: 50px;
+                .carousel-body {
+                    padding: 55px 10% 25px 7%;
+                    color: $primaryWhite;
+                    margin-bottom: 0;
+                    .body-title {
+                        display: none;
+                    }
+                    .body-text {
+                        @include type-m-32(21px,21px);
+                        padding: 0;
+                    }
+                    .body-sub-text {
+                        @include type-u-16;
+                        font-weight: bold;
+                        margin-top: 25px;
+                        text-transform: uppercase;
+                    }
+                }
+                .cta .cta-block {
+                    padding: 0 7% 30px;
+                    border: none;
+                    background: none;
+                    i {
+                        margin-left: 12px;
+                    }
+                }
+                &.background-red {
+                    background-color: $primaryRed;
+                    .carousel-body {
+                        .body-text, .body-sub-text {
+                            color: $primaryWhite;
+                        }
+                    }
+                }
+                &.background-purple {
+                    background-color: $secondaryPurple;
+                    .carousel-body {
+                        .body-text, .body-sub-text {
+                            color: $primaryWhite;
+                        }
+                    }
+                }
+                &.background-blue {
+                    background-color: $secondaryBlue;
+                    .carousel-body {
+                        .body-text, .body-sub-text {
+                            color: $primaryBlack;
+                        }
+                    }
+                    .cta .cta-block {
+                      color: $primaryBlack;  
+                    }
+                }
+                &.background-yellow {
+                    background-color: $secondaryYellow;
+                    .carousel-body {
+                        .body-text, .body-sub-text {
+                            color: $primaryBlack;
+                        }
+                    }
+                .cta .cta-block {
+                      color: $primaryBlack;  
+                    }
+                }
+            }
+        }
+        //*---------------------------------------
+        // Slick Controls
+        &.slick-slider {
+            margin-bottom: 50px;
+            padding: 0;
+            margin: 0 -0.75em;
+        }
+        .slick-track {
+            -webkit-backface-visibility: hidden;
+        }
+        .slick-dots {
+            bottom: -40px;
+            margin: 0;
+            left: 0;
+            @include slick-dots;
+        }
+        .slick-prev,
+        .slick-next {
+            display: inline-block;
+            position: absolute;
+            z-index: 3;
+            width: 40px;
+            height: 40px;
+            top: 50%;
+            margin-top: -20px;
+            @include transition(all 300ms);
+            opacity: 0;
+            &:before {
+                color: $primaryRed;
+                @extend .fa;
+            }
+        }
+        .slick-prev {
+            left: -40px;
+            &:before {
+                content: "\f053";
+            }
+            &.slick-disabled:before {
+                opacity: 0;
+            }
+        }
+        .slick-next {
+            right: -40px;
+            &:before {
+                content: "\f054";
+            }
+            &.slick-disabled:before {
+                opacity: 0;
+            }
+        }
+        &:hover, &:focus {
+            .slick-prev, .slick-next {
+                opacity: 1;
+            }
+        }
+    }
+    .view-archive {
+        position: absolute;
+        top: 10px;
+        right: 0;
+        .mdicon-arrow {
+            position: relative;
+            margin-left: 15px;
+            font-size: 19px;
+            top: 2px;
+        }
+    }
+    .carousel-cta {
+        display: block;
+        bottom: 12px;
+        right: 10px;
+        position: absolute;
+        z-index: z('above');
+    }
+
+    #basic-video-container{
+        z-index: 1;
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        top: 0;
+        &.fade-in {
+            z-index: 10;
+            display: block;
+            opacity: 1;
+            transition: opacity .5s ease-in-out;
+            -moz-transition: opacity .5s ease-in-out;
+            -webkit-transition: opacity .5s ease-in-out;
+        }
+    }
+
+    @include breakpoint(max-width $width-medium) {
+        padding: 0;
+        .section-title {
+            padding: 0 10px 0 15px;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        .view-archive {
+            position: relative;
+            display: inline-block;
+            top: 0;
+            margin-bottom: 15px;
+            padding-left: 15px;
+        }
+        .carousel-group.default.carousel-config-standard {
+            .carousel-item {
+                margin: 0;
+                .carousel-body {
+                    padding-top: 10px;
+                    margin-bottom: 35px;
+                    .body-title {
+                        padding: 0 18px;
+                    }
+                    .carousel-publication{
+                        padding-left: 18px;
+                    }
+                    .carousel-author-name{
+                        padding-left: 18px;
+                    }
+                }
+                .body-text {
+                    display: none;
+                }
+            }
+        }
+        .carousel-group.default.carousel-config-promo {
+            .carousel-item {
+                margin: 0;
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-bottom: 30px;
+                .carousel-body {
+                    padding: 30px 10% 30px 7%;
+                }
+            }
+        }
+        .carousel-group.slick-slider {
+            margin-bottom: 30px;
+            .slick-dots {
+                bottom: -25px;
+            }
+        }
+
+    }
+    @include breakpoint(max-width $width-small) {
+        @include spacing("padding", "top", "mobile");
+        @include spacing("padding", "bottom", "mobile");
+        .carousel-cta {
+            text-align: center;
+            display: block;
+            margin-top: 70px;
+            position: inherit;
+            right: 0;
+        }
+        .carousel-group.default.carousel-config-standard {
+            .carousel-item{
+                margin: 0 5px;
+            }
+            .body-text {
+                display: none;
+            }
+        }
+        .carousel-group.slick-slider {
+            .slick-dots {
+                display: block;
+                bottom: inherit;
+                clear: both;
+                position: relative;
+                padding: 0 30px;
+                li{
+                    width: 20px;
+                    height: 20px;
+                    button{
+                        width: 10px;
+                        height: 10px;
+                        &:before{
+                            width: 10px;
+                            height: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        .carousel-group{
+            &.default{
+                .carousel-item{
+                    &.dynamic{
+                        &.no-img{
+                            .body-title{
+                                font-weight:normal;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

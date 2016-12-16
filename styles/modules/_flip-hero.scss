@@ -1,0 +1,381 @@
+/* =======================
+   Flip Hero
+   ======================= */
+
+.flip-hero {
+    .flip-row {
+        $map: layout(12 .25 inside);
+        @include layout($map fluid no-gutters);
+        @include container;
+        .video-hover {
+            cursor: pointer;
+        }
+        .flip-tile {
+            @include span(2 of 10);
+            @include breakpoint(max-width $width-small) {
+                @include span(5 of 10);
+                &.hide {
+                    display: none;
+                }
+            }
+            a {
+                color: $primaryWhite;
+            }
+            perspective: 1000;
+            position: relative;
+            &.active {
+                .flipper {
+                    transform: rotateY(180deg);
+                    -ms-transform: rotateY(-180deg);
+                    -moz-transform: rotateY(180deg);
+                    -o-transform: rotateY(180deg);
+                }
+            }
+            &:hover, &.applyflip {
+                .flipper {
+                    transform: rotateY(180deg);
+                }
+            }
+            &.red {
+                .flipper .back {
+                    background-color: $primaryRed;
+                }
+            }
+            &.blue {
+                .flipper .back {
+                    background-color: $secondaryBlue;
+                }
+            }
+            &.black {
+                .flipper .back {
+                    background-color: $primaryBlack;
+                }
+            }
+            &.white {
+                .flipper .back {
+                    background-color: $primaryWhite;
+                    .inner .inner-body {
+                        color: $primaryBlack;
+                        .subtitle:before {
+                            border-bottom:1px solid rgba(0, 0, 0, 0.6);
+                        }
+                        a {
+                            color: $primaryBlack;
+                        }
+                    }
+                }
+            }
+            &.tan {
+                .flipper .back {
+                    background-color: $neutralGreyLight;
+                    .inner .inner-body {
+                        color: $primaryBlack;
+                        .subtitle:before {
+                            border-bottom:1px solid rgba(0, 0, 0, 0.6);
+                        }
+                        a {
+                            color: $primaryBlack;
+                        }
+                    }
+                }
+            }
+            .flipper {
+                -webkit-transition: -webkit-transform 0.4s ease-out;
+                -moz-transition: -moz-transform 0.4s ease-out;
+                -o-transition: -o-transform 0.4s ease-out;
+                -ms-transition: -ms-transform 0.4s ease-out;
+                transition: transform 0.4s ease-out;
+                transform-style: preserve-3d;
+                backface-visibility: hidden;
+                width: 100%;
+                .front, .back {
+                    backface-visibility: hidden;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+                .front {
+                    z-index: 1;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    /* for firefox 31 */
+
+                    transform: rotateY(0deg);
+                }
+                .back {
+                    transform: rotateY(180deg);
+                    -webkit-perspective: 800;
+                    -ms-perspective: 800;
+                    -moz-perspective: 800;
+                    -o-perspective: 800;
+                    -moz-transform: rotateY(180deg);
+                    -o-transform: rotateY(180deg);
+
+
+                    .inner {
+                        display: table;
+                        width: 100%;
+                        height: 100%;
+                        .inner-body {
+                            display: table-cell;
+                            vertical-align: middle;
+                            text-align: center;
+                            color: #fff;
+                            padding: 0 20px;
+                            line-height: 1;
+                            @include breakpoint(max-width $width-iPad-landscape) {
+                                padding: 0 10%;
+                            }
+                            .icon {
+                                margin-bottom: 10px;
+                            }
+                            .title {
+
+                                @include type-m-36(18px,18px);
+                                line-height: 1;
+                                margin: 0 0 0 0;
+                                @include breakpoint(max-width $width-iPad-landscape) {
+                                    font-size: 28px;
+                                }
+
+
+                            }
+                            .subtitle {
+                                @include type-m-21(14px);
+                                margin: 0.5em 0 15px 0;
+                                padding-bottom: 15px;
+                                position: relative;
+                                line-height: 1;
+                            }
+                            .subtitle:before {
+                                content: "";
+                                border-bottom: 1px solid $primaryWhite;
+                                border-bottom: 1px solid rgba(255, 255, 255, .6);
+                                position: absolute;
+                                width: 40%;
+                                left: 30%;
+                                bottom: 0;
+                            }
+
+                            .flip-cta{
+                                @include type-u-18(14px);
+                                @include breakpoint(max-width $width-iPad-landscape) {
+                                    font-size: 16px;
+                                }
+                                margin: 0 auto;
+                                i{
+                                    padding-left: 10px;
+                                    &:before{
+                                        vertical-align: middle;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.lt-ie9 {
+    .flip-hero {
+        .flip-row {
+            .flip-tile {
+                .flipper {
+                    .front {
+                        border: 5px black;
+                    }
+                    .back{
+                        display: none;
+                    }
+
+                    &:hover{
+                        .back{
+                            display: none;
+                        }
+                        .front{
+                            display: block;
+                        }
+
+                    }
+                }
+
+                &.active{
+                    .flipper {
+                        .back {
+                            display: none;
+                        }
+                        .front {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ie9{
+    .flip-hero {
+        .flip-row {
+            .flip-tile {
+                perspective: 1000px;
+                -ms-perspective: 1000px;
+
+                .flipper {
+                    transition: 0.5s ease-out;
+                    -ms-transition: 0.5s ease-out;
+                    transform-style: preserve-3d;
+                    -ms-transform-style: preserve-3d;
+
+                    /* content backface is visible so that static content still appears */
+                    backface-visibility: visible;
+                    -ms-backface-visibility: visible;
+
+                    .front {
+                        border: 5px black;
+                        backface-visibility: hidden;
+                        -ms-backface-visibility: visible;
+
+                        transform: rotateY(0deg);
+                        -ms-transform: rotateY(0deg);
+
+                        /* IE Hack. Halfway through the card flip, set visibility. Keep other browsers visible throughout the card flip. */
+                        animation: stayvisible 0.5s both;
+                        -ms-animation: donothing 0.5s;
+                        -ms-transition: visibility 0s linear 0.17s;
+                        visibility: visible;
+                    }
+                    .back{
+                        backface-visibility: hidden;
+                        -ms-backface-visibility: visible;
+
+                        transform: rotateY(-180deg);
+                        -ms-transform: rotateY(-180deg);
+
+                        /* IE Hack. Halfway through the card flip, set visibility. Keep other browsers visible throughout the card flip. */
+                        animation: stayvisible 0.5s both;
+                        -ms-animation: donothing 0.5s;
+                        -ms-transition: visibility 0s linear 0.17s;
+                        visibility: hidden;
+                    }
+                }
+                &:hover{
+                    transform: none;
+                }
+
+                &.applyflip .flipper, &.active,  &:hover {
+
+                    .front {
+                        transform: rotateY(0deg);
+                        -ms-transform: rotateY(0deg);
+
+                        /* IE Hack. Halfway through the card flip, set visibility. Keep other browsers visible throughout the card flip. */
+                        animation: stayvisible 0.5s both;
+                        -ms-animation: donothing 0.5s;
+                        -ms-transition: visibility 0s linear 0.17s;
+                        visibility: hidden;
+                    }
+                    .back {
+                        transform: none;
+                        -webkit-perspective: 800;
+                        -ms-perspective: 800;
+                        -moz-perspective: 800;
+                        -o-perspective: 800;
+                        -moz-transform: none;
+                        -o-transform: none;
+
+                        /* IE Hack. Halfway through the card flip, set visibility. Keep other browsers visible throughout the card flip. */
+                        animation: stayvisible 0.5s both;
+                        -ms-animation: donothing 0.5s;
+                        -ms-transition: visibility 0s linear 0.17s;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.ie10,.ie11 {
+    .flip-hero {
+        .flip-row {
+            .flip-tile {
+                perspective: 1000px;
+                -ms-perspective: 1000px;
+
+                .flipper {
+                    transition: 0.5s ease-out;
+                    -ms-transition: 0.5s ease-out;
+                    transform-style: preserve-3d;
+                    -ms-transform-style: preserve-3d;
+
+                    /* content backface is visible so that static content still appears */
+                    backface-visibility: visible;
+                    -ms-backface-visibility: visible;
+
+                    .front {
+                        border: 5px black;
+                        backface-visibility: hidden;
+                        -ms-backface-visibility: visible;
+
+                        transform: rotateY(0deg);
+                        -ms-transform: rotateY(0deg);
+
+                        /* IE Hack. Halfway through the card flip, set visibility. Keep other browsers visible throughout the card flip. */
+                        animation: stayvisible 0.5s both;
+                        -ms-animation: donothing 0.5s;
+                        -ms-transition: visibility 0s linear 0.17s;
+                        visibility: visible;
+                    }
+                    .back{
+                        backface-visibility: hidden;
+                        -ms-backface-visibility: visible;
+
+                        transform: rotateY(-180deg);
+                        -ms-transform: rotateY(-180deg);
+
+                        /* IE Hack. Halfway through the card flip, set visibility. Keep other browsers visible throughout the card flip. */
+                        animation: stayvisible 0.5s both;
+                        -ms-animation: donothing 0.5s;
+                        -ms-transition: visibility 0s linear 0.17s;
+                        visibility: hidden;
+                    }
+                }
+
+
+                &.applyflip .flipper, &.active, &:hover {
+
+                    .front {
+                        transform: rotateY(0deg);
+                        -ms-transform: rotateY(0deg);
+
+                        /* IE Hack. Halfway through the card flip, set visibility. Keep other browsers visible throughout the card flip. */
+                        animation: stayvisible 0.5s both;
+                        -ms-animation: donothing 0.5s;
+                        -ms-transition: visibility 0s linear 0.17s;
+                        visibility: hidden;
+                    }
+                    .back {
+                        transform: rotateY(-180deg);
+                        -ms-transform: rotateY(-180deg);
+
+                        /* IE Hack. Halfway through the card flip, set visibility. Keep other browsers visible throughout the card flip. */
+                        animation: stayvisible 0.5s both;
+                        -ms-animation: donothing 0.5s;
+                        -ms-transition: visibility 0s linear 0.17s;
+                        visibility: visible;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,352 @@
+$mda-icon-font-path: "../fonts/mda-icons" !default;
+
+@font-face {
+	font-family: 'mda-icons';
+	src:url('#{$mda-icon-font-path}/mda-icons.eot?52p6ne');
+	src:url('#{$mda-icon-font-path}/mda-icons.eot?#iefix52p6ne') format('embedded-opentype'),
+		url('#{$mda-icon-font-path}/mda-icons.ttf?52p6ne') format('truetype'),
+		url('#{$mda-icon-font-path}/mda-icons.woff?52p6ne') format('woff'),
+		url('#{$mda-icon-font-path}/mda-icons.svg?52p6ne#mda-icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="mda-icon-"], [class*=" mda-icon-"] {
+	font-family: 'mda-icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	&.mda-2x {
+     font-size: 2em;
+   }
+
+   &.mda-3x {
+     font-size: 3em;
+   }
+
+   &.mda-4x {
+     font-size: 4em;
+   }
+}
+
+
+// Stacked Icons
+// -------------------------
+
+.mda-stack {
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  vertical-align: middle;
+}
+.mda-stack-1x, .mda-stack-2x {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.mda-stack-1x { line-height: inherit; }
+.mda-stack-2x { font-size: 2em; }
+.mda-inverse { color: #fff; }
+
+
+
+.mda-icon-1on1counseling:before {
+	content: "\e600";
+}
+.mda-icon-appointments:before {
+	content: "\e601";
+}
+.mda-icon-archive:before {
+	content: "\e602";
+}
+.mda-icon-call-fill:before {
+	content: "\e603";
+}
+.mda-icon-call-stroke:before {
+	content: "\e604";
+}
+.mda-icon-cancerchecker:before {
+	content: "\e605";
+}
+.mda-icon-cancertypes:before {
+	content: "\e606";
+}
+.mda-icon-carepages:before {
+	content: "\e607";
+}
+.mda-icon-childrens:before {
+	content: "\e608";
+}
+.mda-icon-clinicaltrials:before {
+	content: "\e609";
+}
+.mda-icon-comment:before {
+	content: "\e60a";
+}
+.mda-icon-diagnosis:before {
+	content: "\e60b";
+}
+.mda-icon-directions-fill:before {
+	content: "\e60c";
+}
+.mda-icon-directions-stroke:before {
+	content: "\e60d";
+}
+.mda-icon-directions:before {
+	content: "\e60e";
+}
+.mda-icon-donate:before {
+	content: "\e60f";
+}
+.mda-icon-drop:before {
+	content: "\e610";
+}
+.mda-icon-email:before {
+	content: "\e611";
+}
+.mda-icon-financialplanning:before {
+	content: "\e612";
+}
+.mda-icon-gallery:before {
+	content: "\e613";
+}
+.mda-icon-genetictesting:before {
+	content: "\e614";
+}
+.mda-icon-gifts:before {
+	content: "\e615";
+}
+.mda-icon-international:before {
+	content: "\e616";
+}
+.mda-icon-knowledgecenter:before {
+	content: "\e617";
+}
+.mda-icon-linkout:before {
+	content: "\e618";
+}
+.rte-container .mda-icon-linkout:after {
+	content: "\e618";
+    margin-left: 4px;
+}
+.rte-container .mda-icon-linkout:before {
+	content: none;
+}
+.basic-text-image .mda-icon-linkout:after {
+	content: "\e618";
+    margin-left: 4px;
+}
+.basic-text-image .mda-icon-linkout:before {
+	content: none;
+}
+
+.mda-icon-planning:before {
+	content: "\e619";
+}
+.mda-icon-powerinnumbers:before {
+	content: "\e61a";
+}
+.mda-icon-publications:before {
+	content: "\e61b";
+}
+.mda-icon-returningpatients:before {
+	content: "\e61c";
+}
+.mda-icon-search:before {
+	content: "\e61d";
+}
+.mda-icon-settings-fill:before {
+	content: "\e61e";
+}
+.mda-icon-settings-stroke:before {
+	content: "\e61f";
+}
+.mda-icon-sharestory:before {
+	content: "\e620";
+}
+.mda-icon-share:before {
+	content: "\e621";
+}
+.mda-icon-subscribe:before {
+	content: "\e622";
+}
+.mda-icon-support-favorite:before {
+	content: "\e623";
+}
+.mda-icon-tips:before {
+	content: "\e624";
+}
+.mda-icon-treatment:before {
+	content: "\e625";
+}
+.mda-icon-volunteer:before {
+	content: "\e626";
+}
+.mda-icon-word:before {
+  content: "\e627";
+}
+.mda-icon-powerpoint:before {
+  content: "\e628";
+}
+.mda-icon-pdf:before {
+  content: "\e629";
+}
+.mda-icon-alert:before {
+  content: "\e62a";
+}
+.mda-icon-leftquote:before {
+  content: "\e62b";
+}
+.mda-icon-flag:before {
+  content: "\e62c";
+}
+.mda-icon-donate_alt:before {
+  content: "\e62d";
+}
+.mda-icon-cadaceus:before {
+  content: "\e62e";
+}
+.mda-icon-email-fill:before {
+  content: "\e62f";
+}
+.mda-icon-fundraiser:before {
+  content: "\e630";
+}
+.mda-icon-recommendedpages:before {
+  content: "\e631";
+}
+.mda-icon-user:before {
+  content: "\e632";
+}
+.mda-icon-speechheart:before {
+  content: "\e633";
+}
+.mda-icon-webpage:before {
+  content: "\e634";
+}
+.mda-icon-podcast:before {
+  content: "\e635";
+}
+.mda-icon-news:before {
+  content: "\e636";
+}
+.mda-icon-blog:before {
+  content: "\e637";
+}
+.mda-icon-cancer_connection:before {
+	content: "\e638";
+}
+.mda-icon-care_centers_clinics:before {
+	content: "\e639";
+}
+.mda-icon-clinical_tools_resources:before {
+	content: "\e63a";
+}
+.mda-icon-contact_us:before {
+	content: "\e63b";
+}
+.mda-icon-corporate_engagements:before {
+	content: "\e63c";
+}
+.mda-icon-education_training:before {
+	content: "\e63d";
+}
+.mda-icon-iPad_apps:before {
+	content: "\e63e";
+}
+.mda-icon-legal_financial:before {
+	content: "\e63f";
+}
+.mda-icon-manage_risks:before {
+	content: "\e640";
+}
+.mda-icon-myCancerConnection:before {
+	content: "\e641";
+}
+.mda-icon-physical_effects:before {
+	content: "\e642";
+}
+.mda-icon-physicians:before {
+	content: "\e643";
+}
+.mda-icon-raise_money:before {
+	content: "\e644";
+}
+.mda-icon-returning_patients_new:before {
+	content: "\e645";
+}
+.mda-icon-six_point_star:before {
+	content: "\e646";
+}
+.mda-icon-screenings:before {
+	content: "\e647";
+}
+.mda-icon-childrens_new:before {
+	content: "\e648";
+}
+.mda-icon-clinical_trials_new:before {
+	content: "\e649";
+}
+.mda-icon-carat:before {
+    content: "\e900";
+}
+.mda-icon-link_out_2:before {
+    content: "\e901";
+}
+.mda-icon-skin_safety:before {
+    content: "\e902";
+}
+.mda-icon-smoking:before {
+    content: "\e903";
+}
+.mda-icon-hpv:before {
+    content: "\e904";
+}
+.mda-icon-moon:before {
+	content: "\e905";
+}
+.mda-icon-contact_us_fill:before {
+	content: "\e906";
+}
+.mda-icon-menu:before {
+	content: "\e907";
+}
+.mda-icon-X:before {
+	content: "\e908";
+}
+.mda-icon-notebook:before {
+	content: "\e909";
+}
+.mda-icon-documents-graph:before {
+	content: "\e90a";
+}
+.mda-icon-documents-check:before {
+	content: "\e90b";
+}
+.mda-icon-documents-chart:before {
+	content: "\e90c";
+}
+.mda-icon-compose:before {
+	content: "\e90d";
+}
+.mda-icon-bookshelf:before {
+	content: "\e90e";
+}
+.mda-icon-book-bag:before {
+	content: "\e90f";
+}
+.mda-icon-briefcase:before {
+	content: "\e910";
+}
+

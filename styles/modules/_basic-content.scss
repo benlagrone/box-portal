@@ -1,0 +1,27 @@
+/* =======================
+   Basic Content
+   ======================= */
+
+.basic-content {
+    .title {
+        @include type-m-36;
+        color: $primaryBlack;
+        line-height: 1.1;
+        padding-bottom: 25px;
+    }
+    .body {
+        color: $neutralGreyDarkest;
+    }
+    p, ul{
+        color: $tertiaryBlack;
+        margin-top: 0;
+    }
+    @media (max-width: $width-small) {
+        .title {
+            padding-bottom: 5px;
+        }
+        .body {
+            padding-bottom: 0;
+        }
+    }
+}

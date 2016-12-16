@@ -1,0 +1,94 @@
+.page-header {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+
+  .header-icon {
+    width: 75px;
+    color: $primaryRed;
+    display:table-cell;
+    padding-right: 30px;
+    border-right: 1px solid $neutralGrey;
+    vertical-align: middle;
+    font-size: 45px;
+  }
+
+  .page-header-title {
+    display: table-cell;
+    vertical-align: middle;
+    &.with-icon {
+      padding-left: 30px;
+      width: 100%;
+    }
+
+    h1 {
+      @include type-m-48(36px,24px);
+      font-weight: normal;
+      line-height: 1;
+      margin:0;
+      padding:0;
+      word-break: normal;
+    }
+  }
+
+  .addthis_sharing_toolbox .at-share-tbx-element.addthis_32x32_style{
+    padding-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  @include breakpoint(max-width $width-medium){
+    display: block;
+    margin-top: 20px;
+  }
+
+  @include breakpoint(max-width $width-small){
+    @include spacing('padding', 'all', 'mobile');
+    .addthis_sharing_toolbox .at-share-tbx-element.addthis_32x32_style{
+      padding-left: 0px;
+    }
+  }
+
+  &.search-results{
+    .page-header-title {
+      h1 {
+        float: left;
+        color: $neutralGreyDark;
+        margin-right: 20px;
+        display: inline-block;
+
+      }
+      span {
+        @include type-m-48;
+        font-weight: normal;
+        margin:0;
+        padding:0;
+        display: inline;
+        line-height: 1;
+        text-transform: capitalize;
+      }
+    }
+
+  }
+}
+
+.page-header-desc {
+  color: $neutralGreyDark;
+  @include type-m-24(14px,14px);
+
+  P{
+    margin: 0;
+  }
+
+  .page-header-subtitle {
+    @include type-ub-16;
+    color:$secondaryBlue;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  @include breakpoint(max-width $width-small){
+    @include spacing('padding', 'bottom', 'mobile');
+    @include spacing('padding', 'sides', 'mobile');
+  }
+}
+

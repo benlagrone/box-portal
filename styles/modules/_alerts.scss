@@ -1,0 +1,41 @@
+/* =======================
+   Alerts
+   ======================= */
+
+.alerts {
+    background: $secondaryYellow;
+    display: block;
+    height: 60px;
+    width: 100%;
+
+    > ul {
+        display: table;
+        height: 100%;
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+        width: auto;
+
+        li{
+            @include type-u-14;
+            color: $primaryBlack;
+            display: table-cell;
+            padding: 0 20px;
+            vertical-align: middle;
+
+            &.alert-icon{
+                font-size: 30px;
+            }
+            .alert-cta{
+                font-weight: bold;
+                i{
+                    margin-left: 10px;
+                    position: relative;
+                    top: 2px;
+                }
+            }
+
+        }
+    }
+
+}

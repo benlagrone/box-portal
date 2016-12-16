@@ -1,0 +1,47 @@
+.publication-detail-header {
+  padding-bottom: 30px;
+
+  .publication-article-nav {
+    border-bottom: 1px solid $neutralGreyLightest;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    position: relative;
+
+    .article-cta {
+      @include type-ub-16;
+      text-transform: uppercase;
+
+      &.article-cta-prev {
+
+      }
+      &.article-cta-next {
+        position: absolute;
+        top:0;
+        right:0;
+      }
+    }
+  }
+  .publication-issue-header {
+    position: relative;
+
+    .issue-header-title {
+      @include type-ub-16;
+      color:$secondaryBlue;
+      text-transform: uppercase;
+    }
+    .issue-header-comments {
+      @include type-u-16;
+      position: absolute;
+      top:0;
+      right:0;
+      a {
+        color: $neutralGrey;
+      }
+    }
+  }
+  @include breakpoint(max-width $width-small){
+    @include spacing('padding', 'top', 'mobile');
+    @include spacing('padding', 'sides', 'mobile');
+    padding-bottom: 0;
+  }
+}

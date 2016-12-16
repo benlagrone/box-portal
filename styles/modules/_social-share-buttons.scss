@@ -1,0 +1,95 @@
+/* =======================
+   Article Share
+   ======================= */
+
+.addthis_horizontal_follow_toolbox .at-follow-tbx-element .addthis_32x32_style {
+    @include type-ub-18;
+    a.at-follow-btn {
+        margin: 0 1em 0 0;
+        span.at-icon-wrapper {
+            .at-icon-facebook path {
+                fill: #3B5998;
+            }
+        }
+        span.at-icon-wrapper {
+            .at-icon-twitter path {
+                fill: #00aced;
+            }
+        }
+        span.at-icon-wrapper {
+            .at-icon-linkedin {
+                width: 21px !important;
+                height: 21px !important;
+            }
+        }
+    }
+    a:nth-child(1), a:nth-child(2) {
+        span.at-icon-wrapper {
+            background: none !important;
+            padding-top: 5px;
+        }
+    }
+    a:nth-child(3) {
+        margin-left: 5px;
+        span.at-icon-wrapper {
+            width: 21px !important;
+            height: 21px !important;
+            margin-top: 10px;
+        }
+    }
+    a:nth-last-child(2) {
+        margin-right: 1em;
+    }
+    .at4-icon {
+        float: none !important;
+    }
+    @include breakpoint(max-width $width-small) {
+        margin:0;
+        a.at-share-btn {
+            background: none;
+            margin: 0 1em 0 0;
+            &.at-svc-compact {
+                width: 4.1em;
+                margin: 0 0.5em 0 0;
+            }
+        }
+
+    }
+}
+
+.addthis_sharing_toolbox{
+    padding-left: 2em;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    @include breakpoint(max-width $width-medium) {
+        @include spacing('padding', 'sides', 'mobile');
+    }
+    .at-share-tbx-element.addthis_32x32_style{
+        height: 41px;
+    }
+}
+
+.at-follow-tbx-element {
+    display: table !important;
+    width: 325px;
+    > p, div {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    > p {
+        width: 143px;
+        padding-top: 12px;
+        @include type-ub-18;
+        color: $primaryRed;
+        position: relative;
+        &:after {
+            content : '|';
+            color: $neutralGrey;
+            position: absolute;
+            top: 12px;
+            bottom: 0;
+            width: 1px;
+            right: 15px;
+        }
+    }
+}

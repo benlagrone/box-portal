@@ -1,0 +1,739 @@
+/* ==|====================
+   Responsive
+   ======================= */
+
+// = Responsive
+// -----------------------------
+
+@mixin columns($base, $desktop, $tablet, $mobile, $last: "") {
+    @include span($desktop of $base $last);
+    @include breakpoint(max-width $width-medium) {
+        @include span($tablet of $base $last);
+    }
+
+    @include breakpoint(max-width $width-small) {
+        @include span($base);
+    }
+}
+
+@mixin simple-columns($col, $grid: 12) {
+    @include columns($grid, $col, $col, $col);
+    &.last {
+        @include columns($grid, $col, $col, $col, "last");
+    }
+    &:last-child {
+        float: right;
+        @include breakpoint(max-width $width-small) {
+            float: right;
+        }
+    }
+}
+
+.col1 {
+    @include simple-columns(1);
+}
+
+.col2 {
+    @include simple-columns(2);
+}
+
+.col3 {
+    @include simple-columns(3);
+}
+
+.col4 {
+    @include simple-columns(4);
+}
+
+.col5 {
+    @include simple-columns(5);
+}
+
+.col6 {
+    @include simple-columns(6);
+}
+
+.col7 {
+    @include simple-columns(7);
+}
+
+.col8 {
+    @include simple-columns(8);
+}
+
+.col9 {
+    @include simple-columns(9);
+}
+
+.col10 {
+    @include simple-columns(10);
+}
+
+.col11 {
+    @include simple-columns(11);
+}
+
+.col12 {
+    @include simple-columns(12);
+}
+
+.pad {
+    @include pre(1);
+    @include post(1);
+}
+
+.pad-l {
+    @include pre(1);
+}
+
+.pad-r {
+    @include post(1);
+}
+
+// = SECTION
+// -----------------------------
+section {
+    @include container;
+    @include clearfix;
+    @include spacing("padding", "top", "desktop");
+    @include spacing("padding", "bottom", "desktop");
+    margin: 0px auto;
+    padding-left: $cell-p-lrg;
+    padding-right: $cell-p-lrg;
+    &.alt-section {
+        padding-top: 50px;
+    }
+    &.bleed-full, &.d-bleed-full, &.nested {
+        padding:0;
+    }
+    &.bleed-sides{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    &.bleed-top {
+        padding-top: 0;
+    }
+    &.bleed-bottom {
+        padding-bottom: 0;
+    }
+    &.dark {
+        background-color: black;
+    }
+    &.highlight.apply,&.resource-highlight.apply {
+        background-color: $neutralGreyLightest;
+    }
+    &.d-pad-top-small {
+        padding-top: $desktop-spacing-small;
+        @media (max-width: $width-small) {
+            padding-top: 0;
+        }
+    }
+
+    section {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .module {
+        clear: both;
+        padding-top: 35px;
+        &:first-child {
+            padding-top: 0px;
+        }
+        @media (min-width: $width-small) {
+            &.d-pad-top {
+                @include spacing("padding", "top", "desktop");
+            }
+            &.d-pad-top-short {
+                padding-top: 20px;
+            }
+        }
+        &.mda-slim-list {
+            .link {
+                height: auto;
+            }
+        }
+    }
+
+    @include breakpoint(max-width $width-medium) {
+        padding: 35px 0;
+        &.bleed-full, &.d-bleed-full, &.nested {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        &.bleed-top {
+            padding-top: 0;
+        }
+        &.bleed-bottom {
+            padding-bottom: 0;
+        }
+        &.alt-section {
+            padding-top: 35px;
+        }
+    }
+
+    @include breakpoint(max-width $width-small) {
+        margin: 0;
+        padding: 0;
+        .module {
+            padding:0;
+            &.m-bleed {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+            &.m-bleed-top {
+                padding-top: 0;
+            }
+            &.m-bleed-bottom {
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+
+// Two column with sidebar
+.col-content-wrapper {
+    padding: 0;
+    @include breakpoint(max-width $width-medium) {
+        margin-right: 0px;
+    }
+}
+
+// 10 column content holder (used next to sidebar)
+.col-sidebar {
+    @include with-layout($susy-outer) {
+        @include simple-columns(2);
+        @include breakpoint(max-width $width-medium) {
+            display: none;
+        }
+    }
+    padding-right: 0;
+    padding-left: $global-spacing;
+    .rtl & {
+        float: right;
+    }
+    &.search-sidebar {
+        @include with-layout($susy-outer) {
+            @include simple-columns(4);
+            @include breakpoint(max-width $width-medium) {
+                @include simple-columns(12);
+                display: block;
+            }
+        }
+        padding-left: $global-spacing*4;
+        padding-right: $global-spacing*2;
+    }
+    &.alternate-sidebar {
+        @include with-layout($susy-outer) {
+            @include span(4 of 12 last);
+            @include breakpoint(max-width $width-medium) {
+                @include simple-columns(12);
+                display: block;
+            }
+        }
+        padding: 0 $global-spacing*4 0 0;
+    }
+    &.publication-sidebar {
+        padding-top: 70px;
+        .flexpromo-content-wrapper {
+            .module {
+                border-bottom: 1px solid #d0d0ce;
+                margin-bottom: 60px;
+                padding-bottom: 60px;
+                .promo.promo-gradient .promo-text .cta{
+                    margin-bottom: 25px;
+                }
+                &:last-child{
+                    border-bottom: 0px solid;
+                }
+            }
+        }
+    }
+    section {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    @include breakpoint(max-width $width-medium) {
+        &.alternate-sidebar {
+            width:100%;
+            float:none;
+            padding: 0 $global-spacing*2;
+        }
+        &.search-sidebar {
+            width:100%;
+            float:none;
+            padding: 0 $global-spacing*2;
+        }
+    }
+    @include breakpoint(max-width $width-small) {
+        &.alternate-sidebar {
+            padding: 0;
+        }
+        &.search-sidebar {
+            padding: 0;
+        }
+        &.publication-sidebar {
+            .flexpromo-content-wrapper {
+                .module {
+                    margin-bottom: 0px;
+                    padding-bottom: 0px;
+                }
+            }
+        }
+    }
+}
+
+.col-content-alternate {
+    @include with-layout($susy-outer) {
+        @include span(12 of 12 last);
+        @include breakpoint(max-width $width-medium) {}
+    }
+}
+
+// 10 column content holder (used next to sidebar)
+.col-content {
+    @include with-layout($susy-outer) {
+        @include span(10 of 12 last);
+        @include breakpoint(max-width $width-medium) {
+            margin: 0;
+            width: 100%;
+        }
+    }
+    padding: 0 $global-spacing 0 $cell-p-med;
+
+    &.search-content {
+        @include with-layout($susy-outer) {
+            @include span(8 of 12 last);
+            @include breakpoint(max-width $width-medium) {
+                @include simple-columns(12);
+            }
+        }
+        padding-right: 84px;
+        section {
+            padding-left: 0;
+        }
+    }
+    &.alternate-content {
+        @include with-layout($susy-outer) {
+            @include span(8 of 12);
+            @include breakpoint(max-width $width-medium) {
+                @include simple-columns(12);
+            }
+        }
+    }
+    .rtl & {
+        @include with-layout($susy-outer) {
+            @include span(10 of 12 first);
+            @include breakpoint(max-width $width-medium) {
+                margin: 0;
+                width: 100%;
+            }
+        }
+    }
+    section {
+        padding-left: $global-spacing*2;
+        padding-right: $global-spacing*2;
+        &.bleed-full {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        &.table {
+            .cell-m {
+                padding-right: $global-spacing*2;
+                padding-left: 0;
+                &.last {
+                    padding-right: 0;
+                    padding-left: $global-spacing*2;
+                }
+            }
+        }
+    }
+    @include breakpoint(max-width $width-medium) {
+        padding:0;
+        section {
+            padding-left: 0;
+            padding-right: 0;
+            &.bleed-full {
+                padding-left: 0;
+                padding-right: 0;
+                .col-single, .col-content-single {
+                    padding-right: 0;
+                    padding-left: 0;
+                }
+            }
+            &.table {
+                .cell-m {
+                    padding-right: $global-spacing*2;
+                    padding-left: $global-spacing*2;
+                    &.last {
+                        padding-right: $global-spacing*2;
+                        padding-left: $global-spacing*2;
+                    }
+                }
+            }
+        }
+        &.search-content {
+            padding: 0;
+
+        }
+    }
+    @include breakpoint(max-width $width-small) {
+        section {
+            &.table {
+                .cell-m {
+                    padding-right: 0;
+                    padding-left: 0;
+                    &.last {
+                        padding-right: 0;
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 10 col with 1 col padding on either side
+.col-single, .col-content-single {
+    // @include span(10);
+    // @include pre(1);
+    // @include post(1);
+    @include breakpoint(max-width $width-medium) {
+        padding-right: $cell-p-med;
+        padding-left: $cell-p-med;
+    }
+
+    @include breakpoint(max-width $width-small) {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+// 4 col with 1 col padding on either side
+.col-m {
+    @include span(4 of 12);
+    @include pre(1);
+    @include post(1);
+    &.last {
+        float: right;
+    }
+    @include breakpoint(max-width $width-medium) {
+        @include with-layout($susy-tablet) {
+            @include span(6);
+        }
+    }
+
+    @include breakpoint(max-width $width-small) {
+        @include span(12);
+    }
+}
+
+// 5 col with 1 col padding on right
+.col-r {
+    @include span(5);
+    @include post(1);
+    &.last {
+        float: right;
+        margin-left: 0;
+    }
+    @include breakpoint(max-width $width-medium) {
+        @include with-layout($susy-tablet) {
+            @include span(6);
+        }
+    }
+
+    @include breakpoint(max-width $width-small) {
+        @include span(12);
+    }
+}
+
+// 5 col with 1 col padding on left
+.col-l {
+    @include span(5);
+    @include pre(1);
+    &.last {
+        float: right;
+        margin-right: 0;
+    }
+    @include breakpoint(max-width $width-medium) {
+        @include with-layout($susy-tablet) {
+            @include span(6);
+        }
+    }
+
+    @include breakpoint(max-width $width-small) {
+        @include span(12);
+    }
+}
+
+// 6 col no col padding
+.col-f {
+    @include span(6);
+    &.last {
+        float: right;
+        margin-right: 0;
+    }
+}
+
+// =
+// -----------------------------
+@media (max-width: $width-small) {
+    .pad, .pad-l, .pad-r {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .m-pad {
+        @include spacing("padding", "sides", "mobile");
+    }
+    .m-pad-extra-top {
+        @include spacing("padding", "top", "desktop", "large");
+    }
+    .m-pad-extra-bottom {
+        @include spacing("padding", "bottom", "desktop", "large");
+    }
+}
+
+.table {
+    display: table;
+    height: 100%;
+    width: 100%;
+    table-layout: fixed;
+
+
+    .cell-f, .cell-l, .cell-r, .cell-m, .cell-t, .cell-inner, .cell-inner-f {
+        display: table-cell;
+        vertical-align: top;
+        height: 100%;
+        float: none;
+        width: percentage(6 / 12);
+        word-break: break-word;
+    }
+
+    .cell-t {
+        width: percentage(4 / 12);
+        padding-left: 0.33em;
+        padding-right: 0.33em;
+        &:first-child {
+            padding-left: 0%;
+            padding-right: 0.66em;
+        }
+        &.last {
+            padding-right: 0%;
+            padding-left: 0.66em;
+        }
+    }
+
+    .cell-f {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .cell-l {
+        padding-right: $global-spacing/2;
+        padding-left: 0;
+    }
+
+    .cell-r {
+        padding-right: 0;
+        padding-left: $global-spacing/2;
+    }
+
+    .cell-d{
+        width: percentage(8 / 12);
+        padding-right: $cell-p-med;
+        padding-left: 0;
+        .col-single{
+            .section-title{
+                margin-left: -1 * $cell-m-lg / 2;
+                margin-top: 20px;
+            }
+        }
+        section {
+            padding: 0;
+        }
+        &.last {
+            padding-right: 0;
+            padding-left: $cell-p-med;
+        }
+    }
+
+    .cell-s{
+        width: percentage(4 / 12);
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .cell-s-highlight{
+        width: percentage(4 / 12);
+        padding-top: 20px;
+        background-color: $neutralGreyLightest;
+        &.last {
+            padding-bottom: 50px;
+            height: auto;
+            padding-left: 0;
+            @include breakpoint(max-width $width-small) {
+                width: 100%
+            }
+        }
+        .module {
+            &.m-bleed{
+                background: none;
+            }
+        }
+    }
+
+    .cell-m {
+        padding-right: $cell-p-lrg;
+        padding-left: 0;
+        &.last {
+            padding-right: 0;
+            padding-left: $cell-p-lrg;
+        }
+    }
+
+    .cell-inner {
+        padding-right: $cell-il-lg;
+        padding-left: $cell-il-lg;
+    }
+
+    .cell-inner-f {
+        padding-right: $cell-f-lg;
+        padding-left: $cell-i-lg;
+        &.last {
+            padding-right: $cell-i-lg;
+            padding-left: $cell-f-lg;
+        }
+    }
+
+    .middle {
+        vertical-align: middle;
+        > .module {
+            height: auto;
+        }
+    }
+
+    .cell-border {
+        border-right: 1px solid $neutralGrey;
+        &.last {
+            border-right: none;
+        }
+    }
+
+    .cell-full-height .module {
+        height: 100%;
+        padding-bottom: 0;
+    }
+
+    @include breakpoint(max-width $width-medium) {
+        .cell-l, .cell-r, .cell-inner, .cell-f, .cell-inner-f {
+            padding-right: $cell-p-med/2;
+            padding-left: $cell-p-med;
+            &.last {
+                padding-right: $cell-p-med;
+                padding-left: $cell-p-med/2;
+            }
+        }
+        .cell-m {
+            padding-right: $cell-p-med;
+            padding-left: $cell-p-med;
+            &.last {
+                padding-right: $cell-p-med;
+                padding-left: $cell-p-med;
+            }
+        }
+        .cell-s-highlight{
+            padding-right: 0;
+            padding-left: 0;
+            &.last {
+                padding-right: 0;
+                padding-left: 0;
+            }
+        }
+        &.table-3col {
+            padding-left: $cell-p-med;
+            padding-right: $cell-p-med;
+        }
+    }
+
+    @include breakpoint(max-width $width-small) {
+        display: block;
+        height: auto;
+
+        &.no-mobile-padding{
+            .link-list{
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+        }
+        &.table-3col {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .cell-f, .cell-l, .cell-r, .cell-md-f, .cell-m, .cell-inner, .cell-inner-f, .cell-t, .cell-d, .cell-s {
+            display: block;
+            width: 100%;
+            clear: both;
+            float: none;
+            padding: 0;
+            &:first-child {
+                padding: 0;
+            }
+            &.last {
+                padding: 0;
+            }
+            &.m-pad {
+                @include spacing("padding", "sides", "mobile");
+                &:first-child {
+                    @include spacing("padding", "sides", "mobile");
+                }
+                &.last {
+                    @include spacing("padding", "sides", "mobile");
+                }
+            }
+        }
+        .cell-border {
+            border-right: none;
+        }
+        .m-pad, &.table-3col.m-pad {
+            @include spacing("padding", "sides", "mobile");
+        }
+        .m-pad-extra-top {
+            @include spacing("padding", "top", "desktop", "large");
+        }
+        .m-pad-extra-bottom {
+            @include spacing("padding", "bottom", "desktop", "large");
+        }
+        .cell-s-highlight{
+            padding-bottom: 0;
+            &.last {
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+
+.iso-item {
+    width: 33%;
+    padding: 15px;
+    @include breakpoint(max-width $width-medium) {
+        width: 50%;
+    }
+
+    @include breakpoint(max-width $width-small) {
+        width: 100%;
+    }
+}
+
+//Column Container Title, Description, CTA
+.col-container-title {
+    @include type-ub-29;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+.col-container-description {
+    @include type-m-21;
+}
+.col-container-cta {
+    @include type-ub-18;
+    margin-bottom: 50px;
+}

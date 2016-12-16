@@ -1,0 +1,44 @@
+/* =======================
+   Accordion
+   ======================= */
+
+.did-you-know {
+    text-align: center;
+    color: $primaryBlack;
+    padding: 0 20px;
+    margin-bottom: 30px;
+    h3{
+        @include type-m-21;
+        padding: 0 15px;
+
+        &.did-you-know-title {
+            border-bottom: none;
+            padding-top: 55px;
+            @include type-ubc-18(16px,14px);
+            text-transform: uppercase;
+        }
+    }
+    p {
+        @include type-m-21;
+        padding: 0 15px;
+
+        &.did-you-know-text-large {
+            @include type-m-24(18px);
+            margin-top: 25px;
+            padding-bottom: 70px;
+            margin-bottom: 0;
+            word-break: normal;
+        }
+    }
+    &.background-purple {
+        background-color: $secondaryPurple;
+        color: $primaryWhite;
+    }
+    @include breakpoint(max-width $width-medium) {
+        p {
+            &.did-you-know-text-large {
+                word-break: normal;
+            }
+        }
+    }
+}

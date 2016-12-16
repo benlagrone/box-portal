@@ -1,0 +1,162 @@
+/* =======================
+   Article Share
+   ======================= */
+
+.addthis_sharing_toolbox .at-share-tbx-element.addthis_32x32_style  {
+    padding-top: 20px;
+    @include type-m-21(21px,21px);
+    a.at-share-btn {
+        margin: 0 1em 0 0;
+        
+        &.at-svc-facebook span.at-icon-wrapper {
+            background: none !important;
+            padding-top: 5px;
+            path {
+                fill: #3B5998;
+            }
+        }
+        &.at-svc-twitter span.at-icon-wrapper {
+            background: none !important;
+            padding-top: 5px;
+            path {
+                fill: #00aced;
+            }
+        }
+        &.at-svc-google span.at-icon-wrapper {
+            background: none !important;
+            padding-top: 5px;
+            path {
+                fill: #CE4D39;
+            }
+        }
+        &.at-svc-pinterest_share span.at-icon-wrapper {
+            background: none !important;
+            padding-top: 5px;
+            path {
+                fill: #C62A2E;
+            }
+        }
+        &.at-svc-linkedin span.at-icon-wrapper {
+            height: 21px !important;
+            width: 21px !important;
+            .at-icon-linkedin {
+                width: 21px !important;
+                height: 21px !important;
+            }
+        }
+        &.at-svc-compact  {
+            border-left: 1px solid #E4E2DA;
+            width: 6em;
+            max-width: 6em;
+            height: 21px;
+            &:before {
+                content: "More";
+                @include type-ub-14;
+                text-transform: uppercase;
+                padding: 0 0.75em 0 1.5em;
+                position: relative;
+                top: -5px;
+            }
+            span.at-icon-wrapper {
+                background: none !important;
+                height: 21px !important;
+                width: 21px !important;
+                .at-icon-addthis {
+                    width: 21px !important;
+                    height: 21px !important;
+                }
+                path {
+                    fill: #da291c;
+                }
+            }
+        }
+    }
+    a:nth-last-child(2) {
+        margin-right: 1em;
+    }
+    @include breakpoint(max-width $width-small) {
+        margin:0;
+        a.at-share-btn {
+            background: none;
+            margin: 0 1em 0 0;
+            &.at-svc-compact {
+                width: 4.1em;
+                margin: 0 0.5em 0 0;
+            }
+        }
+        
+    }
+}
+
+.addthis_sharing_toolbox{
+    padding-left: 2em;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    @include breakpoint(max-width $width-medium) {
+        @include spacing('padding', 'sides', 'mobile');
+    }
+    .at-share-tbx-element.addthis_32x32_style{
+        height: 41px;
+    }
+}
+
+.blog-search-filter,.page-header{
+    .addthis_sharing_toolbox{
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        @include breakpoint(max-width $width-medium) {
+            padding-left: 0;
+        }
+        .at-share-tbx-element.addthis_32x32_style{
+            padding-top: 5px;
+        }
+
+
+    }
+}
+
+.page-header-wrapper{
+    .addthis_sharing_toolbox {
+        padding: 0;
+        @include breakpoint(max-width $width-medium) {
+            padding-left: 0;
+        }
+        @include breakpoint(max-width $width-small) {
+            @include spacing('padding', 'sides', 'mobile');
+            @include spacing('padding', 'bottom', 'mobile');
+            margin-top: -30px;
+        }
+    }
+}
+
+.clinical-trials-header{
+    .addthis_sharing_toolbox{
+        padding-left: 0;
+        padding-top: 0;
+
+        @include breakpoint(max-width $width-medium) {
+            padding-left: 0;
+        }
+    }
+}
+
+.headline,.article-body{
+    .addthis_sharing_toolbox{
+        padding-left: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+        padding-right: 0;
+
+        .at-share-tbx-element.addthis_32x32_style{
+            padding-top: 0;
+        }
+        @include breakpoint(max-width $width-medium) {
+            padding-left: 0;
+        }
+        @include breakpoint(max-width $width-small) {
+            @include spacing('padding', 'bottom', 'mobile');
+        }
+    }
+}
+

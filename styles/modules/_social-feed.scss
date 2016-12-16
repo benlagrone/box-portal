@@ -1,0 +1,179 @@
+/* =======================
+   Social Feed
+   ======================= */
+
+.social-feed {
+    .social-feed-heading {
+
+        h3 {
+            margin: 0;
+            @include type-ub-24;
+            font-weight: normal;
+            border-bottom: 1px solid $neutralGrey;
+            padding-bottom: 25px;
+            &.heading-divider {
+                border-bottom: 1px solid $neutralGrey;
+            }
+        }
+        &.icon-heading {
+            h3 {
+                @include type-m-36;
+                line-height: 1;
+                font-weight: normal;
+                text-align: center;
+            }
+        }
+    }
+    .subtext {
+        @include type-m-21;
+        margin: 20px 0;
+    }
+    .social-feed-body {
+        ul {
+            padding: 0;
+            margin-bottom: 0;
+            li {
+                list-style: none;
+                display: table;
+                width: 100%;
+                height: 120px;
+                text-align: left;
+                .feed-body {
+                    @include type-ul-14;
+                    line-height: 1.2em;
+                    color: $neutralGreyDark;
+                    max-width: 87%;
+                    margin-top: 10px;
+                    clear: both;
+                    padding-top: 15px;
+                }
+                a {
+                    cursor: pointer;
+                    color: $primaryBlack;
+                    display: table-cell;
+                    height: 100%;
+                    vertical-align: middle;
+                    padding: 30px 10px 30px 0;
+                    position: relative;
+                    border-bottom: 1px solid $neutralGrey;
+                    @include transition(all 0.35s);
+                    &:before {
+                        color: $primaryRed;
+                        position: absolute;
+                        right: 16px;
+                        top: 50%;
+                        margin-top: -10px;
+                    }
+                    &:hover {
+                        background-color: $neutralGrey;
+                        padding-right: 0px;
+                        padding-left: 10px;
+                        &:before {
+                            color: $primaryBlack;
+                            transition: color 0.25s ease-in-out;
+                        }
+                    }
+                    img {
+                        float: left;
+                        width: 20%;
+                        margin-right: 15px;
+                    }
+                    h4,
+                    p {
+                        margin: 0;
+                    }
+                    h4 {
+                        @include type-ub-16;
+                        font-weight: normal;
+                        max-width: 87%;
+                    }
+                    p {
+                        @include type-u-14;
+                        &.publish-date {
+                            margin-bottom: 10px;
+                        }
+                    }
+                    .feed-icon {
+                        color: $primaryRed;
+                        padding: 10px 0;
+                    }
+                }
+            }
+        }
+        .social-feed-cta {
+            margin-top: 35px;
+            display: block;
+            .cta {
+                display: inline-block;
+            }
+        }
+    }
+    @include breakpoint(max-width $width-small) {
+        padding: 0;
+        .social-feed-heading {
+            @include mobile-icon-wrapper;
+            padding: 0;
+            h3 {
+                padding: 35px;
+                margin: 0;
+            }
+        }
+        .subtext {
+            margin: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-bottom: 15px;
+            @include spacing('padding', 'sides', 'mobile');
+        }
+        .social-feed-body {
+            ul {
+                margin: 0;
+                li {
+                    width: 100%;
+                    display: block;
+                    height: auto;
+                    &.top-border a {
+                        border-top: none;
+                    }
+                    &:first-child a {
+                        border-top: none;
+                    }
+                    a {
+                        display: block;
+                        height: auto;
+                        padding-top: 15px;
+                        padding-bottom: 15px;
+                        @include spacing('padding', 'sides', 'mobile');
+                        h4 {
+                            margin-bottom: 0;
+                        }
+                        &:before {
+                            color: $primaryRed;
+                            right: 40px;
+                            top: 50%;
+                            margin-top: -7px;
+                        }
+                        &:hover {
+                            @include spacing('padding', 'sides', 'mobile');
+                            &:before {
+                                color: $primaryRed;
+                            }
+                        }
+                        .feed-icon {
+                            padding: 0 0 10px 0;
+                        }
+                    }
+                    &:last-child a {
+                        border-bottom: none;
+                    }
+                }
+            }
+            .social-feed-cta {
+                margin: 20px 0 10px;
+                padding-top: 0;
+                padding-bottom: 0;
+                @include spacing('padding', 'sides', 'mobile');
+            }
+        }
+    }
+}

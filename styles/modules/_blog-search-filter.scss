@@ -1,0 +1,260 @@
+.blog-filter {
+    float: left;
+    padding-top:30px;
+    @include type-u-16(16px,14px);
+    a {
+        margin-left: 15px;
+        margin-right: 15px;
+        color: #000;
+        &.active {
+            color: $primaryRed;
+            @include type-ub-16(16px,16px);
+            border-bottom: 2px solid $primaryRed;
+        }
+    }
+    @media (max-width: $width-small) {
+        text-align: center;
+        width: 100%;
+        display: inline-block;
+        height: 70px;
+        line-height: 70px;
+        a {
+            margin: 0 8px;
+        }
+    }
+}
+.blog-search-filter {
+    float: left;
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $neutralGrey;
+    @include type-u-16(16px,14px);
+
+    .blog-filter {
+        float: left;
+        a {
+            margin-left: 15px;
+            margin-right: 15px;
+            color: #000;
+            &.active {
+                color: $primaryRed;
+                @include type-ub-16(16px,16px);
+                border-bottom: 2px solid $primaryRed;
+            }
+        }
+    }
+    .blog-search {
+        min-height: 35px;
+        position: relative;        
+        .blog-sort {
+            position: relative;
+            width: 80%;
+            display: block;
+            select {
+                @include type-ub-16(16px,16px);
+                margin-right: 45px;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                border-radius: 0px;
+                width: 100%;
+                height: 35px;
+                padding-left: 10px;
+                border: none;
+                background: $neutralGrey;
+                @include selection($primaryWhite, $primaryRed);
+                &:focus {
+                    outline: none;
+                }
+                &::-ms-expand{
+                    display: none;
+                }
+            }
+            .sort-arrow {
+                color: $neutralGreyDark;
+                z-index: 100;
+                pointer-events: none;
+                position: absolute;
+                top: 10px;
+                left: 93%;
+            }
+        }
+        a {
+            float: right;
+            margin-top: 0;
+            width: 100%;
+            padding-right: 10px;
+            .search-icon {
+                color: $neutralGreyDark;
+                @include transition;
+                &:hover {
+                    color: $primaryRed;
+                }
+            }
+        }
+        .search-form {
+            height: 35px;
+        }
+        @media (max-width: $width-small) {
+            float: none;
+            clear: both;
+            padding-top: 10px;            
+            select {
+                width: 82%;
+                height: 35px;
+            }
+        }
+    }
+    .blog-search-mask {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        max-width: 35px;
+        z-index: z("search-results");
+        overflow-x: hidden;
+        @include transition(max-width 0.3s);
+        .search-wrapper {
+            overflow: hidden;
+        }
+        .search-field {
+            line-height: 25px;
+            height: 40px;
+            border-radius: 0;
+            background: $neutralGrey;
+            position: absolute;
+            @include transition(background 0.3s);
+        }
+        .search-icon {
+            //margin-top: 12px;
+            top: -16px;
+            right: 10px;
+        }
+        .search-results {
+            position: static;
+        }
+        .search-result {
+            color: $primaryBlack;
+        }
+        &.reveal {
+            max-width: 100%;
+            .search-field{
+                background-color: $neutralGrey;
+            }
+        }
+        @media (max-width: $width-small) {
+            top: 10px;
+        }
+    }
+    @media (max-width: $width-small) {
+        @include spacing("padding", "sides", "mobile");
+        position: relative;
+        display: block;
+        height: 110px;
+        padding-left: 0;
+        padding-right: 0;
+        > div {
+            height: 70px;
+        }
+        .share-component{
+            margin-top: 31px;
+            text-align: center;
+        }
+        .blog-filter {
+            text-align: center;
+            width: 100%;
+            margin-top: 40px;
+            display: inline-block;
+            height: 70px;
+            line-height: 70px;
+            a {
+                margin: 0 8px;
+            }
+        }
+        .blog-search {
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+
+            &.col6{
+                width: 60px;
+                left: inherit;
+                right: 0;
+
+                &.expand{
+                    width: 100%;
+                    left: 0;
+                    right: initial;
+                }
+            }
+
+            .blog-sort {
+                width: 75%;
+                float: left;
+                border-bottom: 1px solid $neutralGrey;
+                display: none;
+                select {
+                    margin-right: 0;
+                    width: 100%;
+                    display: inline-block;
+                    height: 70px;
+                    line-height: 70px;
+                    padding: 5px 30px 0;
+                }
+                i.sort-arrow {
+                    font-size: 26px;
+                    top: 50%;
+                    margin-top: -13px;
+                    margin-left: -22px;
+                }
+            }
+            .blog-search-mask {
+                height: 70px;
+                top: 0;
+                overflow: hidden;
+                width: 60px;
+                float: right;
+                max-width: inherit;
+                position: relative;
+                .search-form {
+                    height: 35px;
+                    .search-icon {
+                        font-size: 38px;
+                        top: 32px;
+                        right: 20px;
+                        margin-top: 0px;
+                        margin-left: -18px;
+                    }
+                    input {
+                        height: 70px;
+                        background-color: $primaryWhite;
+                        padding-right: 70px;
+                        margin-top: 18px;
+                    }
+                }
+                .search-results{
+                    margin-top: 35px;
+                }
+                &.reveal {
+                    min-height: 70px;
+                    height: auto;
+                    overflow: visible;
+                    width: 100%;
+                    .blog-search{
+                        top: 0;
+                    }
+                    .search-form {
+                        input {
+                            height: 70px;
+                            background-color: $neutralGrey;
+                            padding-right: 70px;                           
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

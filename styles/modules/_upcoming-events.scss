@@ -1,0 +1,109 @@
+.upcoming-events {
+	$commonPadding: 2%;
+	$halfPadding: 1%;
+	padding: 30px;
+	.section-title {
+		@include type-m-32;
+		margin-left: $halfPadding;
+		margin-bottom: 30px;
+		@include breakpoint(max-width $width-small) {
+			font-size: 29px;
+			padding: 0 20%;
+			text-align: center;
+		}
+	}
+	.slick-list{
+		&:focus{
+			outline: 1px solid $secondaryBlue;
+		}
+	}
+	.carousel-item {
+		&.slick-slide {
+			.carousel-body {
+				width: 96%;
+				margin-left: $commonPadding;
+				margin-right: $commonPadding;
+				height: 100%;
+				padding: 30px;
+				background: $primaryWhite;
+				border: 1px solid $neutralGrey;
+				height: 250px;
+				overflow: hidden;
+				position: relative;
+				.sub-title, .date {
+					margin-top: 0;
+					margin-bottom: 7px;
+					@include type-ub-18;
+					font-weight: normal;
+					@include breakpoint(max-width $width-small) {
+						font-size: 15px;
+					}
+				}
+				.sub-title {
+					color: $neutralRed;
+				}
+				.carousel-cta {
+					display: inline-block;
+					margin-top: 30px;
+					margin-left: 0;
+					@include type-m-24;
+					color: $primaryBlack;
+					@include breakpoint(max-width $width-small) {
+						font-size: 18px;
+					}
+				}
+			}
+		}
+	}
+	.cta {
+		margin-left: $halfPadding;
+		display: inline-block;
+		margin-top: 5px;
+	}
+	.slick-prev,
+    .slick-next {
+        display: inline-block;
+        position: absolute;
+        z-index: 3;
+        width: 40px;
+        height: 40px;
+        top: 50%;
+        margin-top: -20px;
+        @include transition(all 300ms);
+        opacity: 0;
+        &:before {
+            color: $primaryRed;
+            @extend .fa;
+            font-size: 40px;
+            @include transition(all 300ms);
+        }
+
+		&:focus{
+			opacity: 1;
+			outline: 1px solid $primaryRed;
+		}
+    }
+    .slick-prev {
+        &:before {
+            content: "\f104";
+            padding-right: 4px;
+        }
+        &.active{
+			opacity: 1;
+        }
+    }
+    .slick-next {
+        &:before {
+            content: "\f105";
+            padding-left: 4px;
+        }
+        &.active{
+            opacity: 1;
+        }
+    }
+    &:hover,&:focus {
+        .slick-prev, .slick-next {
+            opacity: 1;
+        }
+    }
+}

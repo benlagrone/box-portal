@@ -1,0 +1,124 @@
+.lg-backdrop{
+  &.in{
+    opacity: .8;
+  }
+}
+.lg-outer{
+  #lg-counter{
+    @include type-u-16;
+  }
+
+  .lg-item{
+    .jwplayer {
+      &.show-controls{
+        .jwcontrolbar {
+          display: inline-block !important;
+          opacity: 1 !important;
+        }
+      }
+      &.jwfullscreen {
+        margin: 0 auto !important;
+      }
+    }
+    .lg-description{
+      @include type-u-16;
+      color: white;
+    }
+    .jwplayer{
+      max-width: 100%;
+    }
+    .lg-img-wrap{
+      img{
+        max-height: calc(100% - 150px);
+      }
+
+    }
+    .vid-title{
+      @include type-ub-16;
+      margin-top:220px;
+      margin-bottom: 0;
+      color: $primaryWhite;
+      max-width: 756px;
+      text-align: left;
+      margin-left: calc(100%/2 - 756px/2);
+      white-space: normal;
+    }
+    .vid-description{
+      @include type-u-16;
+      color: $primaryWhite;
+      margin-top:5px;
+      max-width: 756px;
+      text-align: left;
+      margin-left: calc(100%/2 - 756px/2);
+      white-space: normal;
+
+    }
+  }
+  .lg-sub-html{
+    @include type-u-16;
+  }
+  .lg-toolbar{
+    .lg-download{
+      display: none;
+    }
+    .lg-close{
+      &:after{
+        font-family: FontAwesome;
+        content: "\f00d";
+      }
+    }
+  }
+  .lg-actions{
+    .lg-next{
+      &:after{
+        font-family: FontAwesome;
+        content: "\f105";
+        font-size: 40px;
+      }
+      &:before{
+        content: '';
+      }
+      &:focus{
+        opacity: 1;
+      }
+    }
+    .lg-prev{
+      &:before{
+        font-family: FontAwesome;
+        content: "\f104";
+        font-size: 40px;
+      }
+      &:after{
+        content:'';
+      }
+      &:focus{
+        opacity: 1;
+      }
+    }
+  }
+
+  @include breakpoint(max-width $width-small) {
+    .lg-item{
+      .lg-description{
+        padding: 0 35px;
+        white-space: normal;
+        text-align: left;
+      }
+      .lg-img-wrap{
+        img{
+          max-height: calc(100% - 100px);
+        }
+
+      }
+      .vid-title{
+        margin-left: 0;
+        margin-top: 100px;
+      }
+      .vid-description{
+        margin-left: 0;
+
+      }
+    }
+  }
+}
+

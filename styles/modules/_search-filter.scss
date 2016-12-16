@@ -1,0 +1,311 @@
+.search-sidebar {
+    margin-top: 24px;
+    margin-bottom: 30px;
+                @include transition(margin-top 0.35s);
+    &.move-down{
+        margin-top: 90px;
+        @include transition(margin-top 0.35s);
+        @include breakpoint(max-width $width-medium) {
+           margin-top: 0;
+        }
+    }
+
+    &.mobile-hidden{
+        @include breakpoint(max-width $width-medium) {
+            display: none;
+        }
+    }
+    .col-search-filter {
+
+        .term-block {
+            @include type-ub-18;
+            text-transform: capitalize;
+            height: 54px;
+            background-color: $neutralGreyLight;
+            padding: 0px 40px 0 10px;
+            margin: 0 0 10px 0;
+            vertical-align: middle;
+            border-radius: 3px;
+            line-height: 56px;
+            position: relative;
+            top: 3px;
+            display: none;
+            .fa-times {
+                color: $primaryRed;
+                background-color: $primaryWhite;
+                border-radius: 20px;
+                width: 20px;
+                height: 20px;
+                padding-left: 5px;
+                padding-top: 3px;
+                font-size: 14px;
+                position: absolute;
+                top: 18px;
+                right: 10px;
+                cursor: pointer;
+            }
+            @include breakpoint(max-width $width-small) {
+                margin: 10px 35px;
+                width: calc(100% - 70px);
+            }
+        }
+
+        .common-search-terms {
+            display: none;
+            text-align: center;
+            @include type-u-18;
+            .even{
+                float: left;
+                width: 50%;
+
+            }
+
+            .odd{
+                float: right;
+                width: 50%;
+            }
+
+            @include breakpoint(max-width $width-medium) {
+                display: none !important;
+            }
+
+        }
+        .mda-custom-dd {
+            background: white;
+            width: 100%;
+
+            &.style2{
+                h2{
+                    border-top: 1px solid $primaryWhite;
+                    border-bottom: 1px solid $primaryWhite;
+                    margin-bottom: 0;
+
+                }
+            }
+            .md-radio {
+                background: white;
+                display: block;
+                float: left;
+                width: 100%;
+                input[type="checkbox"] {
+                    opacity: 0;
+                    position: absolute;
+                    display:block;
+                    ~ span {
+                        &.filter-radio-button {
+                            z-index: 1;
+                            width: 30px;
+                            height: 30px;
+                            background: white;
+                            border: 2px solid $neutralGrey;
+                            border-radius: 15px;
+                            display: block;
+                            float: left;
+                            margin-top: -26px;
+                            .inner {
+                                display: none;
+                                background-color: black;
+                                width: 18px;
+                                height: 18px;
+                                border-radius: 9px;
+                                margin-top: 4px;
+                                margin-left: 4px;
+                            }
+                        }
+                        &.option-text {
+                            display: block;
+                            margin-left: 20px;
+                            margin-top: -21px;
+                        }
+                    }
+
+                    &:checked {
+                        ~ span {
+                            &.filter-radio-button {
+                                border: 2px solid black;
+                            }
+                            &.option-text {
+                                color: black;
+                            }
+                            .inner {
+                                display: block;
+                            }
+                        }
+                    }
+                    &:focus{
+                        ~ span {
+                            &.filter-radio-button {
+                                border: 2px solid $secondaryBlue;
+                            }
+                        }
+                    }
+                }
+                label {
+                    position: relative;
+                    top: 21px;
+                    height: 30px;
+                    z-index: 2;
+                    display: block;
+                }
+
+            }
+            .md-check {
+                input[type="checkbox"] {
+                    ~ i {
+                        color: white;
+                        margin-top: 4px;
+                        margin-left: 3px;
+                        margin-left: -23px;
+                    }
+                    &:checked {
+                        ~ i {
+                            color: black;
+                        }
+                        ~ label {
+                            border: 2px solid black;
+                        }
+                        ~ span {
+                            color: black;
+                        }
+                    }
+                }
+                label {
+                    float: left;
+                    height: 25px;
+                    width: 25px;
+                    border: 2px solid $neutralGrey;
+                    position: relative;
+                }
+            }
+            .mda-custom-dd-link {
+                font-size: 20px;
+                border-bottom: 1px solid $neutralGrey;
+                text-transform: capitalize;
+
+
+                @include breakpoint(max-width $width-medium) {
+                    @include spacing('padding', 'sides', 'mobile');
+                }
+            }
+            .option-text {
+                text-transform: capitalize;
+                vertical-align: top;
+                @include type-u-18;
+                padding-left: 20px;
+                line-height: 1;
+                text-transform: capitalize;
+            }
+            .mda-custom-dd-list {
+                background: $primaryWhite;
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+                padding-left: 20px;
+                @include breakpoint(max-width $width-medium) {
+                    @include spacing('padding', 'sides', 'mobile');
+                }
+
+            }
+
+            &.extended {
+                .mda-custom-dd-list {
+                    height: 100%;
+                    background: white;
+                    border-bottom: 1px solid $neutralGrey;
+
+                    label {
+                        display: block;
+                        top: 3px;
+                    }
+
+                    li{
+                        display: block;
+                    }
+
+                    &.scroll{
+                        max-height: 400px;
+                        overflow-y: scroll;
+
+                    }
+                }
+
+            }
+            h2, li {
+                background: white;
+                margin-bottom: 19px;
+            }
+
+            li{
+                height: auto;
+                margin-top: 8px;
+                &.irrelevant{
+                    color:$neutralGreyDark;
+                }
+            }
+            @include breakpoint(max-width $width-medium) {
+                width: 100%;
+            }
+        }
+        .mda-related-searches {
+            width: 340px;
+            padding: 20px 65px 20px 20px;
+            .mda-related-search-header {
+                @include type-u-21;
+            }
+            a {
+                text-decoration: underline;
+                @include type-u-18;
+                float: left;
+            }
+            @include breakpoint(max-width $width-medium) {
+                display: none;
+            }
+        }
+        .search-filter-hide {
+            height: 85px;
+            text-align: center;
+            display: none;
+            .mda-custom-dd-link {
+                padding: 20px;
+                .mobile-filter-text {
+                    margin-right: 20px;
+                }
+                i {
+                    position: relative;
+                    right: 0px;
+                    &.dd-extended-icon{
+                        display: inline-block;
+                    }
+                    &.dd-collapsed-icon{
+                        display: none;
+                    }
+                }
+            }
+            .mda-custom-dd{
+                .mda-custom-dd-link{
+                    i {
+                        position: relative;
+                        right: 0px;
+                        &.dd-extended-icon{
+                            display: inline-block;
+                        }
+                        &.dd-collapsed-icon{
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            @include breakpoint(max-width $width-medium) {
+                display: inline-block;
+                height: auto;
+            }
+            @include breakpoint(min-width $width-medium) {
+                display: none !important;
+            }
+        }
+        @include breakpoint(max-width $width-medium) {
+            width: 100%;
+        }
+    }
+}

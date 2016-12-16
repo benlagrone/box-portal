@@ -1,0 +1,259 @@
+/* =======================
+   Clinical Trials Search
+   ======================= */
+.clinical-trials-search {
+    background-color: $secondaryBlue;
+    padding: 20px 40px;
+    color: $primaryWhite;
+
+    h2 {
+        @include type-ub-24;
+        color: $primaryWhite;
+        font-weight: normal;
+    }
+
+    p{
+
+    }
+
+    .clinical-trials-search-form{
+      height: 56px;
+
+      .search-form{
+        height: 56px;
+        margin:0;
+        width:100%;
+        padding-left: 0;
+        padding-right: 0;
+
+        
+        input.search-field::-ms-clear{
+        display:none;
+        }
+
+
+        .search-field{
+          padding-top:0;
+          width: 70%;
+          background-color: white;
+          height: 100%;
+          padding-left:20px;
+          vertical-align:top;
+          line-height: normal;
+          padding-bottom: 0;
+
+        }
+
+        .form-search-submit{
+          width: 140px;
+          display: block;
+          background-color: $secondaryBlue;
+          height: 100%;
+
+          @include type-u-18(14px,14px);
+
+        }
+      }
+      .search-result {
+        border: none;
+      }
+      .search-results{
+        position: absolute;
+        top: 56px;
+        width: 70%;
+      }
+    }
+
+  @include breakpoint(max-width $width-small){
+    padding: 20px 0;
+    @include spacing('padding', 'sides', 'mobile');
+
+      .clinical-trials-search-form,.clinical-trials-search-wrapper{
+
+        .search-form{
+
+          .form-search-submit{
+            width: 25%;
+
+
+          }
+        }
+      }
+
+    }
+  }
+
+  .clinical-trials-search-filter {
+    background-color: $secondaryBlueAlternate;
+    color: $primaryWhite;
+    display: flex;
+    width: 100%;
+    height: 100px;
+
+
+    .filter-wrapper {
+      display:block;
+      width:33.33333%;
+      position:relative;
+
+      .mda-custom-dd {
+        &.clinical-trial-filter {
+          width: 100%;
+          position:absolute;
+          height: 100px;
+          h2 {
+            background-color: $secondaryBlueAlternate;
+            border-right: 1px solid $primaryWhite;
+            padding:10px;
+            height: 100px;
+            a {
+              color: $primaryWhite;
+              padding-top: 30px;
+              padding-right: 30px;
+              @include type-u-18;
+              outline: none;
+            }
+            i {
+              color: $primaryWhite;
+            }
+          }
+          &.extended{
+            h2{
+              a{
+                color: $secondaryBlue;
+              }
+            }
+          }
+
+          .mda-custom-dd-list{
+            width: 125%;
+            position: absolute;
+            margin-top: 100px;
+            z-index: 1;
+
+            li{
+              display: block;
+              height: auto;
+              padding: 10px 0;
+
+              a{
+                line-height: 18px;
+              }
+              &:hover{
+                background-color: $neutralGreyDark;
+                a{
+                  color: $primaryWhite;
+                  @include type-m-16(16px,16px);
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+
+          &.extended {
+              height: 292px;
+            h2 {
+              background-color: $neutralGrey;
+              border-top: none;
+              border-bottom: none;
+              color:$primaryWhite;
+              i {
+                color: $primaryWhite;
+              }
+            }
+          }
+        }
+
+
+      }
+      &:last-child{
+        .mda-custom-dd{
+          &.clinical-trial-filter {
+            h2{
+              border-right: none;
+            }
+            .mda-custom-dd-list{
+              right:0;
+            }
+          }
+        }
+
+      }
+      &.cancer-type {
+        .mda-custom-dd{
+          li {
+            text-transform: capitalize;
+          }
+        }
+      }
+      &.physicians{
+
+        .mda-custom-dd{
+          li {
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+
+
+    @include breakpoint(max-width $width-small){
+
+      height: auto;
+      display: block;
+
+      .filter-wrapper {
+        display: block;
+        height: auto;
+        width: 100%;
+
+        .mda-custom-dd {
+          &.clinical-trial-filter {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+
+            h2{
+              height: 92px;
+              border-right: none;
+              padding: 0;
+              a{
+                @include spacing('padding', 'sides', 'mobile');
+                i{
+                  right: 35px;
+                }
+              }
+            }
+            .mda-custom-dd-list {
+              width: 100%;
+              position: relative;
+              margin-top: 0;
+            }
+
+          }
+        }
+      }
+
+    }
+}
+
+.focus {
+  .search-result {
+    border-bottom: 1px solid $neutralGreyLight;
+  }
+}
+
+.ie9{
+  .clinical-trials-search-filter{
+    .filter-wrapper{
+      &.physicians{
+        left: 66.66%
+      }
+
+      &.treatment{
+        left: 33.33%
+      }
+    }
+  }
+}

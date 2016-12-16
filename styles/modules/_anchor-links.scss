@@ -1,0 +1,28 @@
+/* =======================
+   Anchor Links
+   ======================= */
+
+.anchor-links {
+    width: 100%;
+    text-align: center;
+    ul {
+        display: block;
+        margin: 0;
+        padding:0;
+        li {
+            display: inline-block;
+            padding: 10px 15px;
+            a {
+                padding-bottom: 10px;
+                color: $primaryBlack;
+                border-bottom: 4px solid rgba(0, 0, 0, 0);
+                @include type-ub-16;
+            }
+            a:hover,
+            a.selected {
+                color: $primaryRed;
+                border-bottom: 3px solid $primaryRed;
+            }
+        }
+    }
+}

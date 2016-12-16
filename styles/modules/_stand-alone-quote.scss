@@ -1,0 +1,49 @@
+/* =======================
+   Stand Alone Quote
+   ======================= */
+
+.stand-alone-quote {
+    width: 76%;
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    padding-top:15px;
+    .quote-icon {
+        color: $primaryRed;
+    }
+    p {
+        &.quote-text {
+            margin: 25px 0;
+            @include type-m-32(24px,21px);
+            line-height: 1;
+        }
+    }
+    
+    .quote-author-info {
+        width: 33%;
+        line-height: 0.2;
+        .quote-author-name {
+            @include type-mb-21(21px,16px);
+            margin-bottom: 0;
+            line-height: 1;
+        }
+        .quote-author-title {
+            @include type-m-21;
+            margin-top: 0;
+            .strike{
+                text-transform: capitalize;
+            }
+        }
+    }
+    @include breakpoint(max-width $width-medium) {
+        left: 0;
+        width: 100%;
+        margin: 0;
+        .quote-author-info .quote-author-title {
+            margin: 0;
+        }
+    }
+    @include breakpoint(max-width $width-small) {
+        @include spacing("padding", "all", "mobile");
+    }
+}

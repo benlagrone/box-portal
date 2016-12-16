@@ -1,0 +1,164 @@
+/* =======================
+   Glossary
+   ======================= */
+
+.glossary {
+    .glossary_title {
+        font-weight: normal;
+        text-align: center;
+        margin: 46px 0 0;
+        @include type-m-60();
+
+    }
+    .letter-list,
+    .number-list {
+        margin: 27px 0 56px;
+        border-top: 1px solid $primaryBlack;
+        border-bottom: 1px solid $primaryBlack;
+        padding: 52px 15% 15px;
+        text-align: center;
+        > h2 {
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            display: inline-block;
+            padding: 0 0 5px;
+            color: $primaryBlack;
+            border-bottom: 5px solid rgba(0, 0, 0, 0);
+            @include type-u-36;
+            margin: 0 16px 29px;
+            &:hover,
+            &.selected {
+                color: $primaryRed;
+                border-bottom: 4px solid $primaryRed;
+                font-family: 'Univers LT W01_65 Bold', Arial;
+                padding-bottom: 6px;
+            }
+            &.disabled {
+                color : #949490;
+                cursor: default;
+                &:hover {
+                    color : #949490;
+                    border-bottom: 0;
+                    font-family: 'Univers LT W01_55 Roman', Arial;
+                }
+
+            }
+
+        }
+        a:hover,
+        a.selected {
+
+        }
+    }
+    .number-list {
+        display: none;
+    }
+    .gallery-content {
+        padding-left: 25px;
+        section {
+            &.highlight.apply {
+                background: $primaryWhite;
+            }
+            padding: 0;
+        }
+        .glossary_alphabet_title {
+            @include type-ub-48();
+            margin: 0;
+            padding: 0;
+            float: left;
+            width: 11.63%;
+        }
+        > ul {
+            float: left;
+            width: 88%;
+            margin: 48px 0 0;
+            padding: 0;
+            > li {
+                list-style-type: none;
+                padding: 60px 0;
+                border-top: 1px solid $lighterGrey;
+                font-size: 1.2em;
+                .section-title {
+                    font-size: 1.27em;
+                    font-weight: bold;
+                    margin-bottom: 18px;
+                    margin-top: 0;
+
+                }
+                .media-inner {
+                    img {
+                        display: block;
+                        width: 100%;
+                    }
+                }
+                &.last {
+                    padding-bottom: 0;
+                }
+            }
+        }
+        .letter-contents {
+            display: none;
+            .letter-header {
+                h2 {
+                    font-weight: normal;
+                    float: left;
+                    @include type-ub-24();
+                    line-height: 0;
+                }
+                .divider {
+                    width: 95%;
+                    float: right;
+                    hr {
+                        display: block;
+                        border-top: 1px solid $neutralGrey;
+                    }
+                }
+            }
+        }
+    }
+    @include breakpoint(max-width $width-small) {
+        padding: 25px 0 0;
+        .letter-list, .number-list {
+            margin: 10px 0 28px;
+            padding: 20px 15px 0;
+            a {
+                margin: 0 8px 16px;
+                padding-bottom: 0;
+                border-bottom: 4px solid transparent;
+                &:selected {
+                    border-bottom: 3px solid #da291c;
+                }
+            }
+        }
+        .glossary_alphabet_title {
+            position: absolute;
+            background: $primaryWhite;
+        }
+        .gallery-content  {
+            > ul {
+                margin-top: 14px;
+                width: 100%;
+                > li {
+                    padding: 32px 20px 32px 0;
+                    font-size: 17px;
+                    .section-title {
+                        font-size: 17px;
+                        padding: 0;
+                    }
+                    .rte-container {
+                        padding: 0;
+                    }
+                    section {
+                        .col-double.cell-l {
+                            margin-bottom: 17px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

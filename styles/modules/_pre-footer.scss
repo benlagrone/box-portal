@@ -1,0 +1,38 @@
+/* =======================
+   Pre Footer
+   ======================= */
+
+.pre-footer {
+    text-align: center;
+    padding: 0;
+    h2 {
+        font-weight: normal;
+        @include type-m-42(36px,36px);
+        margin-top: 0;
+    }
+    .promo {
+        .promo-text {
+            .cta.cta-block {
+                @include type-ub-24;
+                font-weight: normal;
+                &:hover {
+                    @include type-ub-24;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+    @include breakpoint(max-width $width-small) {
+        padding: 35px 0 0 0;
+        .cell-t {
+            .module {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+        }
+
+        h2 {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,211 @@
+.collection,.collection.tabbed{
+  &.video-collection{
+    .section-title{
+      @include type-m-41;
+    }
+
+    .collection-group{
+      display: block;
+
+
+
+      .collection-item{
+        width: 33.33%;
+        display: block;
+        float: left;
+        height: 410px;
+        padding: 0 .33em 30px .33em;
+        .inner{
+          border: none;
+          background-color: $neutralGreyLightest;
+          overflow: hidden;
+
+
+          .collection-body{
+            .body-title{
+              @include type-ub-16;
+              color: $secondaryBlue;
+              text-transform: uppercase;
+            }
+            .body-text{
+              @include type-m-18;
+            }
+          }
+
+          .collection-image{
+            max-height: 213px;
+            overflow: hidden;
+            img{
+              max-height: none;
+            }
+
+          }
+        }
+        &:last-child{
+          padding: 0 .33em 30px .33em;
+        }
+        &:first-child{
+          padding: 0 .33em 30px .33em;
+        }
+      }
+
+    }
+
+    .tab-menu{
+      :first-child{
+        border-left: none;
+      }
+      li{
+        display: inline-block;
+        padding: 0 15px;
+        border-left: 1px solid black;
+        a{
+          @include type-u-16;
+        }
+      }
+    }
+
+
+    .cta {
+      text-align: center;
+      background-color: transparent;
+      display: block;
+      bottom: -55px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      clear: both;
+      &.hidden{
+        display: none;
+      }
+
+      .cta-block {
+        background-color: transparent;
+        color: $primaryRed;
+        &:after {
+          content: $fa-var-chevron-down;
+          display: inline-block;
+          position: relative;
+          right: -5px;
+          font-family: FontAwesome;
+          speak: none;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          letter-spacing: -0.02em;
+          line-height: 1.3;
+          color: $primaryRed;
+          font-size: 16px;
+          top: 0;
+        }
+        &:before {
+          content: $fa-var-chevron-down;
+          display: inline-block;
+          position: relative;
+          right: 5px;
+          font-family: FontAwesome;
+          speak: none;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          letter-spacing: -0.02em;
+          line-height: 1.3;
+          color: $primaryRed;
+          font-size: 16px;
+          top: 0;
+        }
+
+      }
+      &.less {
+        .cta-block{
+          &:before {
+            content: $fa-var-chevron-up;
+          }
+          &:after {
+            content: $fa-var-chevron-up;
+          }
+        }
+
+      }
+    }
+
+    @include breakpoint(max-width $width-medium) {
+      .collection-group{
+        max-height: none;
+        .collection-item{
+          height: 330px;
+
+          .inner{
+            .collection-image{
+
+              max-height: 138px;
+              overflow: hidden;
+              img{
+                max-height: none;
+              }
+
+            }
+          }
+        }
+      }
+
+    }
+
+
+
+    @include breakpoint(max-width $width-small) {
+      .cta{
+        display: none;
+        bottom: initial;
+        position: relative;
+        left: initial;
+        right: initial;
+        margin: initial;
+      }
+      .collection-group{
+        max-height: none;
+        .collection-item{
+          margin: 0;
+        }
+
+      }
+
+    }
+
+
+
+  }
+}
+
+.collection.tabbed{
+  &.video-collection{
+    @include breakpoint(max-width $width-small) {
+      .collection-group{
+        .collection-item{
+          height: initial;
+          padding: 0 .33em;
+          margin: 0;
+          .inner{
+            .collection-image{
+
+              max-height: 130px;
+              overflow: hidden;
+              img{
+                max-height: none;
+              }
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

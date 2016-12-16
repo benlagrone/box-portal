@@ -1,0 +1,147 @@
+/* ==|================
+   Fonts
+   =================== */
+
+ @font-face{
+   font-family:"Minion W01 Cap Regular";
+   src:url("../fonts/f1eed122-a501-4c59-85e4-4db18384cf87.eot?#iefix");
+   src:url("../fonts/f1eed122-a501-4c59-85e4-4db18384cf87.eot?#iefix") format("eot"),url("../fonts/c30f5672-a88d-407a-bf93-926f33c9d872.woff") format("woff"),url("../fonts/f008cedb-28d1-4788-aab9-82d6877f3939.ttf") format("truetype"),url("../fonts/6f6cb6b6-28c0-4542-b435-5e2ba7ed5a81.svg#6f6cb6b6-28c0-4542-b435-5e2ba7ed5a81") format("svg");
+ }
+ @font-face{
+   font-family:"Minion W01 SmBd Cap";
+   src:url("../fonts/eabf9b87-1127-476e-bcb1-4ad7a62d9659.eot?#iefix");
+   src:url("../fonts/eabf9b87-1127-476e-bcb1-4ad7a62d9659.eot?#iefix") format("eot"),url("../fonts/ae26e9d5-38bc-42e7-b8d7-18bf09c8418a.woff") format("woff"),url("../fonts/2fcc3372-1e01-4e0b-8712-5b7660f67427.ttf") format("truetype"),url("../fonts/3c2d53c2-cb69-4612-92cd-f75e2f1d288a.svg#3c2d53c2-cb69-4612-92cd-f75e2f1d288a") format("svg");
+ }
+ @font-face{
+   font-family:"Univers LT W01_45 Light";
+   src:url("../fonts/2b61512c-069e-4111-bb23-9a918f94a74d.eot?#iefix");
+   src:url("../fonts/2b61512c-069e-4111-bb23-9a918f94a74d.eot?#iefix") format("eot"),url("../fonts/ecf89914-1896-43f6-a0a0-fe733d1db6e7.woff") format("woff"),url("../fonts/7628f343-8c36-4707-9559-8feb86c0462f.ttf") format("truetype"),url("../fonts/11b816e7-d678-48dd-bc75-560de9c19049.svg#11b816e7-d678-48dd-bc75-560de9c19049") format("svg");
+ }
+ @font-face{
+   font-family:"Univers LT W01_55 Roman";
+   src:url("../fonts/b5c30ea8-0700-4fd2-aa12-cc45074693a9.eot?#iefix");
+   src:url("../fonts/b5c30ea8-0700-4fd2-aa12-cc45074693a9.eot?#iefix") format("eot"),url("../fonts/7b95cb9a-a288-4405-97a0-13095f56a903.woff") format("woff"),url("../fonts/c7481806-4ea4-40db-a623-7bc352bbbe43.ttf") format("truetype"),url("../fonts/ac8280da-3de5-456d-bd77-8f01665452a9.svg#ac8280da-3de5-456d-bd77-8f01665452a9") format("svg");
+ }
+ @font-face{
+   font-family:"Univers LT W01_65 Bold";
+   src:url("../fonts/db1c462f-8890-4a11-9de5-36872279e20a.eot?#iefix");
+   src:url("../fonts/db1c462f-8890-4a11-9de5-36872279e20a.eot?#iefix") format("eot"),url("../fonts/b993da84-c1f6-474a-8f00-8aa797b3de8f.woff") format("woff"),url("../fonts/58403ef6-4c15-4280-b4b6-9acf50804f4f.ttf") format("truetype"),url("../fonts/9178e351-95c5-4913-9eeb-fd0645a18c2d.svg#9178e351-95c5-4913-9eeb-fd0645a18c2d") format("svg");
+ }
+ @font-face{
+   font-family:"UniversLTW01-57Condense_723821";
+   src:url("../fonts/aefefc4e-9cb8-4e8e-8599-dda705456734.eot?#iefix");
+   src:url("../fonts/aefefc4e-9cb8-4e8e-8599-dda705456734.eot?#iefix") format("eot"),url("../fonts/1eaf27c0-f4de-4273-9f4c-1b3236ad2f3c.woff") format("woff"),url("../fonts/9b913baf-b1f0-47d2-8c76-42f59650058f.ttf") format("truetype"),url("../fonts/0abcce12-2274-4ee7-b6d5-0066b5f5f670.svg#0abcce12-2274-4ee7-b6d5-0066b5f5f670") format("svg");
+ }
+ @font-face{
+   font-family:"UniversLTW01-67BoldCn";
+   src:url("../fonts/076b8d7a-91b5-4c89-86a1-546b980072c7.eot?#iefix");
+   src:url("../fonts/076b8d7a-91b5-4c89-86a1-546b980072c7.eot?#iefix") format("eot"),url("../fonts/21decb60-b395-4de2-bd04-e38eb2a56d2f.woff") format("woff"),url("../fonts/091058d4-36b2-43f6-80d3-16c88e098061.ttf") format("truetype"),url("../fonts/827d22bc-e38b-4ccf-8a21-1f9aaa76e402.svg#827d22bc-e38b-4ccf-8a21-1f9aaa76e402") format("svg");
+ }
+
+/* ==|================
+   Minion Regular Fonts
+   =================== */
+@font-face{
+   font-family:"Minion Regular";
+   src:url("../fonts/MinionPro/MinionPro-Regular.eot?#iefix");
+   src:url("../fonts/MinionPro/MinionPro-Regular.eot?#iefix") format("eot"),url("../fonts/MinionPro/MinionPro-Regular.woff") format("woff"),url("../fonts/MinionPro/MinionPro-Regular.ttf") format("truetype"),url("../fonts/MinionPro/MinionPro-Regular.svg#6f6cb6b6-28c0-4542-b435-5e2ba7ed5a81") format("svg");
+ }
+@font-face{
+   font-family:"Minion Bold";
+   src:url("../fonts/MinionPro/MinionPro-Bold.eot?#iefix");
+   src:url("../fonts/MinionPro/MinionPro-Bold.eot?#iefix") format("eot"),url("../fonts/MinionPro/MinionPro-Bold.woff") format("woff"),url("../fonts/MinionPro/MinionPro-Bold.ttf") format("truetype"),url("../fonts/MinionPro/MinionPro-Bold.svg#6f6cb6b6-28c0-4542-b435-5e2ba7ed5a81") format("svg");
+ }
+@font-face{
+   font-family:"Minion Semi Bold";
+   src:url("../fonts/MinionPro/MinionPro-Semibold.eot?#iefix");
+   src:url("../fonts/MinionPro/MinionPro-Semibold.eot?#iefix") format("eot"),url("../fonts/MinionPro/MinionPro-Semibold.woff") format("woff"),url("../fonts/MinionPro/MinionPro-Semibold.ttf") format("truetype"),url("../fonts/MinionPro/MinionPro-Semibold.svg#6f6cb6b6-28c0-4542-b435-5e2ba7ed5a81") format("svg");
+ }
+
+
+$videojs-font-path: "../fonts/VideoJS" !default;
+
+ @font-face {
+  font-family: 'VideoJS';
+  src: url('#{$videojs-font-path}/vjs.eot');
+  src: url('#{$videojs-font-path}/vjs.eot?#iefix') format('embedded-opentype'),
+  url('#{$videojs-font-path}/vjs.woff') format('woff'),
+  url('#{$videojs-font-path}/vjs.ttf') format('truetype'),
+  url('#{$videojs-font-path}/vjs.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+ $mdicons-font-path: "../fonts/MDIcons" !default;
+
+ @font-face {
+   font-family: 'MDIcons';
+   src:url('#{$mdicons-font-path}/MDIcons.eot?-j0c5he');
+   src:url('#{$mdicons-font-path}/MDIcons.eot?#iefix-j0c5he') format('embedded-opentype'),
+   url('#{$mdicons-font-path}/MDIcons.woff?-j0c5he') format('woff'),
+   url('#{$mdicons-font-path}/MDIcons.ttf?-j0c5he') format('truetype'),
+   url('#{$mdicons-font-path}/MDIcons.svg?-j0c5he#MDIcons') format('svg');
+   font-weight: normal;
+   font-style: normal;
+ }
+
+ [class^="mdicon-"], [class*=" mdicon-"] {
+   font-family: 'MDIcons';
+   speak: none;
+   font-style: normal;
+   font-weight: normal;
+   font-variant: normal;
+   text-transform: none;
+   line-height: 1;
+
+   /* Better Font Rendering =========== */
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+
+   &.md-2x {
+     font-size:2em;
+   }
+
+   &.md-3x {
+     font-size:3em;
+   }
+
+   &.md-4x {
+     font-size:4em;
+   }
+ }
+
+ .mdicon-arrow-left:before {
+   content: "\e606";
+ }
+
+ .mdicon-arrow-right:before {
+   content: "\e607";
+ }
+
+ .mdicon-arrow:before {
+   content: "\e608";
+ }
+
+ .mdicon-gear:before {
+   content: "\e600";
+ }
+
+ .mdicon-linklist:before {
+   content: "\e601";
+ }
+
+ .mdicon-phone:before {
+   content: "\e602";
+ }
+
+ .mdicon-pin:before {
+   content: "\e603";
+ }
+
+ .mdicon-search:after {
+   content: "\e604";
+ }
+
+ .mdicon-videoplay:before {
+   content: "\e605";
+ }

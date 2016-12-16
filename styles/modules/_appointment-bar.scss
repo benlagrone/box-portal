@@ -1,0 +1,133 @@
+/* =======================
+   Appointment Bar
+   ======================= */
+
+.appointment-bar {
+    background-color: $neutralGreyDarkest;
+    color: #fff;
+    padding: 30px $cell-p-lrg;
+    .fa.mda-show-sm {
+        display: none;
+    }
+    .appointment-wrapper {
+        text-align: center;
+    }
+    .appointment-header {
+        text-align: center;
+        color: $primaryWhite;
+        @include type-u-21(18px,18px);
+        a {
+            display: inline-block;
+            background-color: $primaryRed;
+            padding: 25px;
+            width: 100%;
+            color: $primaryWhite;
+            word-break: normal;
+            @include type-u-21(18px,18px);
+        }
+    }
+    .text {
+        @include transition(all 0.3s);
+        text-align: left;
+        p {
+            @include type-ul-21(18px,18px);
+            margin: 0;
+        }
+        .action-main {
+            color: $primaryWhite;
+            @include type-ub-21(18px,18px);
+            margin: 0;
+        }
+    }
+    @media (max-width: $width-medium) {
+        padding: 30px 0;
+        .appointment-header {
+            a {
+                padding: 18px;
+            }
+        }
+    }
+    @media (max-width: $width-small) {
+        height: 100%;
+        @include transition(height 0.5s);
+        padding: 35px;
+        .appointment-wrapper {
+            padding-top: 0;
+        }
+        .appointment-header {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            @include type-u-18;
+            a {
+                margin-bottom: 30px;
+                padding: 20px 22px;
+            }
+        }
+        .text {
+            width: 100%;
+            padding: 0;
+            margin:0;
+            text-align: center;
+            p {
+                &.action-main {
+                    margin-top: 10px;
+                }
+            }
+        }
+        .appointment-header.cell-m.m-pad.middle{
+            padding: 0;
+        }
+    }
+}
+
+//for standalone
+.col-content section.table .cell-m {
+    &.appointment-header {
+        padding: 0;
+    }
+}
+
+.col-sidebar, .cell-s, .cell-s-highlight {
+    .appointment-bar {
+        height: 100%;
+        @include transition(height 0.5s);
+        padding: 35px;
+        .appointment-header {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: block;
+            @include type-u-21(18px,18px);
+            a {
+                margin-bottom: 30px;
+                padding: 20px 22px;
+                word-break: normal;
+            }
+        }
+        .text {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            display: block;
+            p {
+                &.action-main {
+                    line-height: 42px;
+                }
+            }
+        }
+    }
+}
+
+.cell-s {
+    section {
+        &.appt-section {
+            > .module {
+                @media (max-width: $width-small) {
+                    padding-top:0;
+                }
+            }
+        }
+    }
+}

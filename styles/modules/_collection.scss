@@ -1,0 +1,447 @@
+/* =======================
+   Collection
+   ======================= */
+
+.collection {
+    position: relative;
+    @include clearfix;
+    text-align: center;
+    .section-title {
+        @include type-m-48(36px,24px);
+        font-weight: normal;
+        text-align: center;
+        margin-bottom: 20px;
+        margin-top: -11px;
+    }
+    .tab-menu-wrapper {
+        width: 100%;
+        text-align: center;
+    }
+    .mda-tabs.ui-tabs {
+        border:none;
+    }
+    .tab-menu {
+        @include clearfix;
+        display: none;
+        width: 100%;
+        padding-left: 0;
+        margin: 15px 0 35px;
+        li {
+            display: table-cell;
+            list-style-type: none;
+            border-left: 1px solid $neutralGreyLight;
+            @include type-u-18;
+            &:first-child {
+                border-left: none;
+            }
+            &:focus {
+                outline: none;
+            }
+            &.ui-tabs-active,
+            &:hover {
+                a {
+                    border-bottom: 3px solid $primaryRed;
+                    color: $primaryRed;
+                    @include type-ub-18;
+                }
+            }
+            a {
+                margin: 0;
+                padding-bottom: 5px;
+                color: $primaryBlack;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+    .collection-group {
+        @include clearfix;
+        margin-bottom: 0px;
+        display: table;
+        width: 100%;
+        height: 100%;
+        text-align: left;
+        &.resources {
+            border-spacing: 0;
+        }
+        &.three-columns {
+            .collection-item {
+                width: 33.333%;
+                padding: 0 0.33em;
+                &:first-child {
+                    padding: 0 0.66em 0 0;
+                }
+                &:last-child {
+                    padding: 0 0 0 0.66em;
+                }
+            }
+        }
+        &.two-columns {
+            .collection-item {
+                width: 50%;
+            }
+        }
+        &.four-columns {
+            .collection-item {
+                width: 25%;
+            }
+        }
+        .collection-item {
+            height:100%;
+            display: table-cell;
+            vertical-align: top;
+            padding: 0 0 0 $global-spacing;
+            &:first-child {
+                padding: 0;
+            }
+            .collection-image {
+                img {
+                    @include transition(opacity 0.5s);
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                }
+            }
+            .inner {
+                height: 100%;
+                -moz-box-sizing: border-box;
+                color: $primaryBlack;
+                border: 1px solid $neutralGreyLight;
+                display: block;
+                .collection-image {
+                    background: $primaryBlack;
+                    position: relative;
+                    img {
+                        @include transition(opacity 0.5s);
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                    }
+                    .video-icon {
+                        color: rgba(255,255,255,0.7);
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        margin-top: -0.5em;
+                        margin-left: -0.5em;
+                    }
+
+                    &.mediahub-poster{
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+                .collection-body {
+                    clear: both;
+                    padding: $global-spacing;
+                    i {
+                        font-size: 2.5em;
+                    }
+                    .body-title {
+                        @include type-mb-32;
+                        p {
+                            margin-top: 0;
+                            margin-bottom: $global-spacing;
+                        }
+                    }
+                    .body-text {
+                        @include type-m-21;
+                        line-height: 1.25;
+                        color: $neutralGreyDarkest;
+                        p {
+                            margin-top: 0;
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+                .cta {}
+            }
+            &.resource {
+                padding: 0;
+                text-align: center;
+                margin: 0;
+                border-left: $neutralGrey solid 1px;
+                &:first-child {
+                    border: 0;
+                }
+                .inner {
+                    border: 0;
+                    .collection-body {
+                        border: none;
+                        padding-bottom: 0;
+                        i {
+                            color: $primaryRed;
+                            font-size: 2.5em;
+                            &.mdicon-arrow{
+                                font-size: 1em;
+                                position:relative;
+                                top: 3px;
+                            }
+                        }
+                        a i {
+                            font-size: 1em;
+                        }
+                        .body-title {
+                            margin: 15px 0 10px 0;
+                            @include type-m-32(21px,21px);
+                            color: $neutralGreyDarkest;
+                            line-height: 1;
+                        }
+                        .body-text {
+                            @include type-m-21;
+                            color: $neutralGreyDarkest;
+                        }
+                    }
+                    .cta {
+                        @include type-u-18;
+                        display: inline-table;
+                        i {
+                            padding-left: 10px;
+                            color: $primaryRed;
+                            @include type-fa-1;
+                            &.mdicon-arrow {
+                                font-size: 1em;
+                                vertical-align: middle;
+                                padding-left: 5px;
+                            }
+                        }
+                    }
+                }
+            }
+            &.background-red {
+                .inner {
+                    border: none;
+                    background: $primaryRed;
+                    @include transition(background 0.5s);
+                    position: relative;
+                    display: block;
+                    color: $primaryWhite;
+                    .collection-body {
+                        padding: $global-spacing;
+                        color: $primaryWhite;
+                        border: none;
+                        padding: 0;
+                        .body-title {
+                            width: 115px;
+                            text-transform: uppercase;
+                            @include type-u-14;
+                        }
+                        .body-text {
+                            @include type-m-36;
+                            color: $primaryWhite;
+                        }
+                    }
+                }
+            }
+            &.background-yellow {
+                .inner {
+                    border: none;
+                    background: $secondaryYellow;
+                    @include transition(background 0.5s);
+                    position: relative;
+                    display: block;
+                    color: $primaryBlack;
+                    .collection-body {
+                        color: $primaryBlack;
+                        border: none;
+                        padding: $global-spacing;
+                        .body-title {
+                            width: 115px;
+                            text-transform: uppercase;
+                            @include type-u-14;
+                        }
+                        .body-text {
+                            @include type-m-36;
+                            color: $primaryBlack;
+                        }
+                    }
+                }
+            }
+            &.background-orange {
+                .inner {
+                    border: none;
+                    background: $secondaryOrange;
+                    @include transition(background 0.5s);
+                    position: relative;
+                    display: block;
+                    color: $primaryWhite;
+                    .collection-body {
+                        color: $primaryWhite;
+                        border: none;
+                        padding: $global-spacing;
+                        .body-title {
+                            width: 115px;
+                            text-transform: uppercase;
+                            @include type-u-14;
+                        }
+                        .body-text {
+                            @include type-m-36;
+                            color: $primaryWhite;
+
+                        }
+                    }
+                }
+            }
+            &:hover {
+                .inner {
+                    .collection-image {
+                        img {
+                            opacity: 0.5;
+                        }
+                    }
+                    .body-title {
+                        color: $primaryRed;
+                    }
+                }
+                &.background-red, &.background-orange, &.background-yellow {
+                    .inner {
+                        background: $primaryBlack;
+                        .body-title {
+                            color: $primaryWhite;
+                        }
+                    }
+                }
+                &.background-yellow {
+                    .inner {
+                        background: $primaryBlack;
+                        .collection-body {
+                            .body-text {
+                                color: $primaryWhite;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .mda-collection-all {
+        @include type-u-18;
+        text-align: left;
+        margin-left: 77px;
+        i {
+            margin-left: 10px;
+        }
+    }
+    @include breakpoint(max-width $width-medium) {
+        .mda-tabs {
+            .tab-menu {
+                padding: 0;
+                margin: 0;
+                position: absolute;
+                width: 100%;
+                left: 0;
+                background-color: $primaryWhite;
+                max-height: 0;
+                overflow: hidden;
+                @include transition();
+                margin-top: -1px;
+                display: none;
+                &.active {
+                    max-height: 200px;
+                    padding-bottom: 20px;
+                    z-index: 100;
+                    @include transition();
+                }
+                li {
+                    width: 100%;
+                    text-align: center;
+                    margin-top: 5px;
+                    display: inline-block;
+                    &.active {
+                        display: none;
+                    }
+                    a {
+                        color: $primaryRed;
+                        &:hover, &:active {
+                            border-bottom: none;
+                        }
+                    }
+                    &.ui-tabs-active {
+                        a {
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
+            .tab-menu-mobile {
+                a {
+                    @include type-u-18;
+                    color: $primaryRed;
+                    border-bottom: 2px solid $primaryRed;
+                    padding-bottom: 3px;
+                    margin-bottom: 20px;
+                    display: inline-block;
+                    &:after {
+                        content: $fa-var-chevron-down;
+                        display: inline-block;
+                        position: relative;
+                        top: -3;
+                        right: -5px;
+                        @include type-fa-03;
+                        color: $primaryRed;
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    @include breakpoint(max-width $width-small) {
+        margin-left: 0;
+        margin-right: 0;
+        @include spacing("padding", "top", "mobile");
+        @include spacing("padding", "bottom", "mobile");
+        .collection-group {
+            display: block;
+            width: 100%;
+            margin-bottom: 0;
+            .collection-item {
+                margin-left: 5px;
+                margin-right: 5px;
+                padding: 0;
+                &.background-red {
+                    position: initial;
+                    padding-bottom: 20px;
+                    background-color: $primaryRed;
+                    .inner {
+                        position: initial;
+                    }
+                }
+                &.background-orange {
+                    position: initial;
+                    padding-bottom: 20px;
+                    background-color: $secondaryOrange;
+                    .inner {
+                        position: initial;
+                    }
+                }
+                &.background-yellow {
+                    position: initial;
+                    padding-bottom: 20px;
+                    background-color: $secondaryYellow;
+                    .inner {
+                        position: initial;
+                    }
+                }
+            }
+            &.resources {
+                display: block;
+                .collection-item.resource {
+                    width: 49%;
+                    clear: both;
+                    border-left: none;
+                    display: inline-block;
+                    padding-bottom: 0;
+                    .collection-body {
+                        padding: 0;
+                        border: none;
+                        .body-title {
+                            padding: 0 30px;
+                            margin-top: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

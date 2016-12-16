@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<GSP VER="3.2">
+	<TM>0.037485</TM><Q/>
+	<PARAM name="site" value="mda_aem_stage" original_value="mda_aem_stage"/>
+	<PARAM name="client" value="cancertype_search" original_value="cancertype_search"/>
+	<PARAM name="output" value="xml_no_dtd" original_value="xml_no_dtd"/>
+	<PARAM name="num" value="1000" original_value="1000"/>
+	<PARAM name="filter" value="0" original_value="0"/>
+	<PARAM name="requiredfields" value="diseases.(isPrimaryDiseasePage:true)" original_value="diseases.(isPrimaryDiseasePage:true)"/>
+	<PARAM name="getfields" value="*" original_value="*"/>
+	<PARAM name="sort" value="meta:diseases" original_value="meta:diseases"/>
+	<PARAM name="ie" value="UTF-8" original_value="UTF-8"/>
+	<PARAM name="ulang" value="en" original_value="en"/>
+	<PARAM name="ip" value="172.18.46.200" original_value="172.18.46.200"/>
+	<PARAM name="access" value="p" original_value="p"/>
+	<PARAM name="entqr" value="3" original_value="3"/>
+	<PARAM name="entqrm" value="0" original_value="0"/>
+	<PARAM name="wc" value="200" original_value="200"/>
+	<PARAM name="wc_mc" value="1" original_value="1"/>
+	<RES SN="1" EN="151">
+		<M>151</M>
+		<XT/>
+		<WXT/>
+		<R N="1">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/Leukemia.html</U>
+			<MT N="diseases" V="AML"/>
+		</R>
+		<R N="2">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/Leukemia.html</U>
+			<MT N="diseases" V="ALL"/>
+		</R>
+		<R N="3">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/Leukemia.html</U>
+			<MT N="diseases" V="CML"/>
+		</R>
+		<R N="4">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/Leukemia.html</U>
+			<MT N="diseases" V="CLL"/>
+		</R>
+		<R N="5">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/Leukemia.html</U>
+			<MT N="diseases" V="Ph+"/>
+		</R>
+		<R N="6">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/thyroid-cancer.html</U>
+			<MT N="diseases" V="ATC"/>
+		</R>
+		<R N="7">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/myelodysplastic-syndrome.html</U>
+			<MT N="diseases" V="MDS"/>
+		</R>
+		<R N="8">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/myeloproliferative-disorder.html</U>
+			<MT N="diseases" V="MPD"/>
+		</R>
+		<R N="9">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/multiple-endocrine-neoplasia.html</U>
+			<MT N="diseases" V="MEN1"/>
+		</R>
+		<R N="10">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/multiple-endocrine-neoplasia.html</U>
+			<MT N="diseases" V="MEN2"/>
+		</R>
+		<R N="11">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/multiple-endocrine-neoplasia.html</U>
+			<MT N="diseases" V="MEN"/>
+		</R>
+		<R N="12">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/neurofibromatosis.html</U>
+			<MT N="diseases" V="NF1"/>
+		</R>
+		<R N="13">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/neurofibromatosis.html</U>
+			<MT N="diseases" V="NF2"/>
+		</R>
+		<R N="14">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/neurofibromatosis.html</U>
+			<MT N="diseases" V="NF"/>
+		</R>
+		<R N="15">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/cancer-of-unknown-primary.html</U>
+			<MT N="diseases" V="CUP"/>
+		</R>
+		<R N="16">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/lung-cancer.html</U>
+			<MT N="diseases" V="NSCLC"/>
+		</R>
+		<R N="17">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/lung-cancer.html</U>
+			<MT N="diseases" V="SCLC"/>
+		</R>
+		<R N="18">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/non-hodgkins-lymphoma.html</U>
+			<MT N="diseases" V="ALCL"/>
+		</R>
+		<R N="19">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/non-hodgkins-lymphoma.html</U>
+			<MT N="diseases" V="MCL"/>
+		</R>
+		<R N="20">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/inflammatory-breast-cancer.html</U>
+			<MT N="diseases" V="IBC"/>
+		</R>
+		<R N="21">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/von-hippel-lindau-disease.html</U>
+			<MT N="diseases" V="VHL"/>
+		</R>
+		<R N="22">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/desmoplastic-small-round-cell-tumors.html</U>
+			<MT N="diseases" V="DSRCT"/>
+		</R>
+		<R N="23">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/stomach-cancer.html</U>
+			<MT N="diseases" V="GIST"/>
+		</R>
+		<R N="24">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/Leukemia.html</U>
+			<MT N="diseases" V="MF"/>
+		</R>
+		<R N="25">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/cervical-cancer.html</U>
+			<MT N="diseases" V="SCCC"/>
+		</R>
+		<R N="26">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/cervical-cancer.html</U>
+			<MT N="diseases" V="LCCC"/>
+		</R>
+		<R N="27">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/childhood-brain-tumors.html</U>
+			<MT N="diseases" V="PNET"/>
+		</R>
+		<R N="28">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/brain-tumor.html</U>
+			<MT N="diseases" V="GBM"/>
+		</R>
+		<R N="29">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/breast-cancer.html</U>
+			<MT N="diseases" V="BRCA1"/>
+		</R>
+		<R N="30">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/breast-cancer.html</U>
+			<MT N="diseases" V="BRCA2"/>
+		</R>
+		<R N="31">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/breast-cancer.html</U>
+			<MT N="diseases" V="HER2"/>
+		</R>
+		<R N="32">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/multiple-myeloma.html</U>
+			<MT N="diseases" V="MM"/>
+		</R>
+		<R N="33">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/acoustic-neuroma.html</U>
+			<MT N="diseases" V="Acoustic Neuroma"/>
+		</R>
+		<R N="34">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/adrenal-tumors.html</U>
+			<MT N="diseases" V="Adrenal Gland Tumor"/>
+		</R>
+		<R N="35">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/adrenal-tumors.html</U>
+			<MT N="diseases" V="Cushing's Disease"/>
+		</R>
+		<R N="36">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/adrenal-tumors.html</U>
+			<MT N="diseases" V="Pheochromocytoma"/>
+		</R>
+		<R N="37">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/anal-cancer.html</U>
+			<MT N="diseases" V="Anal Cancer"/>
+		</R>
+		<R N="38">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/myelodysplastic-syndrome.html</U>
+			<MT N="diseases" V="Anemia"/>
+		</R>
+		<R N="39">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/myelodysplastic-syndrome.html</U>
+			<MT N="diseases" V="Aplastic"/>
+		</R>
+		<R N="40">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/myelodysplastic-syndrome.html</U>
+			<MT N="diseases" V="Refractory"/>
+		</R>
+		<R N="41">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/appendix-cancer.html</U>
+			<MT N="diseases" V="Appendix Cancer"/>
+		</R>
+		<R N="42">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/bile-duct-cancer.html</U>
+			<MT N="diseases" V="Bile Duct Cancer"/>
+		</R>
+		<R N="43">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/brain-tumor.html</U>
+			<MT N="diseases" V="Brain Tumor"/>
+		</R>
+		<R N="44">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/brain-tumor.html</U>
+			<MT N="diseases" V="Astrocytoma"/>
+		</R>
+		<R N="45">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/brain-tumor.html</U>
+			<MT N="diseases" V="Brain Stem Glioma"/>
+		</R>
+		<R N="46">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/childhood-brain-tumors.html</U>
+			<MT N="diseases" V="Childhood Brain Tumors"/>
+		</R>
+		<R N="47">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/medulloblastoma.html</U>
+			<MT N="diseases" V="Medulloblastoma"/>
+		</R>
+		<R N="48">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/medulloblastoma.html</U>
+			<MT N="diseases" V="Childhood Medulloblastoma"/>
+		</R>
+		<R N="49">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/neuroblastoma.html</U>
+			<MT N="diseases" V="Neuroblastoma"/>
+		</R>
+		<R N="50">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/neuroblastoma.html</U>
+			<MT N="diseases" V="Childhood Neuroblastoma"/>
+		</R>
+		<R N="51">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/childhood-brain-tumors.html</U>
+			<MT N="diseases" V="Ependymal Tumor"/>
+		</R>
+		<R N="52">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/brain-tumor.html</U>
+			<MT N="diseases" V="Glioblastoma"/>
+		</R>
+		<R N="53">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/brain-tumor.html</U>
+			<MT N="diseases" V="Oligodendroglioma"/>
+		</R>
+		<R N="54">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/bladder-cancer.html</U>
+			<MT N="diseases" V="Bladder Cancer"/>
+		</R>
+		<R N="55">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/breast-cancer.html</U>
+			<MT N="diseases" V="Breast Cancer"/>
+		</R>
+		<R N="56">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/breast-cancer.html</U>
+			<MT N="diseases" V="Male breast cancer"/>
+		</R>
+		<R N="57">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/inflammatory-breast-cancer.html</U>
+			<MT N="diseases" V="Inflammatory breast cancer"/>
+		</R>
+		<R N="58">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/breast-cancer.html</U>
+			<MT N="diseases" V="Triple negative breast cancer"/>
+		</R>
+		<R N="59">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/cancer-of-unknown-primary.html</U>
+			<MT N="diseases" V="Cancer of Unknown Primary (CUP)"/>
+		</R>
+		<R N="60">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/carcinoid-tumors.html</U>
+			<MT N="diseases" V="Carcinoid Tumor"/>
+		</R>
+		<R N="61">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/cervical-cancer.html</U>
+			<MT N="diseases" V="Cervical Cancer"/>
+		</R>
+		<R N="62">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/cervical-cancer.html</U>
+			<MT N="diseases" V="Neuroendocrine"/>
+		</R>
+		<R N="63">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/colon-cancer.html</U>
+			<MT N="diseases" V="Colon Cancer"/>
+		</R>
+		<R N="64">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/breast-cancer.html</U>
+			<MT N="diseases" V="Endocrine"/>
+		</R>
+		<R N="65">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/multiple-endocrine-neoplasia.html</U>
+			<MT N="diseases" V="Multiple Endocrine Neoplasia (MEN)"/>
+		</R>
+		<R N="66">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/neurofibromatosis.html</U>
+			<MT N="diseases" V="Neurofibromatosis"/>
+		</R>
+		<R N="67">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/neurofibromatosis.html</U>
+			<MT N="diseases" V="Childhood Neurofibromatosis"/>
+		</R>
+		<R N="68">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/von-hippel-lindau-disease.html</U>
+			<MT N="diseases" V="von Hippel-Lindau Disease"/>
+		</R>
+		<R N="69">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/esophageal-cancer.html</U>
+			<MT N="diseases" V="Esophageal Cancer"/>
+		</R>
+		<R N="70">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/eye-cancer.html</U>
+			<MT N="diseases" V="Eye Cancer"/>
+		</R>
+		<R N="71">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/eye-cancer.html</U>
+			<MT N="diseases" V="Eyelid / Orbital Tumors"/>
+		</R>
+		<R N="72">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/retinoblastoma.html</U>
+			<MT N="diseases" V="Retinoblastoma"/>
+		</R>
+		<R N="73">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/retinoblastoma.html</U>
+			<MT N="diseases" V="Childhood Retinoblastoma"/>
+		</R>
+		<R N="74">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/fallopian-tube-cancer.html</U>
+			<MT N="diseases" V="Fallopian Tube Cancer"/>
+		</R>
+		<R N="75">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/childhood-germ-cell-tumors.html</U>
+			<MT N="diseases" V="Germ Cell Tumor"/>
+		</R>
+		<R N="76">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/childhood-germ-cell-tumors.html</U>
+			<MT N="diseases" V="Childhood Germ Cell Tumor"/>
+		</R>
+		<R N="77">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/kidney-cancer.html</U>
+			<MT N="diseases" V="Kidney Cancer"/>
+		</R>
+		<R N="78">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/wilms-tumor.html</U>
+			<MT N="diseases" V="Wilms' Tumor"/>
+		</R>
+		<R N="79">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/wilms-tumor.html</U>
+			<MT N="diseases" V="Childhood Wilms' Tumor"/>
+		</R>
+		<R N="80">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/Leukemia.html</U>
+			<MT N="diseases" V="Leukemia"/>
+		</R>
+		<R N="81">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/Leukemia.html</U>
+			<MT N="diseases" V="Acute Lymphoblastic Leukemia"/>
+		</R>
+		<R N="82">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/Leukemia.html</U>
+			<MT N="diseases" V="Acute Myelogenous Leukemia"/>
+		</R>
+		<R N="83">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/childhood-leukemia.html</U>
+			<MT N="diseases" V="Childhood Leukemia"/>
+		</R>
+		<R N="84">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/Leukemia.html</U>
+			<MT N="diseases" V="Chronic Lymphocytic Leukemia"/>
+		</R>
+		<R N="85">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/Leukemia.html</U>
+			<MT N="diseases" V="Chronic Myelogenous Leukemia"/>
+		</R>
+		<R N="86">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/Leukemia.html</U>
+			<MT N="diseases" V="Hairy Cell Leukemia"/>
+		</R>
+		<R N="87">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/liver-cancer.html</U>
+			<MT N="diseases" V="Liver Cancer"/>
+		</R>
+		<R N="88">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/childhood-liver-cancer.html</U>
+			<MT N="diseases" V="Childhood Liver Cancer"/>
+		</R>
+		<R N="89">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/lung-cancer.html</U>
+			<MT N="diseases" V="Lung Cancer"/>
+		</R>
+		<R N="90">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/non-hodgkins-lymphoma.html</U>
+			<MT N="diseases" V="Lymphoma"/>
+		</R>
+		<R N="91">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/non-hodgkins-lymphoma.html</U>
+			<MT N="diseases" V="Non-Hodgkins's Lymphoma (NHL)"/>
+		</R>
+		<R N="92">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/non-hodgkins-lymphoma.html</U>
+			<MT N="diseases" V="B-Cell Lymphoma"/>
+		</R>
+		<R N="93">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/non-hodgkins-lymphoma.html</U>
+			<MT N="diseases" V="Burkitt's Lymphoma"/>
+		</R>
+		<R N="94">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/non-hodgkins-lymphoma.html</U>
+			<MT N="diseases" V="T-Cell Lymphoma"/>
+		</R>
+		<R N="95">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/non-hodgkins-lymphoma.html</U>
+			<MT N="diseases" V="Mantle Cell Lymphoma"/>
+		</R>
+		<R N="96">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/childhood-lymphoma.html</U>
+			<MT N="diseases" V="Childhood Lymphoma"/>
+		</R>
+		<R N="97">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/hodgkins-lymphoma.html</U>
+			<MT N="diseases" V="Hodgkin's"/>
+		</R>
+		<R N="98">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/waldenstroms-macroglobulinemia.html</U>
+			<MT N="diseases" V="Waldenstrom's Macroglobulinemia"/>
+		</R>
+		<R N="99">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/mesothelioma.html</U>
+			<MT N="diseases" V="Mesothelioma"/>
+		</R>
+		<R N="100">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/lung-cancer.html</U>
+			<MT N="diseases" V="Mediastinal Tumor"/>
+		</R>
+		<R N="101">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/multiple-myeloma.html</U>
+			<MT N="diseases" V="Multiple Myeloma"/>
+		</R>
+		<R N="102">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/myelodysplastic-syndrome.html</U>
+			<MT N="diseases" V="Myelodysplastic Syndrome (MDS)"/>
+		</R>
+		<R N="103">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/myeloproliferative-disorder.html</U>
+			<MT N="diseases" V="Myeloprofliferative Disorder (MPD)"/>
+		</R>
+		<R N="104">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/oral-cancer.html</U>
+			<MT N="diseases" V="Oral Cancer"/>
+		</R>
+		<R N="105">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/ovarian-cancer.html</U>
+			<MT N="diseases" V="Ovarian Cancer"/>
+		</R>
+		<R N="106">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/parathyroid-disease.html</U>
+			<MT N="diseases" V="Parathryoid Disease"/>
+		</R>
+		<R N="107">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/parathyroid-disease.html</U>
+			<MT N="diseases" V="Hyperparathryoidism"/>
+		</R>
+		<R N="108">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/pancreatic-cancer.html</U>
+			<MT N="diseases" V="Pancreatic Cancer"/>
+		</R>
+		<R N="109">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/penile-cancer.html</U>
+			<MT N="diseases" V="Penile Cancer"/>
+		</R>
+		<R N="110">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/pituitary-tumors.html</U>
+			<MT N="diseases" V="Pituitary Tumor"/>
+		</R>
+		<R N="111">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/prostate-cancer.html</U>
+			<MT N="diseases" V="Prostate Cancer"/>
+		</R>
+		<R N="112">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/rectal-cancer.html</U>
+			<MT N="diseases" V="Rectal Cancer"/>
+		</R>
+		<R N="113">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/throat-cancer.html</U>
+			<MT N="diseases" V="Salivary Gland Cancer"/>
+		</R>
+		<R N="114">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/bone-cancer.html</U>
+			<MT N="diseases" V="Bone Cancer"/>
+		</R>
+		<R N="115">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/bone-cancer.html</U>
+			<MT N="diseases" V="Chordoma"/>
+		</R>
+		<R N="116">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/bone-cancer.html</U>
+			<MT N="diseases" V="Chondrosarcoma"/>
+		</R>
+		<R N="117">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/bone-cancer.html</U>
+			<MT N="diseases" V="Fibrosarcoma"/>
+		</R>
+		<R N="118">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/bone-cancer.html</U>
+			<MT N="diseases" V="Osteosarcoma"/>
+		</R>
+		<R N="119">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/bone-cancer.html</U>
+			<MT N="diseases" V="Childhood Osteosarcoma"/>
+		</R>
+		<R N="120">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/ewings-sarcoma.html</U>
+			<MT N="diseases" V="Ewing's Sarcoma"/>
+		</R>
+		<R N="121">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/ewings-sarcoma.html</U>
+			<MT N="diseases" V="Childhood Ewing's Sarcoma"/>
+		</R>
+		<R N="122">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/soft-tissue-sarcoma.html</U>
+			<MT N="diseases" V="Soft Tissue"/>
+		</R>
+		<R N="123">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/soft-tissue-sarcoma.html</U>
+			<MT N="diseases" V="Angiosarcoma"/>
+		</R>
+		<R N="124">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/desmoplastic-small-round-cell-tumors.html</U>
+			<MT N="diseases" V="Desmoplastic Small Round Cell Tumors"/>
+		</R>
+		<R N="125">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/soft-tissue-sarcoma.html</U>
+			<MT N="diseases" V="Fibrosarcoma"/>
+		</R>
+		<R N="126">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/soft-tissue-sarcoma.html</U>
+			<MT N="diseases" V="Leiomyosarcoma"/>
+		</R>
+		<R N="127">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/soft-tissue-sarcoma.html</U>
+			<MT N="diseases" V="Liposarcoma"/>
+		</R>
+		<R N="128">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/soft-tissue-sarcoma.html</U>
+			<MT N="diseases" V="Malignant Fibrous Histiosarcoma"/>
+		</R>
+		<R N="129">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/soft-tissue-sarcoma.html</U>
+			<MT N="diseases" V="Neurofibrosarcoma"/>
+		</R>
+		<R N="130">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/childhood-soft-tissue-sarcoma.html</U>
+			<MT N="diseases" V="Rhabdomyosarcoma"/>
+		</R>
+		<R N="131">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/soft-tissue-sarcoma.html</U>
+			<MT N="diseases" V="Synovial Sarcoma"/>
+		</R>
+		<R N="132">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/skin-cancer.html</U>
+			<MT N="diseases" V="Skin Cancer"/>
+		</R>
+		<R N="133">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/skin-cancer.html</U>
+			<MT N="diseases" V="Basal / Squamous Cell"/>
+		</R>
+		<R N="134">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/melanoma.html</U>
+			<MT N="diseases" V="Melanoma"/>
+		</R>
+		<R N="135">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/skull-base-tumors.html</U>
+			<MT N="diseases" V="Skull Base Tumor"/>
+		</R>
+		<R N="136">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/spine-tumors.html</U>
+			<MT N="diseases" V="Spinal Tumors"/>
+		</R>
+		<R N="137">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/stomach-cancer.html</U>
+			<MT N="diseases" V="Stomach Cancer"/>
+		</R>
+		<R N="138">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/stomach-cancer.html</U>
+			<MT N="diseases" V="Gastrointestinal Stromal Tumor"/>
+		</R>
+		<R N="139">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/testicular-cancer.html</U>
+			<MT N="diseases" V="Testicular Cancer"/>
+		</R>
+		<R N="140">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/throat-cancer.html</U>
+			<MT N="diseases" V="Throat Cancer"/>
+		</R>
+		<R N="141">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/throat-cancer.html</U>
+			<MT N="diseases" V="Laryngeal Cancer"/>
+		</R>
+		<R N="142">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/throat-cancer.html</U>
+			<MT N="diseases" V="Pharyngeal Cancer"/>
+		</R>
+		<R N="143">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/thyroid-cancer.html</U>
+			<MT N="diseases" V="Thyroid Cancer"/>
+		</R>
+		<R N="144">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/uterine-cancer.html</U>
+			<MT N="diseases" V="Uterine Cancer"/>
+		</R>
+		<R N="145">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/vaginal-cancer.html</U>
+			<MT N="diseases" V="Vaginal Cancer"/>
+		</R>
+		<R N="146">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/vulvar-cancer.html</U>
+			<MT N="diseases" V="Vulvar Cancer"/>
+		</R>
+		<R N="147">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/childhood-germ-cell-tumors.html</U>
+			<MT N="diseases" V="Childhood Germ Cell Tumors"/>
+		</R>
+		<R N="148">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/childhood-hematology-disorders.html</U>
+			<MT N="diseases" V="Childhood Hematology Disorders"/>
+		</R>
+		<R N="149">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/implant-associated-anaplastic-large-cell-lymphoma.html</U>
+			<MT N="diseases" V="Implant-Associated Anaplatic Large Cell lymphoma"/>
+		</R>
+		<R N="150">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/childhood-melanoma.html</U>
+			<MT N="diseases" V="Childhood Melanoma"/>
+		</R>
+		<R N="151">
+			<U>https://aem-test.mdanderson.edu/patients-family/diagnosis-treatment/cancer-types/childhood-soft-tissue-sarcoma.html</U>
+			<MT N="diseases" V="Childhood Soft Tissue Sarcoma"/>
+		</R>
+	</RES>
+</GSP>

@@ -1,0 +1,458 @@
+/* =======================
+   Promos
+   ======================= */
+
+.promo {
+    text-align: center;
+    margin: 0 auto;
+    .promo-icon {
+        display: block;
+
+        .fa-stack {
+            border-radius: 50%;
+            width: 108px;
+            height: 108px;
+            margin-bottom: 20px;
+            i:nth-child(2) {
+                font-size: 0.9em;
+            }
+
+            &.gradient-background-green {
+                @include gradientBackground($secondaryGreen, $secondaryGreenGradientDark);
+            }
+            &.gradient-background-lightblue {
+                @include gradientBackground($secondaryBlueLight, $secondaryBlueLightGradientDark);
+            }
+            &.gradient-background-blue {
+                @include gradientBackground($secondaryBlue, $secondaryBlueGradientDark);
+            }
+            &.gradient-background-red {
+                @include gradientBackground($primaryRed, $primaryRedGradientDark);
+            }
+            &.gradient-background-purple {
+                @include gradientBackground($secondaryPurple, $secondaryPurpleGradientDart);
+            }
+            &.gradient-background-orange {
+                @include gradientBackground($secondaryOrange, $secondaryOrangeGradientDark);
+            }
+        }
+    }
+    .promo-text {
+        color: $primaryBlack;
+        .title {
+            @include type-m-32(24px,21px);
+            margin-top: 0;
+            margin-bottom: 0;
+            padding: 0;
+            line-height: 1;
+            font-weight: normal;
+
+            &.univers-heading {
+                @include type-ub-24;
+            }
+            &.minion-heading {
+                @include type-m-36(36px,32px);
+            }
+            &.heading-left {
+                text-align: left;
+                padding: 0 10%;
+
+            }
+            &.heading-center {
+                text-align: center;
+            }
+        }
+        .body {
+            @include type-m-21;
+            margin-top: 20px;
+            color: $neutralGreyDarkest;
+            &.promo-text-small {
+                @include type-u-14;
+            }
+        }
+        .cta-block-wrapper {
+            text-align: center;
+        }
+        .cta {
+            margin-top: 10px;
+            display: block;
+            &.cta-block {
+                @include type-u-18;
+                padding: 11px 30px;
+                display: inline-block;
+                color: $primaryRed;
+                border: 1px solid $primaryRed;
+                @include transition(all 0.5s);
+                &:hover {
+                    background: $primaryRed;
+                    color: $primaryWhite;
+                    @include type-u-18;
+                }
+            }
+        }
+        ul li{
+            text-align: left;
+        }
+    }
+    &.promo-text-left {
+        .promo-text {
+            text-align: left;
+            .title {
+                text-align: center;
+                &.heading-left {
+                    text-align: left;
+                }
+                &.heading-center {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    &.promo-with-img {
+        .promo-text {
+            img {
+                margin-top: 35px;
+                width: 100%;
+            }
+            .body {
+                margin-top: 15px;
+            }
+        }
+    }
+    &.promo-hide-icon {
+        .promo-icon {
+            display: none;
+        }
+    }
+    .subtext {
+        color: $neutralGreyDarkest;
+    }
+    .promo-share-wrapper {
+         a {
+            &.share i:before {
+                position: relative;
+                top: 2px;
+            }
+            &:hover {
+                color: $primaryRed;
+            }
+        }
+        .promo-share {
+            color: $neutralGreyDark;
+            display: inline-block;
+            &.promo-share-favorite {
+                margin-right: 6px;
+            }
+        }
+        .share-btn {
+            color: $neutralGreyDark;
+            display: inline-block;
+        }
+    }
+    &.promo-with-background {
+        height: 100%;
+        padding-top: 10px;
+        padding-bottom: 60px;
+        .promo-icon {
+            i:nth-child(2) {
+                font-size: 1em;
+            }
+        }
+        &.promo-hide-icon {
+            .promo-icon {
+                display: none;
+            }
+        }   
+        &.promo-no-icon {
+            padding-top: 60px;
+        }
+        .promo-text {
+            padding-left: 10%;
+            padding-right: 10%;
+            font-size: 1em;
+            color: $primaryWhite;
+            .title {
+                margin-top: 0;
+                padding: 0;
+                border:none;
+                @include type-m-36(32px,32px);
+
+                 &.univers-heading {
+                    @include type-ub-24;
+                }
+                &.minion-heading {
+                    @include type-m-36(36px,32px);
+                }
+                &.heading-left {
+                    text-align: left;
+                }
+                &.heading-center {
+                    text-align: center;
+                }
+            }
+            .body {
+                @include type-m-21;
+                color: $primaryWhite;
+            }
+            .cta {
+                color: $primaryWhite;
+                margin-top: 30px;
+                &.cta-block {
+                    background: transparent;
+                    border: 1px solid $primaryWhite;
+                    &:hover {
+                        background: rgba(0, 0, 0, .2);
+                    }
+                }
+            }
+        }
+        &.promo-background-black {
+            .promo-text {
+                .cta.cta-block:hover {
+                    background: $primaryWhite;
+                    color: $primaryBlack;
+                }
+            }
+        }
+    }
+    &.promo-stacked {
+        border-bottom: 1px solid $neutralGrey;
+        padding: 35px 0;
+    }
+    &.promo-background-red {
+        background-color: $primaryRed;
+    }
+    &.promo-background-black {
+        background-color: $primaryBlack;
+    }
+    &.promo-background-blue {
+        background-color: $secondaryBlue;
+    }
+    &.promo-background-purple {
+        background-color: $secondaryPurple;
+    }
+    &.promo-icon-green .fa-stack {
+        background-color: $secondaryGreen;
+    }
+    &.promo-icon-lightblue .fa-stack {
+        background-color: $secondaryBlueLight;
+    }
+    &.promo-icon-blue .fa-stack {
+        background-color: $secondaryBlue;
+    }
+    &.promo-icon-red .fa-stack {
+        background-color: $primaryRed;
+    }
+    &.promo-icon-orange .fa-stack {
+        background-color: $secondaryOrange;
+    }
+    &.promo-icon-white .fa-stack {
+        background-color: transparent;
+        height: 95px;
+        margin-bottom: 0;
+    }
+    &.promo-icon-purple .fa-stack {
+        background-color: $secondaryPurple;
+    }
+    @include breakpoint(max-width $width-medium) {
+        .promo-icon {
+            .fa-stack {
+                width: 88px;
+                height: 88px;
+                line-height: 88px;
+            }
+        }
+        .promo-text {
+            .cta {
+                margin-top: 10px;
+            }
+        }
+    }
+    @include breakpoint(max-width $width-small) {
+        @include mobile-icon-wrapper;
+        margin: 0;
+        @include spacing('padding', 'sides', 'mobile');
+        @include spacing('padding', 'top', 'mobile');
+        @include spacing('padding', 'bottom', 'mobile');
+        .promo-icon {
+            @include mobile-icon-left;
+            .fa-stack {
+                margin-bottom: 0;
+            }
+        }
+        .promo-text {
+            @include mobile-icon-right;
+            .title {
+                padding: 0 0 0 15px;
+                margin: 0;
+                &.heading-center {
+                    text-align: left;
+                }
+                &.heading-left {
+                    padding: 0 0 0 15px;
+
+                }
+            }
+            .body {
+                padding: 0;
+            }
+            .cta {
+                margin-top: 10px;
+                padding: 0 0 0 15px;
+                text-align: left;
+                &.cta-block {
+                    margin-top: 15px;
+                }
+            }
+            .cta-block-wrapper{
+                display: inline-block;
+                margin-left: 23px;               
+            }
+        }
+        &.promo-text-left .promo-text .title, 
+        &.promo-text-left .promo-text .cta {
+            text-align: left;
+        }
+        &.promo-border {
+            @include spacing('padding', 'bottom', 'mobile');
+            @include spacing('padding', 'sides', 'mobile');
+            border-bottom: 1px solid $neutralGrey;
+            padding-top: 0;
+            table-layout: fixed;
+            .promo-text {
+                .cta {
+                    white-space: initial;
+                }
+            }
+            &.promo-last {
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+        }
+        &.promo-no-icon {
+            @include spacing('padding', 'sides', 'mobile');
+            @include spacing('padding', 'top', 'mobile');
+            @include spacing('padding', 'bottom', 'mobile');
+            .promo-text {
+                .title {
+                    padding:0;
+                    display: inline-block;
+                }
+                .cta {
+                    &.cta-right-arrow {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+        &.promo-with-background {
+            padding: 0 0 40px;
+            min-height: inherit;
+            display: block;
+            &.promo-no-icon {
+                @include spacing('padding', 'sides', 'mobile');
+                @include spacing('padding', 'top', 'mobile');
+                @include spacing('padding', 'bottom', 'mobile');
+                .promo-text {
+                    .title {
+                        padding:0;
+                    }
+                    .cta {
+                        &.cta-right-arrow {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+            .promo-icon {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+            .promo-text {
+                width:100%;
+                display:block;
+                text-align: center;
+                .cta {
+                    margin-top: 0;
+                    text-align: center;
+                    &.cta-block {
+                        margin-top: 1px;
+                    }
+                }
+                .title {
+                    padding: 0 22px;
+                }
+            }
+        }
+        &.promo-stacked {
+            border-bottom: none;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            @include spacing('padding', 'sides', 'mobile');
+            margin: 0;
+        }
+        p, .mda-hide-sm {
+            display: none;
+        }
+    }
+}
+
+.cell-s-highlight{
+    .promo{
+        padding-top: 35px;
+        padding-left: $global-spacing;
+        padding-right: $global-spacing;
+    }
+}
+
+.lt-ie9,
+.ie9 {
+    .fa-stack {
+        &.gradient-background-green {
+            background: $secondaryGreenLight;
+        }
+        &.gradient-background-blue {
+            background: $secondaryBlueLight;
+        }
+        &.gradient-background-lightblue {
+            background: $secondaryBlueLight;
+        }
+        &.gradient-background-red {
+            background: $primaryRed;
+        }
+        &.gradient-background-purple {
+            background: $secondaryPurple;
+        }
+        &.gradient-background-orange {
+            background: $secondaryOrange;
+        }
+    }
+}
+
+.ie11,.ie10,.ie9{
+    .pre-footer{
+        .promo{
+            min-height: 360px;
+            @include breakpoint(max-width 1025px) {
+                min-height: 390px;
+            }
+            @include breakpoint(max-width $width-medium) {
+                min-height: 345px;
+            }
+            @include breakpoint(max-width $width-small) {
+                min-height: 0px;
+            }
+        }
+    }
+    .table{
+        .col-double{
+            .promo{
+                &.promo-with-background{
+                    height: 380px;
+                }
+            }
+
+        }
+    }
+}

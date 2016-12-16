@@ -1,0 +1,78 @@
+/* =======================
+   Maintenance Alert Page
+   ======================= */
+
+#global-header #nav-logo {
+
+  @include breakpoint(max-width $width-medium) {
+    padding: 0;
+  }
+}
+
+.maintenance-page {
+  color: $primaryBlack;
+  background-color: $neutralGreyLight;
+  text-align: center;
+  padding-top: 50px;
+
+  .maintenance-alert-icon {
+    .circle {
+      color: $primaryRed;
+    }
+    .alert-icon {
+      color: $primaryWhite;
+    }
+  }
+
+  h1 {
+    @include type-m-48(36px,24px);
+    font-weight: normal;
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+
+  p {
+    @include type-m-36;
+    color: $neutralGreyDarkest;
+    padding: 0 20%;
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+
+  .making-cancer-history {
+    background-color: $primaryBlack;
+    padding: 32px 0;
+    margin-top: 168px;
+    img {
+      width: 354px;
+      vertical-align: middle;
+    }
+  }
+
+  @include breakpoint(max-width $width-medium) {
+    h1 {
+      padding: 0 4%;
+    }
+    p {
+      padding: 0 14%;
+    }
+    .making-cancer-history {
+      img {
+        width: 320px;
+      }
+    }
+  }
+
+  @include breakpoint(max-width $width-small) {
+    padding-top: 30px;
+    p {
+      padding: 0 10%;
+    }
+    .making-cancer-history {
+      margin-top: 100px;
+      img {
+        width: 280px;
+      }
+    }
+  }
+}

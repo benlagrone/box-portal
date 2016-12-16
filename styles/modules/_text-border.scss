@@ -1,0 +1,75 @@
+.text-border-container{
+  .text-border-title{
+    @include type-ub-29;
+    font-weight: normal;
+
+  }
+  .text-border-desc{
+    @include type-m-24;
+    margin-bottom: 65px;
+  }
+
+  .border-item-wrapper{
+    float: left;
+    padding: 0 15px;
+    width: 50%;
+    height: 270px;
+    margin-bottom: 30px;
+
+
+    .text-border{
+      text-align: center;
+      display: block;
+      outline: 1px solid $neutralGrey;
+      padding: 50px 30px;
+      background: $primaryWhite;
+      height: auto;
+
+      &:hover, &:focus{
+        outline: 2px solid $primaryRed;
+
+      }
+      .title{
+        @include type-ubc-24;
+        margin-top: 0;
+        font-weight: normal;
+        color: $primaryRed;
+        text-transform: uppercase;
+      }
+      .description{
+        @include type-m-21;
+        color: $primaryBlack;
+      }
+
+    }
+
+
+
+  }
+  @include breakpoint(max-width $width-small) {
+    padding: 20px 30px;
+    .border-item-wrapper {
+      width: 100%;
+      float: none;
+      padding: 0;
+      height: 220px;
+      .text-border{
+        padding: 30px 20px;
+      }
+
+    }
+  }
+  @include breakpoint(max-width $width-medium) {
+    padding: 20px 30px;
+    .border-item-wrapper {
+      width: 100%;
+      float: none;
+      padding: 0;
+      height: 220px;
+      .text-border{
+        padding: 30px 20px;
+      }
+
+    }
+  }
+}

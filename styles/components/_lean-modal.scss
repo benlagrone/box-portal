@@ -1,0 +1,34 @@
+// // default setting for lean-overlay modal plugin
+*[rel*=leanModal] {
+    cursor: pointer;
+}
+
+#lean_overlay {
+    position: fixed;
+    z-index: z('modal-overlay');
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background: #000;
+    display: none;
+}
+
+#l-modal {
+    display: none;
+    position: fixed;
+    color: #fff;
+    background-color: #000;
+    z-index: z("modal") !important;
+    .l-modal-body {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+    .modal-close {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: z("modal") + 1 !important;
+    }
+}

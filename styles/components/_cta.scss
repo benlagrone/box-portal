@@ -1,0 +1,38 @@
+/* ==|====================
+   CTA Styles
+   ======================= */
+
+.cta {
+    @include type-u-18;
+    color: $primaryRed;
+     position: relative;
+     text-decoration: none;
+    i {
+        margin-left: 15px;
+        position: relative;
+        top: 2px;
+        @include breakpoint(max-width $width-small) {
+            margin-left: 5px;
+        }
+    
+    }
+    i.mda-icon-linkout{
+        margin-left: 5px;
+     }
+    .cta-block {
+        border: 1px solid $primaryWhite;
+        color: $primaryWhite;
+        vertical-align: middle;
+        @include type-u-18;
+        padding: 15px 45px;
+        display: inline-block;
+        background-color: #000;
+        background-color: rgba(0, 0, 0, 0.5);
+        @media(max-width: $width-small) {
+            padding: 12px 30px 10px;
+        }
+    }
+    &:hover {
+        font-weight: bold;
+    }
+}

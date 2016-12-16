@@ -1,0 +1,26 @@
+h2.section-title, h1.section-title {
+    @include type-m-48(36px,24px);
+    word-wrap: break-word;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: -11px;
+
+    @include breakpoint(max-width $width-small) {
+        @include spacing('padding', 'all', 'mobile');
+    }
+}
+
+.nested-section-title {
+    h2.section-title {
+        margin-bottom: 50px;
+        margin-top: -4px;
+        line-height: 1;
+        @include breakpoint(max-width $width-medium) {
+            margin-bottom: 20px;
+        }
+        @include breakpoint(max-width $width-small) {
+            margin: 0;
+            @include spacing('padding', 'all', 'mobile');
+        }
+    }
+}

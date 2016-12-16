@@ -1,0 +1,24 @@
+/* ===========================
+   Author Specific Overrides
+   =========================== */
+.cq-wcm-edit {
+
+	// Fix IE11 dialog fieldset width issues
+	.x-window {
+		box-sizing: content-box;
+	}
+
+	// Fix RTE alignment issues in mainparsys
+	.content > .parbase > .rte-container {
+		margin: 0 auto;
+		max-width: $width-main;
+	}
+
+	// RTL fix for dialog box styling.
+	.rtl .x-window, .rtl .x-panel {
+	  direction: ltr;
+	}
+	.cq-text-placeholder-ipe {
+		font-size: 1em !important;
+	}
+}

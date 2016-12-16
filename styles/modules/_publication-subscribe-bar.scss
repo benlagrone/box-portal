@@ -1,0 +1,238 @@
+.publication-subscribe-bar {
+  background-color: $secondaryPurple;
+  max-height: 80px;
+  overflow-y: hidden;
+  color:$primaryWhite;
+  position: relative;
+
+  &.extended {
+    max-height: 186px;
+    @include transition(max-height 0.5s);
+
+  }
+
+  &.collapse {
+    max-height: 80px;
+    @include transition(max-height 0.5s);
+    .error-message{
+      display: none !important;
+    }
+
+  }
+
+  .subscribe-cta {
+    display:block;
+    width:100%;
+    @include type-u-18;
+    color:$primaryWhite;
+    text-align: center;
+    height:80px;
+    line-height:80px;
+    @include breakpoint(max-width $width-small){
+      height: 90px;
+    }
+  }
+
+  .subscribe-form-container{
+    height: 105px;
+    padding: 0 4em;
+    display: none;
+
+    &.success{
+      text-align: center;
+
+    }
+
+    .pub-subscribe-form {
+
+      .input-group {
+        height: auto;
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 25px;
+        width: 23%;
+        float: left;
+        margin-right: 10px;
+
+        label, input{
+          @include type-u-18;
+          color: $neutralGreyDark;
+        }
+        label{
+          position: absolute;
+          left: 18px;
+          top: 19px;
+          @include transition(all 0.35s);
+        }
+        input{
+          float: left;
+          height: 60px;
+          padding: 9px 17px;
+          width: 100%;
+        }
+
+        &.has-value{
+          label{
+            top: 5px;
+            @include type-u-12(12px,12px);
+            @include transition(all 0.35s);
+
+          }
+        }
+
+      }
+      .pub-subscribe-submit {
+        margin-top: 1px;
+        float: left;
+        display: inline-block;
+        height: 60px;
+        background-color: $secondaryPurple;
+        border: 1px solid $primaryWhite;
+        color: $primaryWhite;
+        width: 23%;
+      }
+
+      .pub-subscribe-req {
+        @include type-u-14;
+        color: $primaryWhite;
+        display: block;
+        clear: both;
+        padding: 5px;
+        position: absolute;
+        margin-top: 58px;
+      }
+
+      @include breakpoint(max-width $width-small){
+        input{
+          width: 80%;
+        }
+
+        .input-group {
+          width: 100%;
+          float: none;
+
+        }
+        .pub-subscribe-email {
+          margin:10px auto;
+          display: block;
+          float: none;
+          width: 96%;
+        }
+
+        .pub-subscribe-fName {
+          margin:10px auto;
+          display: block;
+          width: 96%;
+          float: none;
+
+
+        }
+
+        .pub-subscribe-lName {
+          margin:10px auto;
+          display: block;
+          width: 96%;
+          float: none;
+
+
+        }
+
+        .pub-subscribe-submit {
+          width: 150px;
+          margin-bottom: 20px;
+        }
+
+        .pub-subscribe-req {
+          margin-left: 10px;
+          float: right;
+          margin-right: 15px;
+          position: relative;
+          margin-top: 0;
+        }
+      }
+      input{
+        &::input-placeholder {
+          color:    $neutralGreyDark;
+          opacity:  1;
+          @include type-u-18;
+        }
+        &::-webkit-input-placeholder {
+          color:    $neutralGreyDark;
+          opacity:  1;
+          @include type-u-18;
+        }
+        &:-moz-placeholder {
+          color:    $neutralGreyDark;
+          opacity:  1;
+          @include type-u-18;
+          line-height: 36px;
+        }
+        &::-moz-placeholder {
+          color:    $neutralGreyDark;
+          opacity:  1;
+          @include type-u-18;
+          line-height: 36px;
+
+        }
+        &:-ms-input-placeholder { /* Internet Explorer 10+ */
+          color:    $neutralGreyDark;
+          opacity:  1;
+          @include type-u-18;
+        }
+      }
+    }
+    @include breakpoint(max-width $width-medium) {
+      padding: 0;
+      .pub-subscribe-form {
+        @include spacing('padding', 'sides', 'mobile');
+
+        .input-group {
+            padding-bottom: 0;
+            label {
+              top: 31px;
+            }
+          }
+      }
+    }
+
+    @include breakpoint(max-width $width-small) {
+      padding: 0;
+      .pub-subscribe-form {
+        @include spacing('padding', 'sides', 'mobile');
+
+        .input-group {
+          &.has-value{
+            label {
+              top: 14px;
+            }
+          }
+
+        }
+      }
+    }
+
+  }
+
+  .error-message{
+    @include type-u-14;
+    display: none;
+    position: absolute;
+    top: 58px;
+    margin-left: 10px;
+    color: white;
+  }
+  .success-message{
+    @include type-u-16;
+    display: none;
+    position: relative;
+    color: $primaryWhite;
+
+  }
+  @include breakpoint(max-width $width-small) {
+    &.extended {
+      max-height:425px;
+      @include transition(max-height 0.5s);
+
+    }
+  }
+}

@@ -1,0 +1,341 @@
+/* =======================
+   Header
+   ======================= */
+
+$tophatHeight: 40px;
+$navHeight: 90px;
+$headerBorder: 4px;
+$headerPadding: 25px;
+$navSearchHeight: 65px;
+$mobileNavHeight: 93px;
+$alertBarHeight: 44px;
+$alertBarMobileHeight: 60px;
+$mobileNavSearchHeight: $mobileNavHeight;
+$mobileTopNavHeight: $mobileNavSearchHeight - 5;
+$mobileNavItemHeight: 56px;
+$mobileUtilityNavHeight: 44px;
+$navContentHeight: 116px;
+
+#global-header {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  background: $primaryWhite;
+  &.addGutter {
+    margin-bottom: 50px;
+  }
+  &.addTopGutter {
+    .nav-content {
+      padding-top: 60px;
+    }
+  }
+  &.lock, &.alert-lock{
+    position: fixed;
+    overflow: hidden;
+  }
+  .nav-content {
+    padding: 0;
+  }
+  .alert-wrapper {
+    height: $alertBarHeight;
+    &.hide {
+      display: none;
+    }
+  }
+  #nav-logo {
+    float: left;
+    padding: 24px 0 15px 15px;
+    img {
+      height: 68px;
+    }
+  }
+  #nav-search-toggle {
+    float: right;
+    margin-top: 22px;
+    color: $primaryBlack;
+    font-size: 12px;
+    padding-left: $headerPadding;
+    z-index: 5000;
+    outline: 0;
+    i {
+      width: 43px;
+      height: 43px;
+      border-radius: 20px;
+      color: $neutralGreyDark;
+      padding: 10px;
+      background: #e9e9e9;
+      font-size: 1.3em;
+      cursor: pointer;
+      .mdicon-text {
+        padding-right: 15px;
+        padding-left: 5px;
+        display: inline;
+        @include type-u-12(12px,12px);
+        @include breakpoint(max-width ($width-large + 105px)) {
+          display: none;
+        }
+      }
+    }
+    div {
+      display: none;
+      @include type-u-16;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+      text-decoration: none;
+      border: none;
+      background: none;
+      margin-top: -19px;
+      margin-left: -28px;
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+  }
+  #mobile-menu-toggle {
+    display: none;
+    position: absolute;
+    right: 10px;
+    padding: 14px 12px 10px 12px;
+    text-align: right;
+    // width:50px;
+    i {
+      font-size: 28px;
+      pointer-events: none;
+    }
+  }
+  // medium desktop
+  @include breakpoint(max-width $width-medium) {
+    &.addGutter {
+      margin-bottom: 0;
+    }
+    #nav-logo {
+      padding: 20px 0;
+      img {
+        height: 45px;
+      }
+    }
+  }
+
+  // mobile styling
+  @include breakpoint(max-width $width-medium) {
+    padding: 0;
+    @include transition(all 0.4s 0s);
+    @include transform(translate3d(0, 0, 0));
+    .alert-wrapper {
+      width: 100%;
+      height: auto;
+    }
+    .breadcrumb-wrapper {
+      display: none;
+    }
+    #nav-logo {
+      display: table-cell;
+      width: 50%;
+      padding: 0;
+      vertical-align: middle;
+      float: none;
+      img {
+        height: 38px;
+        vertical-align: middle;
+      }
+    }
+    #mobile-menu-toggle {
+      position: relative;
+      display: table-cell;
+      width: 50%;
+      padding: 10px 20px 10px 0;
+      right: 0;
+      vertical-align: middle;
+      .mobile-menu-container {
+        display: inline-block;
+        text-align: center;
+        margin-top: 2px;
+        font-family: Univers LT W01_55 Roman;
+        .menu-title {
+          font-size: 10px;
+          position: absolute;
+          right: 19px;
+          bottom: 8px;
+          text-transform: uppercase;
+        }
+      }
+    }
+    #nav-search-toggle {
+      display: none;
+    }
+    .nav-content {
+      padding: 10px 0 10px 20px;
+      height: $mobileNavHeight;
+      border-bottom: $headerBorder solid $primaryRed;
+      display: table;
+      width: 100%;
+    }
+    .alert-wrapper {
+      .module {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+#nav-search-mask {
+  position: absolute;
+  top: $navSearchHeight;
+  right: 0;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  z-index: 99;
+  @include transition(max-height 0.35s);
+  &.open {
+    max-height: 6000px;
+    #nav-search-wrapper {
+      @include transform(translate3d(0, 0, 0));
+    }
+  }
+  &.sticky {
+    top: $primaryNavHeight;
+  }
+  // mobile styling
+  @include breakpoint(max-width $width-medium) {
+    display: none;
+  }
+}
+
+#nav-search-wrapper {
+  height: 80px;
+  //background: rgba($secondaryRed, 1);
+  @include transform(translate3d(0, -100%, 0));
+  @include transition(all 0.35s);
+  &.red {
+    background-color: $primaryRed;
+  }
+  &.grey {
+    background-color: $neutralGreyDarkest;
+  }
+  &.tan {
+    background-color: $neutralGreyLight;
+  }
+  &.secondaryRed {
+    background-color: $secondaryRed;
+  }
+}
+
+#nav-search, #results-search-bar {
+  height: $navSearchHeight;
+  position: relative;
+  padding: 10px $headerPadding 0 $headerPadding;
+  .search-options {
+    position: absolute;
+    right: 221px;
+    top: 26px;
+    .search-clear, .search-close {
+      float: right;
+    }
+    .search-clear {
+      @include type-u-16;
+      line-height: 1.8;
+    }
+    .search-close {
+      margin-left: 12px;
+      padding-left: 12px;
+      border-left: 1px solid $neutralGrey;
+    }
+  }
+  .search-wrapper {
+    width: 700px;
+    float: right;
+    .search-form {
+      height: 56px;
+      padding-top: 2px;
+    }
+    i.search-icon {
+      display: none;
+    }
+    .search-field {
+      line-height: normal;
+      float: left;
+      height: 56px;
+      padding: 2px 76px 0 25px;
+      color: $primaryBlack;
+      background: $primaryWhite;
+      border-radius: 3px;
+      width: $searchTextWidth;
+    }
+    .search-results {
+      margin-top: -12px;
+      border-radius: 0 0 3px 3px;
+      padding-left: 0px;
+      width: $searchTextWidth;
+    }
+    .search-result {
+      line-height: $navSearchHeight;
+    }
+    &.focus {
+      .search-result {
+        &.reveal {
+          height: $navSearchHeight;
+        }
+      }
+    }
+    .form-search-submit {
+      @include type-u-16;
+      display: block;
+      height: 56px;
+    }
+  }
+  .search-message {
+    float: left;
+    color: $primaryWhite;
+    padding: 20px 40px 0 0;
+    @include type-u-18;
+    text-transform: capitalize;
+  }
+  // mobile styling
+  @include breakpoint(max-width $width-medium) {
+    position: relative;
+    top: initial;
+    width: 100%;
+    height: $mobileNavSearchHeight;
+    background: none;
+    .search-message {
+      display: none;
+    }
+    .search-wrapper {
+      width: 100%;
+      .placeholder {
+        content: 'Search';
+      }
+      .search-form {
+        line-height: 1.3em;
+      }
+      .search-field {
+        padding: 0px 50px 0 34px;
+        line-height: normal;
+        color: $neutralGrey;
+        background: $neutralGreyDarkest;
+      }
+      .form-search-submit {
+        background: transparent;
+      }
+      i.search-icon {
+        display: block;
+        margin-top: 20px;
+        color: $neutralGrey;
+      }
+    }
+    .search-options {
+      display: none;
+    }
+  }
+}
+
+#search-results {
+  .search-result {
+    @include type-u-18;
+    line-height: 84px;
+  }
+}

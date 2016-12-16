@@ -1,0 +1,93 @@
+.mda-donate.standalone {
+    background-color: $primaryRed;
+    color: $primaryWhite;
+    text-align: center;
+    padding: 0 18% 20px 18%;
+    .content {
+        .block-header {
+            @include type-m-36(24px,24px);
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+        .donate-icon {
+            display: inline-block;
+            color: $primaryWhite;
+            .fa-circle {
+                color: $primaryRed;
+            }
+        }
+        .block-sub-header {
+            margin: 0;
+        }
+        .donate-info {
+            a, input {
+                @include type-mb-24;
+                margin-top: 0;
+                color: $primaryWhite;
+                line-height: 55px;
+                padding: 0 5px;
+                display: inline-block;
+                width: 140px;
+                margin: 15px auto 0 auto;
+                border: 1px solid $primaryWhite;
+                background-color: $primaryRed;
+                &.donate-submit {
+                    opacity: 1;
+                    display: block;
+                    height: 55px;
+                    position: relative;
+                    margin: 0 auto;
+                    outline: 1;
+                }
+                &.donate-custom {
+                    opacity: 0;
+                    display: none;
+                    text-align: center;
+                    height: 55px;
+                    margin-top: 0;
+                    @include placeholder(#FFF);
+                }
+            }
+            &.active {
+                a, input {
+                    &.donate-amount {
+                        opacity: 0;
+                        display: none;
+                    }
+                    &.donate-submit {
+                        opacity: 100;
+                        display: inline-block;
+                        outline: 1;
+                        @include transition(opacity 0.5s);
+                    }
+                }
+                .donate-custom {
+                    opacity: 100;
+                    display: inline-block;
+                    @include transition(opacity 0.5s);
+                }
+            }
+        }
+    }
+    @media(max-width: $width-small) {
+        padding-left: 0;
+        padding-right: 0;
+        .content {
+            .donate-icon {
+                display: none;
+            }
+            .block-sub-header {
+                display: none;
+            }
+            .donate-info {
+                margin-top: 20px;
+                input {
+                    width: 120px;
+                    &.donate-submit {
+                        top: 1px;
+                    }
+                }
+            }
+        }
+    }
+}

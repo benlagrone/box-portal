@@ -1,0 +1,42 @@
+{
+  "name": "Box-portal",
+  "description": "EHR Analytics team portal",
+  "main": "index.html",
+  "authors": [
+    "Ben <blagrone@mdanderson.org>"
+  ],
+  "license": "MIT",
+  "homepage": "http://localhost:8079/index.html",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.7",
+    "angular-animate": "~1.4.8",
+    "angular-bootstrap": "~1.3.3",
+    "angular-route": "~1.5.8",
+    "bootstrap-sass-official": "~3.3.6",
+    "jquery": "~2.1.4",
+    "requirejs": "~2.1.22",
+    "angular-cookies": "~1.5.8",
+    "angular-touch": "~1.5.8"
+  },
+  "devDependencies": {},
+  "overrides": {
+    "fontawesome": {
+      "main": [
+        "css/lib/font-awesome-4.6.3/font-awesome.min.css",
+        "fonts/font-awesome-4.6.3/fonts/fontawesome-webfont.eot",
+        "fonts/font-awesome-4.6.3/fonts/fontawesome-webfont.woff",
+        "fonts/font-awesome-4.6.3/fonts/fontawesome-webfont.ttf",
+        "fonts/font-awesome-4.6.3/fonts/fontawesome-webfont.svg"
+      ]
+    }
+  }
+}

@@ -1,0 +1,202 @@
+.publication-landing-content{
+  margin-top: 66px;
+  &.col-content {
+    &.publication-content {
+      padding-top: 70px;
+
+    }
+  }
+
+  .publications-col-title{
+    @include type-ub-24;
+    font-weight: normal;
+    margin-top:0;
+  }
+
+
+  .publication-subscribe {
+    background-color: $neutralBeige;
+    padding: 45px 66px;
+    overflow-y: hidden;
+    margin-bottom: 30px;
+
+    &.extended {
+      @include transition(max-height 0.5s);
+
+    }
+
+    &.collapse {
+      @include transition(max-height 0.5s);
+
+    }
+
+    .publication-content{
+      height: auto;
+      overflow: hidden;
+      z-index:1;
+
+      .pub-subscribe-description {
+        @include type-m-18(16px,14px);
+        margin: 25px 0 35px 0;
+      }
+      .subscribe-cta {
+        @include type-u-18;
+        margin-left: 85px;
+
+
+      }
+      .view-latest-cta {
+        @include type-u-18;
+      }
+
+      .publication-logo{
+        max-height: 75px;
+      }
+
+      @include  breakpoint(max-width $width-small){
+
+        img{
+          max-width: 250px;
+          height: auto;
+        }
+        .subscribe-cta{
+
+          float: left;
+          width: 100%;
+          margin-left: 0;
+          margin-top: 30px;
+        }
+        .view-latest-cta{
+          float: left;
+          width: 100%;
+        }
+      }
+      
+    }
+    .subscribe-form-container {
+      height: 350px;
+      position:relative;
+      display: none;
+      .pub-subscribe-form {
+        margin-top: 20px;
+        .input-group {
+          height: auto;
+          overflow: hidden;
+          position: relative;
+          padding-bottom: 25px;
+          label, input{
+            @include type-u-18;
+            color: $neutralGreyDark;
+          }
+          label{
+            position: absolute;
+            left: 18px;
+            top: 19px;
+            @include transition(all 0.35s);
+
+
+
+          }
+          input{
+            float: left;
+            height: 60px;
+            padding: 9px 17px;
+            width: 100%;
+          }
+
+          &.has-value{
+            label{
+              top: 5px;
+              @include type-u-12(12px,12px);
+              @include transition(all 0.35s);
+
+            }
+          }
+
+        }
+        .pub-subscribe-req {
+          @include type-u-14;
+          color: $neutralGreyDark;
+          float: left;
+        }
+        .pub-subscribe-submit {
+          width: 150px;
+          height: 55px;
+          float: right;
+          background-color: $neutralBeige;
+          border: 1px solid $primaryRed;
+        }
+      }
+
+      .error-message{
+        @include type-u-14;
+        color: $primaryRed;
+        top: 15px;
+        position: relative;
+        display: none;
+      }
+      .success-message{
+        @include type-u-16;
+        color: $primaryBlack;
+        display: none;
+        position: relative;
+        top: 50px;
+      }
+
+      &.success{
+        height: 100px;
+      }
+      @include breakpoint(max-width $width-small) {
+        .success-message{
+          @include type-u-14;
+          top: 20px;
+        }
+
+
+        .pub-subscribe-form{
+          margin-top: 20px;
+          .input-group {
+            width: 100%;
+          }
+        }
+
+        &.success{
+          height: auto;
+        }
+      }
+
+    }
+    @include breakpoint(max-width $width-medium) {
+      .subscribe-form-container {
+
+        .pub-subscribe-form {
+          .input-group {
+            label {
+              top: 21px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  @include breakpoint(max-width $width-medium) {
+    .publications-col-title {
+      padding: 0 $global-spacing*2;
+    }
+    .publication-subscribe {
+      padding: $global-spacing*2;
+    }
+  }
+
+  @include breakpoint(max-width $width-small) {
+    @include spacing('padding', 'top', 'mobile');
+    margin-top:0;
+    .publications-col-title{
+      @include spacing('padding', 'sides', 'mobile');
+    }
+
+
+  }
+}

@@ -1,0 +1,134 @@
+.rte-container {
+  text-align: left;
+  @include type-m-18(16px, 14px);
+  p {
+    padding: 0 !important;
+    img{
+      width: 100%;
+      height: auto;
+    }
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    a {
+      text-decoration: underline;
+      &.cta {
+        text-decoration: none;
+      }
+    }
+  }
+  li {
+    a {
+      text-decoration: underline;
+      &.cta {
+        text-decoration: none;
+      }
+    }
+  }
+
+  h4{
+    margin-bottom: 10px;
+  }
+
+  .rte-padding-left{
+    padding-left: 80px;
+  }
+
+  .rte-disclaimer-text{
+    @include type-m-14;
+    color: $lightGrey;
+
+  }
+
+  .cta{
+    background-color: transparent;
+    display: block;
+    &.more{
+      text-align: center !important;
+
+    }
+    &.less{
+      text-align: center !important;
+
+    }
+
+    .cta-block{
+      background-color: transparent;
+      color: $primaryRed;
+      border: none;
+      &:after {
+        content: $fa-var-chevron-down;
+        display: inline-block;
+        position: relative;
+        right: -5px;
+        font-family: FontAwesome;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        letter-spacing: -0.02em;
+        line-height: 1.3;
+        color: $primaryRed;
+        font-size: 16px;
+      }
+      &:before {
+        content: $fa-var-chevron-down;
+        display: inline-block;
+        position: relative;
+        right: 5px;
+        font-family: FontAwesome;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        letter-spacing: -0.02em;
+        line-height: 1.3;
+        color: $primaryRed;
+        font-size: 16px;
+      }
+    }
+    &.less{
+      .cta-block{
+        &:after {
+          content: $fa-var-chevron-up;
+        }
+        &:before {
+          content: $fa-var-chevron-up;
+
+        }
+      }
+    }
+  }
+
+
+  @include breakpoint(max-width $width-small) {
+    @include spacing('padding', 'all', 'mobile');
+    p {
+      margin-bottom: 1em;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+.cell-s-highlight {
+  .rte-container {
+    padding: 0 1em;
+    @include breakpoint(max-width $width-small) {
+      padding: 35px;
+    }
+  }
+}
+.content>.rte-container {
+	margin: 0 auto;
+	max-width: $width-main;
+}

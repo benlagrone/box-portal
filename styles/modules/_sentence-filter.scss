@@ -1,0 +1,206 @@
+/* =======================
+   Sentence Filter
+   ======================= */
+
+.sentence-filter-wrapper {
+    text-align: center;
+    background-color: $primaryBlack;
+    color: $primaryRed;
+    padding: 70px 118px 50px 118px;
+    &.yellow{
+        background-color: $secondaryYellow;
+        color: $primaryBlack;
+        .filter {
+            color: $primaryBlack;
+
+            .sf-select-wrapper {
+                ul {
+                    li {
+                        border: 1px solid $primaryBlack;
+                        background-color: $secondaryYellow;
+                    }
+                }
+            }
+        }
+        input[type=submit],
+        button {
+            background: $secondaryYellow;
+            border: 1px solid $primaryBlack;
+            color: $primaryBlack;
+
+        }
+        input[type=submit]{
+            display: block;
+        }
+
+    }
+    &.sf-large {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        margin: 0;
+        .filter {
+            @include type-m-72;
+            display: block;
+            margin-top: 20px;
+            &:first-child {
+                margin-top: 0;
+            }
+            .sf-select-wrapper {
+                ul li {
+                    @include type-ul-48;
+                }
+            }
+        }
+        input[type=submit] {
+            margin: 45px 0 0;
+        }
+    }
+    .filter {
+        @include type-m-36(36px,36px);
+        color: $primaryWhite;
+        display: inline-block;
+        margin-right: 40px;
+        .sf-select-wrapper {
+            display: inline;
+            color: $primaryRed;
+            margin-left: 10px;
+            border-bottom: 1px solid $primaryRed;
+            position: relative;
+            @include type-ul-36(36px,36px);
+
+            input.sf-hidden-input {
+                margin-left: -2000px;
+                position: absolute;
+                display: block;
+            }
+            > a {
+                padding-right: 40px;
+                padding-left: 4px;
+                display: inline-block;
+                &:after {
+                    content: $fa-var-chevron-down;
+                    display: inline;
+                    position: relative;
+                    top: -6px;
+                    right: -36px;
+                    @include type-fa-03;
+                    color: $primaryRed;
+                }
+            }
+            ul {
+                display: block;
+                position: absolute;
+                padding: 0;
+                text-align: center;
+                margin-left: -24px;
+                margin-top: -5px;
+                z-index: 100;
+                max-height: 0;
+                overflow: hidden;
+                width: 100%;
+                left: 23px;
+                @include transition(all .5s);
+                li {
+                    display: block;
+                    white-space: nowrap;
+                    padding: 5px 50px;
+                    text-align: center;
+                    border: 1px solid $primaryWhite;
+                    background-color: $primaryBlack;
+                    margin: 0 auto;
+                    @include type-ul-34;
+                    &.selected {
+                        display: none;
+                    }
+                }
+            }
+            &.extended {
+                > a:after {
+                    content: $fa-var-chevron-up;
+                }
+                ul {
+                    max-height: 254px;
+                    overflow-y: scroll;
+                    overflow-x: visible;
+                    padding-bottom: 10px;
+                    @include transition(all .5s);
+                    left: 23px;
+                }
+            }
+        }
+    }
+    input[type=submit],
+    button {
+        background: $primaryBlack;
+        border: 1px solid $primaryWhite;
+        color: $primaryWhite;
+        vertical-align: middle;
+        @include type-u-18;
+        padding: 10px 75px;
+        margin: 20px 0;
+        @include button-hover();
+    }
+    input[type=submit]{
+        margin: 30px auto;
+        &.sf-mobile-next{
+            display: none;
+        }
+    }
+
+}
+
+@include breakpoint(max-width $width-small) {
+    .sentence-filter-wrapper, .sentence-filter-wrapper.sf-large {
+        padding: 50px 0px;
+        margin: 0;
+        /*
+        *  Using visibility/position to hide inputs, instead of using display: none.
+        *  This way the inputs are still posted once the form is complete.
+        */
+
+
+        input[type=submit]{
+            &.sf-mobile-step-two {
+                display: none;
+            }
+        }
+
+
+        .sf-mobile-step-two {
+            display: none;
+        }
+
+        &.sf-mobile-step-two-active {
+            .sf-mobile-step-two {
+                display: initial;
+            }
+            input[type=submit]{
+                &.sf-mobile-step-two {
+                    display: initial;
+                }
+            }
+            .sf-mobile-step-one {
+                display: none;
+            }
+        }
+        .filter {
+            margin: 0;
+            .sf-select-wrapper {
+                display: inline-block;
+                border: none;
+                margin: 0;
+                width: 100%;
+                > a {
+                    padding-bottom: 3px;
+                    border-bottom: 1px solid $primaryRed;
+                }
+
+            }
+        }
+        input[type=submit],
+        button {
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+    }
+}

@@ -1,0 +1,111 @@
+.generated-link-list{     
+	.link-list-heading{        
+		h2 {
+            margin: 0 0 15px 0;
+            @include type-ub-24(24px, 18px);
+            font-weight: normal;
+            text-align: left;
+            padding-bottom: 18px;
+		    border-bottom: 1px solid $neutralGrey;
+        }
+	}
+	.link-list-body {
+        margin-bottom: 83px;
+        &.last {
+            margin-bottom: 0;
+        }
+        ul {
+            padding: 0;
+            margin: 0;
+            li {
+                list-style: none;
+                text-align: left;
+                padding:15px 0;
+                a {
+                    cursor: pointer;
+                    color: #3361ad;
+                    vertical-align: middle;
+                    @include type-ub-16;
+                    font-weight: bold;
+                    text-decoration: underline;
+                    @include transition(all 0.35s);
+                    font-family:"Univers LT W01_45 Light";
+                                        
+                }
+                :last-child {
+                    margin:0 0 15px 0;
+                }
+                :before { display:none;content: none; }
+
+               
+            }
+        }
+
+        
+        ul.linked-list-border {            
+            li {
+                list-style: none;
+                text-align: left;
+                padding:30px 10px 30px 0;
+                border-bottom: 1px solid $neutralGrey;
+                @include transition(all 0.35s);
+                a {
+                    cursor: pointer;
+                    color: #000;
+                    vertical-align: middle;
+                    @include type-ub-16;
+                    text-decoration: none;
+                    @include transition(all 0.35s);
+                    font-weight: normal;
+                }
+                
+                :last-child {
+                    margin:0 0 15px 0;
+                }
+                
+                :before {
+                    display: block;
+                    content: "\e601";
+                    float: right;
+                    color: red;
+                    font-family: 'MDIcons';
+                    font-style: normal;
+                    font-weight: normal;
+                    font-variant: normal;
+                    text-transform: none;
+                    line-height: 1;
+                    speak: none;
+                }
+
+                &:hover{
+                  background-color: $neutralGrey;
+                  padding-right: 0;
+                  padding-left: 10px;
+                  @include transition(all 0.35s);
+                  &:before {
+                    color: $primaryBlack;
+                    transition: color 0.25s ease-in-out;
+                  }
+                }
+
+            }
+        }
+    }
+    @include breakpoint(max-width $width-medium){
+         width: 100%;
+         padding: 35px;
+         .link-list-body {
+            margin-bottom: 50px;
+          }
+    }
+     @include breakpoint(max-width $width-small) {
+        width: 100%;
+     	 padding: 35px;
+     	 .link-list-heading{
+		     	 h3 {
+		            @include type-ub-24;
+				    width: 100%;
+		        }
+	       }
+     } 
+}

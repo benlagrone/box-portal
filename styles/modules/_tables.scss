@@ -1,0 +1,161 @@
+.footable{
+  &.table{
+
+    &.no-header{
+      .footable-detail-row .footable-details.table tbody tr th{
+        display: none;
+      }
+    }
+
+    border: none;
+
+    .footable-header{
+      border-color: $neutralGreyDark;
+    }
+
+    .footable-detail-row{
+      border: 1px solid $neutralGreyLightest;
+    }
+    thead{
+      background-color: $neutralGreyDark;
+      color: $primaryWhite;
+      tr{
+        th{
+          @include type-ub-16;
+          font-weight: normal;
+          border-bottom: none;
+          vertical-align: middle;
+          padding: 20px;
+        }
+      }
+      @include breakpoint(max-width $width-small) {
+        display: none !important;
+      }
+
+
+    }
+    tbody{
+
+      tr{
+        td{
+          @include type-u-14;
+          font-weight: normal;
+          border: 1px solid $neutralGreyLightest;
+          word-break: normal;
+          padding-left: 20px;
+          padding-right: 20px;
+          word-wrap: break-word;
+          a{
+            
+          }
+          @include breakpoint(max-width $width-small) {
+            border: none;
+            padding: 8px;
+          }
+        }
+
+        &.odd{
+          background-color: $tableOffWhite;
+        }
+      }
+    }
+    @include breakpoint(max-width $width-small) {
+      tbody {
+        background-color: $primaryWhite;
+        width: 100%;
+        display: block;
+        tr {
+          background-color: $primaryWhite;
+          width: 100%;
+          display: table;
+          height: auto;
+        }
+      }
+    }
+  }
+
+
+
+
+  &.footable-details{
+    tbody{
+      tr{
+        th{
+          border: none;
+        }
+        td{
+          border: none;
+        }
+      }
+    }
+  }
+
+}
+.footable-detail-row{
+  .footable-details{
+    &.table{
+      background-color: $primaryWhite;
+      tbody{
+        tr{
+          background-color: $primaryWhite;
+
+          th{
+            border: none;
+            float: left;
+            display: block;
+            width:100%;
+
+          }
+          td{
+            border: none;
+            float: left;
+            background-color: $primaryWhite;
+            display: block;
+            width:100%;
+            word-break: normal;
+
+            .footable-toggle{
+              display: none !important;
+            }
+
+          }
+          &.odd{
+            background-color: $primaryWhite;
+          }
+        }
+      }
+    }
+  }
+  &.odd{
+    .footable-details {
+      &.table {
+        background-color: $tableOffWhite;
+        tbody {
+          tr {
+            background-color: $tableOffWhite;
+
+            th {
+              background-color: $tableOffWhite;
+              border: none;
+              float: left;
+              display: block;
+              width: 100%;
+
+            }
+            td {
+              border: none;
+              float: left;
+              background-color: $tableOffWhite;
+              display: block;
+              width: 100%;
+
+            }
+            &.odd {
+              background-color: $tableOffWhite;
+            }
+          }
+        }
+      }
+    }
+  }
+}

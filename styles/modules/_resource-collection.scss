@@ -1,0 +1,64 @@
+/* =======================
+   Resource Collection
+   ======================= */
+.resource-collection{
+  width: 100%;
+  display: block;
+  .collection-item{
+    width: 33.3333%;
+    float: left;
+    margin-top: 15px;
+    .icon{
+      width: 25%;
+      padding: 13px 0;
+      text-align: center;
+      float: left;
+      color: white;
+
+      i{
+        font-size: 60px;
+      }
+
+      &.purple{ background-color: $secondaryPurple}
+      &.green{background-color: $secondaryGreen}
+      &.orange{background-color: $secondaryOrange}
+    }
+    .date{
+      @include type-ub-16;
+      color: $secondaryOrange;
+      padding-left: 24px;
+
+      float: left;
+    }
+    .title{
+      @include type-mb-24(24px,16px);
+      float: left;
+      width: 75%;
+      padding: 0 20px 0 24px;
+      color: $primaryBlack;
+
+
+    }
+    @include breakpoint(max-width $width-medium){
+      .icon{
+        i{
+          font-size: 50px;
+        }
+      }
+    }
+
+    @include breakpoint(max-width $width-small){
+      width: 100%;
+      padding: 20px 0;
+      .icon{
+        i{
+          font-size: 60px;
+        }
+      }
+    }
+
+
+  }
+
+
+}

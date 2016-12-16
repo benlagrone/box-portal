@@ -1,0 +1,43 @@
+/* =======================
+   Clinical Trials Sidebar
+   ======================= */
+.article-sidebar {
+    background-color: $neutralGreyLightest;
+    padding: $global-spacing*2;
+    @include type-u-16;
+    word-wrap:break-word;
+
+    h3 {
+        @include type-ub-24;
+        font-weight: normal;
+        margin-top:0;
+    }
+
+    div {
+        padding: 5px 0;
+        p {
+            margin:0;
+            padding: 3px 0;
+            &.title {
+                @include type-ub-18(16px,16px);
+            }
+            span{
+                display: block;
+            }
+        }
+        a{
+            @include type-u-18(16px,16px);
+        }
+    }
+
+    .cta {
+        padding: 15px 0;
+        .cta-block {
+            width:100%;
+            text-align:center;
+            background-color: $primaryRed;
+            color: $primaryWhite;
+            border:none;
+        }
+    }
+}

@@ -1,0 +1,112 @@
+/* =======================
+   Clinical Trials Search
+   ======================= */
+.clinical-trials-header {
+    .clinical-trials-header-subtitle,
+    .clinical-trials-header-link {
+        @include type-u-18;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    h1 {
+        @include type-m-36(32px,24px);
+        font-weight: normal;
+        margin-top: 0;
+    }
+    border-bottom: 1px solid $neutralGrey;
+
+    .clinical-trials-header-link {
+        a {
+            padding-bottom: 20px;
+            color: $primaryBlack;
+            text-decoration: underline;
+        }
+    }
+    @include breakpoint(max-width $width-medium){
+        @include spacing('padding', 'sides', 'mobile');
+    }
+    @include breakpoint(max-width $width-small){
+        @include spacing('padding', 'all', 'mobile');
+    }
+}
+
+
+.clinical-trials-subheader, .clinical-trials-faculty {
+    div {
+        padding-right: 20px;
+        position:relative;
+        display: table-cell;
+        &.treatment{
+            padding-left: 120px;
+        }
+        p {
+            padding: 0 0 10px 0;
+            margin:0;
+            @include type-u-16(16px,14px);
+            &.title {
+                @include type-ub-16;
+                white-space: nowrap;
+            }
+        }
+    }
+    @include breakpoint(max-width $width-small){
+        div{
+            padding: 15px 35px;
+            border-bottom: 1px solid $neutralGrey;
+            display: block;
+            p{
+                padding: 10px 0;
+                display: inline-block;
+            }
+            &.treatment{
+                @include spacing('padding', 'sides', 'mobile');
+                p{
+                    padding: 10px 0;
+                    display: block;
+                    &.title{
+                        padding: 10px 0 0 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.clinical-trials-subheader {
+    padding-left: 2em;
+    display: table;
+
+    @include breakpoint(max-width $width-medium){
+        @include spacing('padding', 'all', 'mobile');
+    }
+    @include breakpoint(max-width $width-small){
+        padding: 0;
+        display: block;
+    }
+}
+
+
+.clinical-trials-faculty {
+    position: relative;
+    display: table;
+    .clinical-trials-headshot {
+        display:block;
+        img {
+            border-radius: 50%;
+            width: 100px;
+            height: auto;
+            margin: auto;
+            position: absolute;
+            top:-20px;
+        }
+    }
+    .clinical-trials-principal {
+        padding-left: 120px;
+    }
+    @include breakpoint(max-width $width-small){
+        display: block;
+        div{
+            border-bottom: none;
+        }
+    }
+}

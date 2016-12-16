@@ -1,0 +1,368 @@
+.image-carousel {
+    .carousel-item {
+        background: $neutralGreyLightest;
+        position: relative;
+        height: 325px;
+        &.red {
+            background-color: $primaryRed;
+            .slide-count, .carousel-body, .cta-container .cta, .cta-container .cta span {
+                color: $primaryWhite;
+            }
+        }
+        &.purple {
+            background-color: $secondaryPurple;
+            .slide-count, .carousel-body, .cta-container .cta, .cta-container .cta span {
+                color: $primaryWhite;
+            }
+        }
+        &.blue {
+            background-color: $secondaryBlue;
+            .slide-count, .carousel-body, .cta-container .cta, .cta-container .cta span {
+                color: $primaryWhite;
+            }
+        }
+        &.green {
+            background-color: $secondaryGreen;
+            .slide-count, .carousel-body, .cta-container .cta, .cta-container .cta span {
+                color: $primaryWhite;
+            }
+        }
+        &.yellow {
+            background-color: $secondaryYellow;
+            .slide-count, .carousel-body, .cta-container .cta, .cta-container .cta span {
+                color: $primaryBlack;
+            }
+        }
+
+        .cta-container {
+            a {
+                margin: 0;
+                position: relative;
+                padding-right: 40px;
+                float: left;
+                width: 49%;
+
+                &:last-of-type{
+                    float: right;
+                }
+                &:first-of-type{
+                    float: left;
+                }
+            }
+        }
+        &.has-image {
+            .cta-container {
+                a {
+                    float: left;
+                    width: 100%;
+                    display: block;
+                    height: 66px;
+                    padding-top: 26px;
+                    font-size: 14px;
+                    margin-left: 0;
+                    &.last {
+                        margin-left: 0;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+        .carousel-body {
+            height: 100%;
+            padding: 40px 0;
+            margin: 0 6%;
+            position: relative;
+            .title {
+                margin: 0;
+                font-size: 2em;
+                font-weight: normal;
+            }
+            .description {
+                font-size: 24px;
+            }
+        }
+    }
+
+
+    .has-image {
+        .carousel-image {
+            float: left;
+            display: inline;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            img {
+                width: auto;
+                height: 100%;
+            }
+        }
+        .carousel-body {
+            width: auto;
+            padding: 20px 30px;
+            margin: 0;
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+            .title {
+                margin-top: 10px;
+                margin-bottom: 0;
+                padding: 0;
+                font-size: 1.9em;
+            }
+            .description {
+                margin: 0;
+                font-size: 1.29em;
+            }
+            .cta-container{
+                position: absolute;
+                width: calc(100% - 60px);
+            }
+        }
+    }
+    .no-image {
+        .slick-next:before, .slick-prev:before, .slide-count {
+            color: $primaryWhite;
+        }
+
+        .slide-count {
+            color: $primaryWhite;
+        }
+    }
+    .cta-container {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        a {
+            font-family: "Univers LT W01_65 Bold";
+            border-top: 1px solid #c2c2c3;
+            color: $primaryBlack;
+            position: relative;
+            width: 100%;
+            display: block;
+            height: 66px;
+            padding-top: 26px;
+            font-size: 14px;
+            .cta_icon {
+                border: 1px solid;
+                display: inline-block;
+                padding-left: 8px;
+                padding-top: 2px;
+                border-radius: 50%;
+                width: 21px;
+                height: 21px;
+                position: absolute;
+                right: 5px;
+                color: $secondaryRed;
+                font-weight: bold;
+            }
+            .cta_external_icon {
+                padding-left: 7px;
+                width: 21px;
+                height: 21px;
+                position: absolute;
+                right: 5px;
+                color: $secondaryRed;
+                font-weight: bold;
+            }
+
+        }
+    }
+    .slick-prev,
+    .slick-next {
+        display: inline-block;
+        position: absolute;
+        z-index: 3;
+        width: 40px;
+        height: 40px;
+        top: 50%;
+        margin-top: -20px;
+        @include transition(all 300ms);
+        opacity: 0;
+        &:before {
+            color: $primaryRed;
+            @extend .fa;
+        }
+    }
+    .slick-prev {
+        left: 0;
+        &:before {
+            content: "\f053";
+        }
+        &.slick-disabled:before {
+            opacity: 0;
+        }
+    }
+    .slick-next {
+        right: 0;
+        &:before {
+            content: "\f054";
+        }
+        &.slick-disabled:before {
+            opacity: 0;
+        }
+    }
+    .slick-slider {
+        margin-bottom: 0;
+    }
+    &:hover, &:focus {
+        .slick-prev, .slick-next {
+            opacity: 1;
+        }
+    }
+    .slide-count {
+        position: absolute;
+        top: 41px;
+        right: 48px;
+        font-family:"Univers LT W01_45 Light";
+        font-size: .8em;
+    }
+    .slick-dots {
+        display: none !important;
+    }
+    @include breakpoint(max-width $width-medium) {
+        .carousel-item {
+            height: 300px;
+        }
+    }
+    @include breakpoint(max-width $width-small) {
+        .carousel-item {
+            width: 88%;
+            height: auto;
+            margin-right: 10px;
+            margin-left: 10px;
+            overflow: hidden;
+            .carousel-body {
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 40px 0 0 0;
+                position: relative;
+                right: 0;
+                top: 0;
+
+                .title {
+                    font-size: 17px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    clear:both;
+
+                }
+                .description {
+                    font-size: 13px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    height: auto;
+                }
+            }
+            .cta-container {
+                bottom: 0;
+                position: relative;
+                width: 100%;
+                a {
+                    width: 100%;
+                    padding-top: 20px;
+                    padding-bottom: 20px;
+                    margin-right: 0;
+                    margin-left: 0;
+                    float: none;
+                    display: block;
+                    font-size: 13px;
+                    height: auto;
+                    position: relative;
+                    .cta_text {
+                        display: inline-block;
+                        float: left;
+                        margin-left: 10px;
+                        width: 60%;
+                    }
+                    .cta_icon {
+                        font-size: .8em;
+                        width: 20px;
+                        height: 20px;
+                        padding-left: 8px;
+                        padding-top: 4px;
+                        float: right;
+                        right: 10px;
+                        top: 36%;
+                    }
+                }
+            }
+            &.red,&.purple,&.blue,&.green,&.yellow {
+                .carousel-body{
+                    .title{
+                        font-size: 21px;
+                    }
+                    .description{
+                        font-size: 18px;
+                    }
+                }
+            }
+            &.has-image{
+                height: auto;
+                .carousel-image {
+                    width: 100%;
+                    height: auto;
+
+                    img{
+                        width: 100%;
+
+                    }
+                }
+                .carousel-body {
+                    width: 100%;
+                    height: auto;
+                    padding: 0;
+                    .title {
+                        font-size: 18px;
+                        font-weight: normal;
+                        margin-top: 14px;
+                        padding: 20px 0 0 15px;
+                    }
+                    .description {
+                        font-size: 14px;
+                        padding: 0 0 0 15px;
+                        margin-bottom: 20px;
+                    }
+                }
+                .cta-container {
+                    padding: 0;
+                    margin: 0;
+                    width: 100%;
+                    a {
+                        width: 100%;
+                        padding-top: 20px;
+                        padding-bottom: 20px;
+                        margin-right: 0;
+                        margin-left: 0;
+                        float: none;
+                        display: block;
+                        font-size: 13px;
+                        height: auto;
+                        position: relative;
+                        .cta_text {
+                            display: inline-block;
+                            float: left;
+                            margin-left: 10px;
+                            width: 60%;
+                        }
+                        .cta_icon {
+                            font-size: .8em;
+                            width: 20px;
+                            height: 20px;
+                            padding-left: 8px;
+                            padding-top: 4px;
+                            float: right;
+                            right: 10px;
+                            top: 36%;
+                        }
+                    }
+                }
+            }
+        }
+
+        .slide-count {
+            top: 17px;
+            right: 17px;
+        }
+    }
+}

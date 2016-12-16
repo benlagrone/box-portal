@@ -1,0 +1,167 @@
+/*===============================
+=       Type Styles       =
+===============================*/
+
+@mixin type-family($weight:'Minion') {
+  @if $weight=='FontAwesome' {
+    font-family: FontAwesome;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else if $weight=='MDIcons' {
+    font-family: 'MDIcons';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @else if $weight=='Light' {
+    font-family: 'Univers LT W01_45 Light', Arial;
+  }
+  @else if $weight=='Bold' {
+    font-family: 'Univers LT W01_65 Bold', Arial;
+  }
+  @else if $weight=='Condensed' {
+    font-family: 'UniversLTW01-57Condense_723821', Arial;
+  }
+  @else if $weight=='BoldCondensed' {
+    font-family: 'UniversLTW01-67BoldCn', Arial;
+  }
+  @else if $weight=='Univers' {
+    font-family: 'Univers LT W01_55 Roman', Arial;
+  }
+  @else if $weight=='MinionSemi' {
+    font-family: 'Minion Semi Bold','Minion W01 SmBd Cap', Arial;
+  }
+  @else {
+    font-family: 'Minion Regular', 'Minion W01 Cap Regular', Arial, Georgia;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@mixin type-simple($weight,$desktop,$spacing) {
+  @include type-family($weight);
+  font-size: $desktop;
+  letter-spacing: $spacing;
+  line-height: 1.3;
+}
+
+@mixin type-setup($weight,$desktop,$tablet,$mobile,$spacing) {
+  @include type-family($weight);
+  font-size: $desktop;
+  letter-spacing: $spacing;
+  line-height: 1.3;
+  @include breakpoint(max-width $width-medium) {
+    font-size: $tablet;
+  }
+  @include breakpoint(max-width $width-small) {
+    font-size: $mobile;
+  }
+}
+
+//*---------------------------------------
+// Univers
+@mixin type-u-36($md:16px,$sm:16px){      @include type-setup('Univers',36px,$md,$sm,-0.02em) }
+@mixin type-u-21($md:18px,$sm:18px){      @include type-setup('Univers',21px,$md,$sm,-0.02em) }
+@mixin type-u-18($md:16px,$sm:16px){      @include type-setup('Univers',18px,$md,$sm,-0.02em) }
+@mixin type-u-16($md:16px,$sm:16px){      @include type-setup('Univers',16px,$md,$sm,-0.02em) }
+@mixin type-u-24($md:16px,$sm:16px){      @include type-setup('Univers',24px,$md,$sm,-0.02em) }
+@mixin type-u-14($md:14px,$sm:14px){      @include type-setup('Univers',14px,$md,$sm,-0.02em) }
+@mixin type-u-12($md:12px,$sm:12px){      @include type-setup('Univers',12px,$md,$sm,-0.02em) }
+@mixin type-u-10($md:10px,$sm:10px){      @include type-setup('Univers',10px,$md,$sm,-0.02em) }
+
+
+//*---------------------------------------
+// Univers Light
+@mixin type-ul-14($md:14px,$sm:14px){      @include type-setup('Light',14px,$md,$sm,-0.02em) }
+@mixin type-ul-24($md:16px,$sm:16px){      @include type-setup('Light',24px,$md,$sm,-0.02em) }
+@mixin type-ul-21($md:16px,$sm:16px){      @include type-setup('Light',21px,$md,$sm,-0.02em) }
+@mixin type-ul-18($md:14px,$sm:14px){      @include type-setup('Light',18px,$md,$sm,-0.02em) }
+@mixin type-ul-34($md:34px,$sm:34px){      @include type-setup('Light',34px,$md,$sm,-0.02em) }
+@mixin type-ul-36($md:24px,$sm:16px){      @include type-setup('Light',36px,$md,$sm,-0.02em) }
+@mixin type-ul-48($md:36px,$sm:36px){      @include type-setup('Light',48px,$md,$sm,-0.02em) }
+
+//*---------------------------------------
+// Univers Bold
+@mixin type-ub-48($md:21px,$sm:21px){      @include type-setup('Bold',48px,$md,$sm,-0.02em) }
+@mixin type-ub-41($md:21px,$sm:21px){      @include type-setup('Bold',41px,$md,$sm,-0.02em) }
+@mixin type-ub-29($md:21px,$sm:21px){      @include type-setup('Bold',29px,$md,$sm,-0.02em) }
+@mixin type-ub-24($md:16px,$sm:16px){      @include type-setup('Bold',24px,$md,$sm,-0.02em) }
+@mixin type-ub-21($md:21px,$sm:16px){      @include type-setup('Bold',21px,$md,$sm,-0.02em) }
+@mixin type-ub-18($md:14px,$sm:14px){      @include type-setup('Bold',18px,$md,$sm,-0.02em) }
+@mixin type-ub-16($md:14px,$sm:14px){      @include type-setup('Bold',16px,$md,$sm,-0.02em) }
+@mixin type-ub-14($md:12px,$sm:12px){      @include type-setup('Bold',14px,$md,$sm,-0.02em) }
+
+//*---------------------------------------
+// Univers Condensed
+@mixin type-uc-10($md:10px) {      @include type-setup('Condensed',10px,$md,10px,-0.02em) }
+
+//*---------------------------------------
+// Univers Bold Condensed
+@mixin type-ubc-117($md:36px,$sm:36px){      @include type-setup('BoldCondensed',117px,$md,$sm,-0.02em) }
+@mixin type-ubc-96($md:36px,$sm:36px){      @include type-setup('BoldCondensed',96px,$md,$sm,-0.02em) }
+
+@mixin type-ubc-24($md:16px,$sm:16px){      @include type-setup('BoldCondensed',24px,$md,$sm,-0.02em) }
+@mixin type-ubc-18($md:16px,$sm:16) {     @include type-setup('BoldCondensed',16px,$md,$sm,-0.02em) }
+@mixin type-ubc-10($md:10px) {     @include type-setup('BoldCondensed',10px,$md,10px,-0.02em) }
+@mixin type-ubc-12($md:12px) {     @include type-setup('BoldCondensed',12px,$md,12px,-0.02em) }
+@mixin type-ubc-16($md:16px,$sm:16) {     @include type-setup('BoldCondensed',16px,$md,$sm,-0.02em) }
+@mixin type-ubc-14($md:14px) {     @include type-setup('BoldCondensed',14px,$md,14xpx,-0.02em) }
+@mixin type-ubc-12-alt($md:27px) { @include type-setup('BoldCondensed',30px,$md,27px,-0.02em) }
+
+//*---------------------------------------
+// Minion Pro
+@mixin type-m-117($md:36px,$sm:36px){      @include type-setup('Minion',117px,$md,$sm,-0.02em) }
+@mixin type-m-102($md:36px,$sm:36px){      @include type-setup('Minion',102px,$md,$sm,-0.02em) }
+@mixin type-m-90($md:36px,$sm:36px){      @include type-setup('Minion',90px,$md,$sm,-0.02em) }
+@mixin type-m-72($md:55px,$sm:36px){      @include type-setup('Minion',72px,$md,$sm,-0.02em) }
+@mixin type-m-66($md:55px,$sm:24px){      @include type-setup('Minion',66px,$md,$sm,-0.02em) }
+@mixin type-m-60($md:55px,$sm:29px){      @include type-setup('Minion',60px,$md,$sm,-0.02em) }
+@mixin type-m-55($md:36px,$sm:24px){      @include type-setup('Minion',55px,$md,$sm,-0.02em) }
+@mixin type-m-48($md:36px,$sm:24px){      @include type-setup('Minion',48px,$md,$sm,-0.02em) }
+@mixin type-m-42($md:36px,$sm:24px){      @include type-setup('Minion',42px,$md,$sm,-0.02em) }
+@mixin type-m-41($md:36px,$sm:24px){      @include type-setup('Minion',41px,$md,$sm,-0.02em) }
+@mixin type-m-38($md:38px,$sm:38px){      @include type-setup('Minion',38px,$md,$sm,-0.02em) }
+@mixin type-m-36($md:24px,$sm:24px){      @include type-setup('Minion',36px,$md,$sm,-0.02em) }
+@mixin type-m-32($md:24px,$sm:24px){      @include type-setup('Minion',32px,$md,$sm,-0.02em) }
+@mixin type-m-24($md:16px,$sm:16px){      @include type-setup('Minion',24px,$md,$sm,-0.02em) }
+@mixin type-m-21($md:16px,$sm:16px){      @include type-setup('Minion',21px,$md,$sm,-0.02em) }
+@mixin type-m-18($md:18px,$sm:18px){      @include type-setup('Minion',18px,$md,$sm,-0.02em) }
+@mixin type-m-16($md:14px,$sm:14px){      @include type-setup('Minion',16px,$md,$sm,-0.02em) }
+@mixin type-m-14($md:14px,$sm:14px){      @include type-setup('Minion',14px,$md,$sm,-0.02em) }
+
+//*---------------------------------------
+// Minion Pro Semi
+@mixin type-mb-32($md:24px,$sm:24px){      @include type-setup('MinionSemi',24px,$md,$sm,-0.02em) }
+@mixin type-mb-24($md:24px,$sm:24px){      @include type-setup('MinionSemi',24px,$md,$sm,-0.02em) }
+@mixin type-mb-21($md:21px,$sm:21px){      @include type-setup('MinionSemi',21px,$md,$sm,-0.02em) }
+
+
+//*---------------------------------------
+// Font Awesome
+@mixin type-fa-03($md:0.3em) {     @include type-setup('FontAwesome',0.3em,$md,0.3em,-0.02em) }
+@mixin type-fa-05($md:0.5em) {     @include type-setup('FontAwesome',0.5em,$md,0.5em,0em) }
+@mixin type-fa-1($md:1em) {        @include type-setup('FontAwesome',1em,$md,1em,-0.02em) }
+@mixin type-fa-14($md:14px) {     @include type-setup('FontAwesome',14px,$md,14px,-0.02em) }
+@mixin type-fa-15($md:1.5em) {     @include type-setup('FontAwesome',1.5em,$md,1.5em,-0.02em) }
+@mixin type-fa-16($md:16px) {     @include type-setup('FontAwesome',16px,$md,$md,-0.02em) }
+@mixin type-fa-25($md:2.5em) {     @include type-setup('FontAwesome',2.5em,$md,2.5em,-0.02em) }
+@mixin type-fa-18($md:1.8em) {     @include type-setup('FontAwesome',1.8em,$md,1.8em,-0.02em) }
+@mixin type-fa-30($md:30px) {     @include type-setup('FontAwesome',30px,$md,30px,-0.02em) }
+@mixin type-fa-2($md:2em) {        @include type-setup('FontAwesome',2em,$md,2em,-0.02em) }
+
+//*---------------------------------------
+// Navigation
+@mixin type-nav-1($md:12px) {      @include type-setup('Univers',12px,$md,12px,-0.02em) }
+@mixin type-nav-2($md:14px) {      @include type-setup('Bold',14px,$md,14px,-0.02em) }
+@mixin type-nav-3($md:16px) {      @include type-setup('Univers',16px,$md,16px,-0.02em) }
+@mixin type-nav-4($md:16px) {      @include type-setup('Bold',16px,$md,16px,-0.02em) }
+@mixin type-nav-4-alt($md:14px) {      @include type-setup('Bold',16px,$md,14px,-0.02em) }

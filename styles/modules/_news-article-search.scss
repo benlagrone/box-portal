@@ -1,0 +1,86 @@
+.news-article-search {
+    float: right;
+    width: 100%;
+    padding-bottom: 20px;
+    position: relative;
+    border-bottom: 1px solid $neutralGrey;
+    @include type-u-16(16px,14px);
+    .news-article-search-mask {
+        float: right;
+        width: 50%;
+        max-width: 40px;
+        z-index: z('search-results');
+        overflow-x: hidden;
+        @include transition(max-width 0.3s);
+        .search-field {
+            padding: 0.5em 35px 0.5em 10px;
+            height: 35px;
+            border-radius: 0;
+            background: $neutralGrey;
+            @include transition(background 0.3s);
+        }
+        .search-icon {
+            margin-top: 8px;
+            right: 10px;
+        }
+        .search-results {
+            position: static;
+        }
+        .search-result {
+            color: $primaryBlack;
+        }
+        .search-wrapper .search-form {
+            height: auto;
+        }
+        &.reveal {
+            max-width: 100%;
+        }
+        @media(max-width: $width-small) {
+            top: 10px;
+        }
+    }
+    @media(max-width:$width-small) {
+        @include spacing('padding', 'sides', 'mobile');
+        position: relative;
+        display: block;
+        height: 110px;
+        padding-left: 0;
+        padding-right: 0;
+        > div {
+            height: 70px;
+        }
+        .news-article-search {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            .news-article-search-mask {
+                width: 25%;
+                top: 0;
+                float: right;
+                max-width: inherit;
+                border-bottom: 1px solid $neutralGrey;
+                .search-form {
+                    height: 70px;
+                    .search-icon {
+                        font-size: 38px;
+                        top: 32px;
+                        right: 20px;
+                        margin-top: -18px;
+                        margin-left: -18px;
+                    }
+                    input {
+                        height: 70px;
+                        background-color: $primaryWhite;
+                        padding-right: 70px;
+                    }
+                }
+                &.reveal {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,104 @@
+.statistics{
+  .title{
+    @include type-m-55;
+    font-weight: normal;
+    text-align: center;
+    width: 100%;
+    margin-top: 0;
+
+  }
+  &.triple{
+    .stat-item {
+      width: 33%;
+      padding: 0 15px;
+    }
+  }
+  &.double{
+    .stat-item {
+      width: 50%;
+      padding: 0 50px;
+    }
+  }
+  &.single{
+    .stat-item {
+      width: 100%;
+    }
+  }
+
+  .stat-item{
+    color: $primaryBlack;
+    float: left;
+    text-align: center;
+
+    .statistic{
+      @include type-ubc-96(60px, 36px);
+      font-weight: normal;
+      margin: 0;
+    }
+    .description{
+      margin-top:0;
+      margin-bottom: 40px;
+      @include type-u-21;
+    }
+
+    &.red{
+      color: $primaryRed;
+    }
+    &.blue{
+      color: $secondaryBlue;
+    }
+    &.purple{
+      color: $secondaryPurple;
+    }
+    &.green{
+      color: $secondaryGreen;
+    }
+    &.orange{
+      color: $secondaryOrange;
+    }
+  }
+
+  .body-text{
+    border-top: 1px solid $neutralGrey;
+    padding-top: 25px;
+    clear: both;
+
+
+    .text{
+      color: $lightGrey;
+      @include type-m-21;
+    }
+  }
+  @include breakpoint(max-width $width-medium) {
+    .body-text{
+      padding-top: 30px;
+      margin-bottom: 30px;
+    }
+  }
+
+
+  @include breakpoint(max-width $width-small) {
+    padding-top: 35px;
+    @include spacing('padding', 'sides', 'mobile');
+
+    &.triple, &.double, &.single{
+      .stat-item{
+        width: 100%;
+        padding: 0;
+      }
+
+    }
+
+    .body-text {
+      padding-top: 30px;
+    }
+
+    .stat-item {
+      .statistic {
+        margin-top: 0;
+      }
+    }
+
+
+  }
+}

@@ -1,0 +1,108 @@
+.publication-search {
+    height: 85px;
+    // background: $neutralGreyDarkest;
+    .col-content-alternate {
+        position: absolute;
+        height: 100%;
+    }
+    .search-form {
+        height: 56px;
+        padding: 15px $global-spacing*4 0 $global-spacing*4;
+        width: 100%;
+        float: right;
+        margin: 0;
+        .placeholder {
+            float: left;
+            @include type-u-21(17px,17px);
+            color: white;
+            padding-left: 0;
+        }
+        .form-search-submit {
+            display: block;
+            width: 135px;
+            height: 56px;
+            background: $neutralGreyDarkest;
+            margin-left: 20px;
+            @include type-u-18;
+        }
+        .search-field {
+            height: 56px;
+            background-color: white;
+            float: right;
+            line-height: normal;
+            width: 50%;
+            padding-left: 24px;
+            &:-moz-placeholder {
+                color:    $neutralGreyDark;
+                opacity:  1;
+
+                line-height: -moz-block-height;
+                @include type-u-18;
+            }
+            &::-moz-placeholder {
+                color:    $neutralGreyDark;
+                opacity:  1;
+                line-height: -moz-block-height;;
+                @include type-u-18;
+            }
+        }
+    }
+    .search-results {
+        position: relative;
+        top: 0;
+        width: 50%;
+        float: right;
+        right: 155px;
+    }
+    &.hasVal {
+        .placeholder {
+            display: block;
+        }
+    }
+
+    @include breakpoint(max-width $width-medium) {
+        height: 115px;
+
+        .search-results {
+            width: 75%;
+            float: left;
+            right: 0;
+        }
+        .search-form {
+            padding: 0;
+            @include spacing('padding', 'sides', 'mobile');
+            .placeholder {
+                width: 100%;
+                position: relative;
+                padding-left: 0;
+                top:19px;
+            }
+            .form-search-submit {
+                position: relative;
+                margin-top: 21px;
+                width: 20%;
+                max-width: 135px;
+                padding-left: 0;
+                padding-right: 0;
+                margin-left: 0;
+            }
+            .search-field {
+                position: relative;
+                margin-top: 21px;
+                padding-left: 12px;
+                float: left;
+                width: 75%;
+            }
+        }
+    }
+
+    &.red {
+        background-color: $primaryRed;
+    }
+    &.grey {
+        background-color: $neutralGreyDarkest;
+    }
+    &.tan {
+        background-color: $neutralGreyLight;
+    }
+}

@@ -1,0 +1,19 @@
+.sc-ico-follow{
+	.social-ico-left{
+		float:left;
+		margin:0 18px 0 0;
+
+	}
+	.social-ico-content{
+		float:left;
+		color:#3361ad;
+		margin:0;
+		border-bottom:1px solid #a1b1d3;
+		@include type-u-18(18px, 19px);
+		font-weight:normal;
+
+	}
+
+}
+
+

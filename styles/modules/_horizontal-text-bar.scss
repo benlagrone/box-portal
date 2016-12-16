@@ -1,0 +1,123 @@
+.horizontal-text-bar{
+  background: $primaryWhite;
+  display: table;
+  padding: 60px 72px;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+
+  &.red{
+    background: $primaryRed;
+  }
+  &.blue{
+    background: $secondaryBlue;
+  }
+  &.purple{
+    background: $secondaryPurple;
+  }
+
+  i{
+    font-size: 4em;
+    position: relative;
+    width: auto;
+    height: 100%;
+    padding-right: 30px;
+    color: $primaryWhite;
+    line-height: 1;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .text-container{
+    display: table-cell;
+    vertical-align: middle;
+    width: 70%;
+
+    .title{
+      @include type-ub-21(21px, 18px);
+      color: white;
+      display: block;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .description{
+      @include type-u-21;
+      color: white;
+      display: block;
+      margin: 15px 0 0 0;
+      p{
+        margin: 0;
+      }
+
+    }
+  }
+
+  .cta-container{
+    display: table-cell;
+    vertical-align: middle;
+    width: 30%;
+    .cta{
+      float: right;
+      position: relative;
+
+      a{
+        @include type-u-18;
+        background: transparent;
+        height: auto;
+        min-width: 230px;
+        padding: 24px 45px;
+        text-align: center;
+      }
+    }
+  }
+  @include breakpoint(max-width $width-medium) {
+    .cta-container{
+      .cta{
+        a{
+          min-width: inherit;
+        }
+      }
+    }
+  }
+
+  @include breakpoint(max-width $width-small) {
+    padding: 30px;
+    display: block;
+    @include spacing('padding', 'sides', 'mobile');
+    i{
+      margin-right: 0;
+      margin-bottom: 20px;
+      float: none;
+      text-align: center;
+      display: block;
+      padding: 0;
+    }
+    .text-container{
+      display: block;
+      text-align: center;
+      width: 100%;
+
+    }
+
+    .cta-container{
+      display: block;
+      height: 100%;
+      overflow: hidden;
+      text-align: center;
+      width: 100%;
+
+      .cta{
+        float: none;
+        margin-top: 30px;
+        a{
+          height: 42px;
+          min-width: inherit;
+          padding: 12px 30px 10px;
+        }
+      }
+    }
+
+  }
+
+
+}

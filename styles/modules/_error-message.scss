@@ -1,0 +1,209 @@
+.error-message-section {
+  color: $primaryBlack;
+  background-color: $neutralGreyLight;
+  padding: 60px 0;
+  text-align: center;
+
+  p {
+    @include type-m-48;
+    margin: 0 auto;
+    width: 768px; 
+  }
+
+  .error-search {
+    display: inline-block;
+    padding-top: 48px;
+    margin: 0 auto;
+
+    #error-search-box-wrapper {
+      width: 820px;
+      margin: 0 auto;
+      float: left;
+    }
+
+    #error-search-form {
+      height: 56px;
+      line-height: 56px; 
+
+      .placeholder {
+        margin-left: 16px;
+        padding-left: 10px;
+      }
+      .search-field {
+        width: 620px; //595
+        background-color: $primaryWhite;
+        height: inherit;
+        line-height: 0;
+        padding-left: 16px;
+      }
+
+      ::-webkit-input-placeholder {
+         @include type-u-18(18px,18px);
+      }
+
+      :-moz-placeholder { /* Firefox 18- */
+        @include type-u-18(18px,18px);
+      }
+
+      ::-moz-placeholder {  /* Firefox 19+ */
+        @include type-u-18(18px,18px);
+      }
+
+      :-ms-input-placeholder {
+        @include type-u-18(18px, 18px);
+      }
+    }
+
+    .form-search-submit {
+      display: inline-block;
+      border: 1px solid black;
+      color: black;
+      float: right;
+      height: 56px;
+      @include type-u-18;
+      text-decoration: none;
+      vertical-align: middle;
+      width: 136px;
+      background-color: $neutralGreyLight;
+    }
+
+    .search-results {
+      padding-left: 0;
+      position: absolute;
+      margin-top: 0;
+      width: 620px;
+      margin-left: 32px;
+
+    }
+  }
+
+  .error-contact {
+     margin: 0 auto;
+     margin-top: 50px;
+
+    .bold {
+      @include type-ub-18;
+    }
+
+    #error-question {
+      @include type-u-18;
+      border-right: 1px solid black;
+      color: black;
+      display:inline-block;
+      padding: 12px 48px; 
+    }
+
+    #error-call {
+      @include type-u-18;
+      color: black;
+      display: inline-block;
+      padding: 12px 48px; 
+    }
+  }
+
+  .error-message-icon {
+    color: black;
+    font-size: 44px;
+    margin-right: 30px;
+    vertical-align: middle;
+
+    &.small {
+      font-size: 20px;
+      margin-left: 16px;
+      margin-right: 2px;
+    }
+  }
+  
+  @include breakpoint(max-width $width-medium) {
+    .error-search {
+      width: 100%;
+      padding-left: 10%;
+      padding-right: 10%;
+      #error-search-box-wrapper {
+        width: 100%;
+        .placeholder {
+          margin-left: 0;
+        }
+        .search-field {
+          width: 75%;
+          padding-left: 10px;
+          float: left;
+        }
+        .form-search-submit {
+          width: 20%;
+        }
+        .search-results{
+          margin-left: 0;
+          width: 75%;
+        }
+      }
+    }
+    #error-search-form {
+      .placeholder {
+        @include type-u-18(18px,18px);
+      }
+    }
+  } 
+
+  @include breakpoint(max-width $width-small) {
+    padding: 100px 0 60px 0;
+
+    p {
+      @include type-m-90;
+      width: 80%;
+    }
+    .error-search {
+      width: 100%;
+      @include spacing('padding', 'sides', 'mobile');
+
+
+      #error-search-box-wrapper {
+        width: 100%;
+
+        .placeholder {
+          margin-left: 0;
+          padding-left: 10px;
+        }
+
+        .search-field {
+          width: 75%;
+          padding-left: 10px;
+          float: left;
+        }
+        .form-search-submit {
+          width: 20%;
+        }
+      }
+    }
+
+    .error-contact {
+      margin-top: 48px;
+      text-align: center; 
+
+      .bold {
+        @include type-ub-24;
+      }
+
+      #error-question {
+        @include type-u-36;
+        border: none;
+        padding-left: 43px;
+      }
+
+      #error-call {
+        @include type-u-36;
+
+      }
+    }
+
+    .error-message-icon {
+      font-size: 34px;
+      margin-right: 19px;
+
+       &.small {
+        font-size: 26px;
+       }
+    }
+  }
+  
+}
